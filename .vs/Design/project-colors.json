@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "01406eec-a2b7-446e-9bd1-e6bdceb05a8a": {
+      "ProjectGuid": "01406eec-a2b7-446e-9bd1-e6bdceb05a8a",
+      "DisplayName": "Shared",
+      "ColorIndex": 0
+    },
+    "36c49937-4e6e-426a-800a-2b99fe9e14ce": {
+      "ProjectGuid": "36c49937-4e6e-426a-800a-2b99fe9e14ce",
+      "DisplayName": "Entities",
+      "ColorIndex": 1
+    },
+    "ae7db831-075f-4b50-adad-98cce4354e6a": {
+      "ProjectGuid": "ae7db831-075f-4b50-adad-98cce4354e6a",
+      "DisplayName": "Data",
+      "ColorIndex": 2
+    },
+    "eda50185-94fa-4040-8ecb-bfc162dff208": {
+      "ProjectGuid": "eda50185-94fa-4040-8ecb-bfc162dff208",
+      "DisplayName": "Services",
+      "ColorIndex": 3
+    },
+    "e4d66c5e-f9e3-419a-a64b-46dcc6ecc7a4": {
+      "ProjectGuid": "e4d66c5e-f9e3-419a-a64b-46dcc6ecc7a4",
+      "DisplayName": "Mvc",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}
