@@ -16,8 +16,8 @@ namespace Services.Concrete
 
         public ArticleManager(IUnitofWork unitofWork, IMapper mapper)
         {
-            _mapper = mapper;
             _unitofWork = unitofWork;
+            _mapper = mapper;
         }
 
 

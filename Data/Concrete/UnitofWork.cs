@@ -4,7 +4,7 @@ using Data.Concrete.EntityFramework.Repositories;
 
 namespace Data.Concrete
 {
-    public class UnitofWork : IUnitofWork, IAsyncDisposable
+    public class UnitofWork : IUnitofWork
     {
         private readonly dContext _context;//kendi dbcontextimiz
         //articles,categories bizzden context bekledogi icin

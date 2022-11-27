@@ -5,8 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();//mvc uygulamasi oldugu belirtilir
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation(); ;
 builder.Services.AddServerSideBlazor();
-builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.LoadMyServices();
+builder.Services.AddAutoMapper(typeof(Program));
+
 
 
 var app = builder.Build();

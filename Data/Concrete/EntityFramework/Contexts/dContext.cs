@@ -18,12 +18,12 @@ namespace Data.Concrete.EntityFramework.Contexts
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            //option builder kullanilarak connection stringi ekleme
-            optionsBuilder.UseSqlServer(connectionString:
-                "data source=LAPTOP-UI9DTME8;initial catalog=dboBlog;trusted_connection=true;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;MultipleActiveResultSets=True;");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    //option builder kullanilarak connection stringi ekleme
+        //    optionsBuilder.UseSqlServer(connectionString:
+        //        "data source=LAPTOP-UI9DTME8;initial catalog=dboBlog;trusted_connection=true;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;MultipleActiveResultSets=True;");
+        //}
         public dContext(DbContextOptions<dContext> option) : base(option)
         {
 

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Data.Concrete;
+using Data.Abstract;
 using Entities.Concrete;
 using Entities.Dtos;
 using Entities.Dtos.Categories;
@@ -12,10 +12,10 @@ namespace Services.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-        private readonly UnitofWork _unitofWork;
+        private readonly IUnitofWork _unitofWork;
         private readonly IMapper _mapper;
 
-        public CategoryManager(UnitofWork unitofWork, IMapper mapper)
+        public CategoryManager(IUnitofWork unitofWork, IMapper mapper)
         {
             _unitofWork = unitofWork;
             _mapper = mapper;
