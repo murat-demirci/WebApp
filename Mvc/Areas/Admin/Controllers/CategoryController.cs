@@ -22,7 +22,7 @@ namespace Mvc.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var result = await _categoryService.GetAll();
+            var result = await _categoryService.GetAllByNonDeleted();
             //category service icinde dataresult dondugu icin result aliyoruz
             return View(result.Data);
             //data => categorylistdto dur
@@ -36,6 +36,9 @@ namespace Mvc.Areas.Admin.Controllers
         {
             return PartialView("_CategoryAddPartial");
         }
+
+
+
         [HttpPost]
         public async Task<IActionResult> Add(CategoryAddDto categoryAddDto)
         {
@@ -63,9 +66,52 @@ namespace Mvc.Areas.Admin.Controllers
             return Json(ajaxAddError);
         }
 
+
+        [HttpGet]
+        public async Task<IActionResult> Update(int categoryId)
+        {
+            var result = await _categoryService.GetCategoryUpdateDto(categoryId);
+            if (result.ResultStatus == ResultStatus.Success)
+            {
+                return PartialView("_CategoryUpdatePartial", result.Data);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(CategoryUpdateDto categoryUpdateDto)
+        {
+            //gelen bilgiler dolu mu  bos mu, dogru mu  kontrolu
+            if (ModelState.IsValid)
+            {
+                var result = await _categoryService.Update(categoryUpdateDto, "Admin");
+                if (result.ResultStatus == ResultStatus.Success)
+                {
+                    var ajaxUpdateCategory = JsonSerializer.Serialize(new CategoryUpdateAjaxViewModel
+                    {
+                        CategoryDto = result.Data,
+                        CategoryUpdatePartial = await this
+                            .RenderViewToStringAsync("_CategoryUpdatePartial", categoryUpdateDto)
+                    });
+                    return Json(ajaxUpdateCategory);//json formatinda doner
+                }
+            }
+            var ajaxUpdateError = JsonSerializer.Serialize(new CategoryUpdateAjaxViewModel
+            {
+                CategoryUpdatePartial = await this
+                            .RenderViewToStringAsync("_CategoryUpdatePartial", categoryUpdateDto)
+                //partial icinde hatali inputlarla ilgili hata mesajlari doner
+            });
+            return Json(ajaxUpdateError);
+        }
+
         public async Task<JsonResult> GetAllCategories()
         {
-            var result = await _categoryService.GetAll();
+            var result = await _categoryService.GetAllByNonDeleted();
             var categories = JsonSerializer.Serialize(result.Data, new JsonSerializerOptions
             {
                 ReferenceHandler = ReferenceHandler.Preserve
@@ -78,8 +124,8 @@ namespace Mvc.Areas.Admin.Controllers
         {
             //index deki data-id den id alincak
             var result = await _categoryService.Remove(categoryId, "Admin");
-            var ajaxResult = JsonSerializer.Serialize(result);
-            return Json(ajaxResult);
+            var deletedCategory = JsonSerializer.Serialize(result.Data);
+            return Json(deletedCategory);
         }
     }
 }

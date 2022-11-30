@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq.Expressions;
 
 
-namespace Shared.Data.Concrete.Dapper
+namespace Shared.Data.Concrete.EntityFramework
 {
     //shared nuget paket dapper(entityframework kullanildi aslinda) ekle
     //3. parti yazilim oldugunden klasorleme ayri yapildi

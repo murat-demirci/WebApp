@@ -11,8 +11,6 @@ namespace Data.Concrete
         private efArticleRepository _articlerep;
         private efCategoryRepository _categoryrep;
         private efCommentRepository _commentrep;
-        private efRoleRepository _rolerep;
-        private efUserRepository _userrep;
         //interface newlenemediginden somut halleri eklenmeli
         public UnitofWork(dContext context)
         {
@@ -30,9 +28,6 @@ namespace Data.Concrete
 
         public ICommentRepository Comments => _commentrep ?? new efCommentRepository(_context);
 
-        public IRoleRepository Roles => _rolerep ?? new efRoleRepository(_context);
-
-        public IUserRepository Users => _userrep ?? new efUserRepository(_context);
         public async Task<int> SaveAsync()
         {
             return await _context.SaveChangesAsync();//int deger doner

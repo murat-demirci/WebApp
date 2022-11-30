@@ -10,9 +10,7 @@
     {
         IArticleRepository Articles { get; }//unitofwork.Articles ile ulasilabilir
         ICategoryRepository Categories { get; }
-        ICommentRepository Comments { get; }
-        IRoleRepository Roles { get; }
-        IUserRepository Users { get; }//_unitofwork.categories.addAsync() kullanim ornegi
+        ICommentRepository Comments { get; }//_unitofwork.categories.addAsync() kullanim ornegi
         //ayrica save metodu lazim veritabini islemesi icin
         //ornek:
         //_unitofwork.categories.addAsync(category)

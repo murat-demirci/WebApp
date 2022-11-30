@@ -1,5 +1,6 @@
 ﻿using Data.Concrete.EntityFramework.Mappings;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 //data katmanina entityframework,sqlserver ve design kurulur eklenir
@@ -7,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data.Concrete.EntityFramework.Contexts
 {
-    public class dContext : DbContext
+    public class dContext : IdentityDbContext<User, Role, int>
     {
         //public dContext()
         //{
@@ -16,8 +17,7 @@ namespace Data.Concrete.EntityFramework.Contexts
         public DbSet<Article> Articles { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<User> Users { get; set; }
+
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    //option builder kullanilarak connection stringi ekleme
