@@ -41,28 +41,28 @@ namespace Data.Concrete.EntityFramework.Mappings
             //bir makale olusturulurken bir kategoriye ve bir kullaniciya ihtiyac oldugu belirtildi
             builder.ToTable("Articles");//tabloya donusturme
 
-            builder.HasData(new Article
-            {
-                ID = 1,
-                UserId = 1,
-                CategoryId = 1,
-                Title = "Javascript ile animasyon",
-                Content = "JavaScript Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
-                ArticleThumbnail = "article.jpg",
-                ArticleComment = 1,
-                ArticleLike = 0,
-                ArticleView = 0,
-                SeoDescription = "Javascript ile animasyon",
-                SeoTags = "javscript",
-                SeoAuthor = "Creator Name",
-                IsActive = true,
-                IsDeleted = false,
-                CreatedByName = "InitialCreate",
-                ModifiedByName = "InitialCreate",
-                CreatedDate = DateTime.Now,
-                ModifiedDate = DateTime.Now,
-                Note = ""
-            });
+            //builder.HasData(new Article
+            //{
+            //    ID = 1,
+            //    UserId = 1,
+            //    CategoryId = 1,
+            //    Title = "Javascript ile animasyon",
+            //    Content = "JavaScript Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
+            //    ArticleThumbnail = "article.jpg",
+            //    ArticleComment = 1,
+            //    ArticleLike = 0,
+            //    ArticleView = 0,
+            //    SeoDescription = "Javascript ile animasyon",
+            //    SeoTags = "javscript",
+            //    SeoAuthor = "Creator Name",
+            //    IsActive = true,
+            //    IsDeleted = false,
+            //    CreatedByName = "InitialCreate",
+            //    ModifiedByName = "InitialCreate",
+            //    CreatedDate = DateTime.Now,
+            //    ModifiedDate = DateTime.Now,
+            //    Note = ""
+            //});
         }
     }
 }

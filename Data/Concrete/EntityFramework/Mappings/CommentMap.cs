@@ -24,19 +24,19 @@ namespace Data.Concrete.EntityFramework.Mappings
             builder.Property(c => c.Note).HasMaxLength(500);
             builder.ToTable("Comments");
 
-            builder.HasData(new Comment
-            {
-                ID = 1,
-                ArticleId = 1,
-                CommentContent = "Ilk yorum",
-                IsActive = true,
-                IsDeleted = false,
-                CreatedByName = "InitialCreate",
-                ModifiedByName = "InitialCreate",
-                CreatedDate = DateTime.Now,
-                ModifiedDate = DateTime.Now,
-                Note = ""
-            });
+            //builder.HasData(new Comment
+            //{
+            //    ID = 1,
+            //    ArticleId = 1,
+            //    CommentContent = "Ilk yorum",
+            //    IsActive = true,
+            //    IsDeleted = false,
+            //    CreatedByName = "InitialCreate",
+            //    ModifiedByName = "InitialCreate",
+            //    CreatedDate = DateTime.Now,
+            //    ModifiedDate = DateTime.Now,
+            //    Note = ""
+            //});
         }
     }
 }

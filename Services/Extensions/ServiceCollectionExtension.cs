@@ -1,7 +1,8 @@
 ﻿using Data.Abstract;
 using Data.Concrete;
 using Data.Concrete.EntityFramework.Contexts;
-using Microsoft.EntityFrameworkCore;
+using Entities.Concrete;
+
 using Microsoft.Extensions.DependencyInjection;
 using Services.Abstract;
 using Services.Concrete;
@@ -17,10 +18,9 @@ namespace Services.Extensions
     {
         public static IServiceCollection LoadMyServices(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddDbContext<dContext>(
-    options => options.UseSqlServer(
-        "data source=LAPTOP-UI9DTME8;initial catalog=dboBlog;trusted_connection=true;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;MultipleActiveResultSets=True;"));
-            //serviceCollection.AddDbContext<dContext>();
+            serviceCollection.AddDbContext<dContext>();
+            serviceCollection.AddIdentity<User, Role>().AddEntityFrameworkStores<dContext>();
+            //migrations islemleri icin(identity)
             serviceCollection.AddScoped<IUnitofWork, UnitofWork>();
             //scoped: bir istekte bulundugunda ve bu islemlere baslandiginda bu islemlerin
             //butunu scope icerisine alinir ve yurutulur.
@@ -32,5 +32,6 @@ namespace Services.Extensions
             return serviceCollection;
             //burdan startup.cs dosyasina git
         }
+
     }
 }
