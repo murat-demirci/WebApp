@@ -22,6 +22,7 @@ namespace Data.Concrete.EntityFramework.Mappings
             builder.Property(c => c.CreatedDate).IsRequired();
             builder.Property(c => c.ModifiedDate).IsRequired();
             builder.Property(c => c.Note).HasMaxLength(500);
+            builder.Property(c => c.Note).IsRequired(false);
             builder.ToTable("Categories");
 
             builder.HasData(
@@ -35,7 +36,7 @@ namespace Data.Concrete.EntityFramework.Mappings
                 ModifiedByName = "InitialCreate",
                 CreatedDate = DateTime.Now,
                 ModifiedDate = DateTime.Now,
-                Note = ""
+                Note = "Not Yok"
             }
             );
         }

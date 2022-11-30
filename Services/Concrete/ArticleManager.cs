@@ -28,7 +28,8 @@ namespace Services.Concrete
             article.CreatedByName = createdName;
             article.ModifiedByName = createdName;
             article.UserId = 1;
-            await _unitofWork.Articles.AddAsync(article).ContinueWith(t => _unitofWork.SaveAsync());
+            await _unitofWork.Articles.AddAsync(article);
+            await _unitofWork.SaveAsync();
             return new Result(ResultStatus.Success, $"{article.Title} baslikli makale eklenmistir");
         }
 
@@ -38,7 +39,8 @@ namespace Services.Concrete
             if (result)
             {
                 var article = await _unitofWork.Articles.GetAsync(a => a.ID == articleId);
-                await _unitofWork.Articles.DeleteAsync(article).ContinueWith(t => _unitofWork.SaveAsync());
+                await _unitofWork.Articles.DeleteAsync(article);
+                await _unitofWork.SaveAsync();
                 return new Result(ResultStatus.Success, $"{article.Title} baslikli makale silinmistir");
             }
             return new Result(ResultStatus.Error, $"Boyle bir makale bulunamadi");
@@ -55,7 +57,12 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<ArticleDto>(ResultStatus.Error, "Boyle bir makale bulunamadi", null);
+            return new DataResult<ArticleDto>(ResultStatus.Error, "Boyle bir makale bulunamadi", new ArticleDto
+            {
+                Message = "Boyle bir makale bulunamadi",
+                Article = null,
+                resultStatus = ResultStatus.Error
+            });
         }
 
         public async Task<IDataResult<ArticleListDto>> GetAll()
@@ -69,7 +76,12 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<ArticleListDto>(ResultStatus.Error, "Makaleler bulunamadi", null);
+            return new DataResult<ArticleListDto>(ResultStatus.Error, "Makaleler bulunamadi", new ArticleListDto
+            {
+                Message = "Makaleler bulunamadi",
+                Articles = null,
+                resultStatus = ResultStatus.Error
+            });
         }
 
         public async Task<IDataResult<ArticleListDto>> GetAllByCategory(int categoryId)
@@ -86,9 +98,19 @@ namespace Services.Concrete
                         resultStatus = ResultStatus.Success,
                     });
                 }
-                return new DataResult<ArticleListDto>(ResultStatus.Error, "Bu kategoriye ait makale bulunamadi", null);
+                return new DataResult<ArticleListDto>(ResultStatus.Error, "Bu kategoriye ait makale bulunamadi", new ArticleListDto
+                {
+                    Message = "Bu kategoriye ait makale bulunamadi",
+                    Articles = null,
+                    resultStatus = ResultStatus.Error
+                });
             }
-            return new DataResult<ArticleListDto>(ResultStatus.Error, "Kategori bulunamadi", null);
+            return new DataResult<ArticleListDto>(ResultStatus.Error, "Kategori bulunamadi", new ArticleListDto
+            {
+                Message = "Kategori bulunamadi",
+                Articles = null,
+                resultStatus = ResultStatus.Error
+            });
 
         }
 
@@ -103,7 +125,12 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<ArticleListDto>(ResultStatus.Error, "Silinmis Makale veya Makaleler bulunamadi", null);
+            return new DataResult<ArticleListDto>(ResultStatus.Error, "Silinmis Makale veya Makaleler bulunamadi", new ArticleListDto
+            {
+                Message = "Silinmis ve aktif Makale veya Makaleler bulunamadi",
+                Articles = null,
+                resultStatus = ResultStatus.Error
+            });
         }
 
         public async Task<IDataResult<ArticleListDto>> GetlAllByNoneDeletedAnActive()
@@ -117,7 +144,12 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<ArticleListDto>(ResultStatus.Error, "Silinmis ve aktif Makale veya Makaleler bulunamadi", null);
+            return new DataResult<ArticleListDto>(ResultStatus.Error, "Silinmis ve aktif Makale veya Makaleler bulunamadi", new ArticleListDto
+            {
+                Message = "Silinmis ve aktif Makale veya Makaleler bulunamadi",
+                Articles = null,
+                resultStatus = ResultStatus.Error
+            });
         }
 
         public async Task<IResult> Remove(int articleId, string modifiedName)
@@ -129,7 +161,8 @@ namespace Services.Concrete
                 article.ModifiedByName = modifiedName;
                 article.IsDeleted = true;
                 article.ModifiedDate = DateTime.Now;
-                await _unitofWork.Articles.UpdateAsync(article).ContinueWith(t => _unitofWork.SaveAsync());
+                await _unitofWork.Articles.UpdateAsync(article);
+                await _unitofWork.SaveAsync();
                 return new Result(ResultStatus.Success, $"{article.Title} baslikli makale kaldirildi");
             }
             return new Result(ResultStatus.Error, $"Boyle bir makale bulunamadi");
@@ -141,7 +174,8 @@ namespace Services.Concrete
             var article = _mapper.Map<Article>(articleUpdateDto);
             article.ModifiedByName = modifiedName;
             article.UserId = 1;
-            await _unitofWork.Articles.AddAsync(article).ContinueWith(t => _unitofWork.SaveAsync());
+            await _unitofWork.Articles.AddAsync(article);
+            await _unitofWork.SaveAsync();
             return new Result(ResultStatus.Success, $"{article.Title} baslikli makale guncellenmistir");
         }
     }

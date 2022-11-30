@@ -25,8 +25,9 @@ namespace Shared.Data.Abstract
         //id 1 olan makale yorumlari repository.GetAllAsync(y=>y.ArticleId==1)
         //predicate null olabilir yani metot a deger verilmezse tum herseyi yukler
 
-        Task AddAsync(T entity);
-        Task UpdateAsync(T entity);
+        //ekleme guncelleme islemleri icin entity donmeli
+        Task<T> AddAsync(T entity);
+        Task<T> UpdateAsync(T entity);
         Task DeleteAsync(T entity);
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
         //any bir kullanici var mi? ayni makale varmi ? gibi sorgu yapmamizi saglar

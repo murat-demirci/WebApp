@@ -18,7 +18,7 @@ namespace Entities.Dtos
         [DisplayName("Not Alani")]
         [MaxLength(500, ErrorMessage = "{0}, maksimum {1} karakter alabilir")]
         [MinLength(5, ErrorMessage = "{0}, minimum {1} karakter alabilir")]
-        public string Note { get; set; }
+        public string? Note { get; set; }
         [DisplayName("Aktif")]
         [Required(ErrorMessage = "Lutfen {0} durumu seciniz")]
         public bool isActive { get; set; }

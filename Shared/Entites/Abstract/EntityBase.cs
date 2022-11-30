@@ -15,7 +15,7 @@
         public virtual bool IsActive { get; set; } = true;
         public virtual string CreatedByName { get; set; } = "Admin";
         public virtual string ModifiedByName { get; set; } = "Admin";
-        public virtual string Note { get; set; }
+        public virtual string? Note { get; set; }
 
     }
 }

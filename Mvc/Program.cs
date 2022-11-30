@@ -1,13 +1,28 @@
+using Services.AutoMapper.Profiles;
 using Services.Extensions;
+using System.Text.Json.Serialization;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();//mvc uygulamasi oldugu belirtilir
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation()
+    .AddJsonOptions(opt =>
+    {
+        //enum degerleri json formatinda dogru islenmesi icin
+        opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        //enum degerleri sayi olarak alir eger icine jsonnamepolicy.camelcase eklenirse yazi olarak
+
+        //json formati icerisinde farkli objeler varsa burdan sorun cikmamsi icin,
+        //(bug olma ihtimaline karsi controller sinifina da eklenir)
+        opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    });//mvc uygulamasi oldugu belirtilir
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation(); ;
 builder.Services.AddServerSideBlazor();
 builder.Services.LoadMyServices();
-builder.Services.AddAutoMapper(typeof(Program));
-
+builder.Services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile));
+//category controller da islemler yapildiginda front ende model donulecek
+//bu modelin js tarafinda da anlailmasi icin json formatina donusturulmesi gerek
+//jsonserializer
 
 
 var app = builder.Build();

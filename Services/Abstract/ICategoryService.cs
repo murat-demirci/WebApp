@@ -16,13 +16,15 @@ namespace Services.Abstract
         Task<IDataResult<CategoryListDto>> GetAllByNonDeleted();
         Task<IDataResult<CategoryListDto>> GetAllByNonDeletedAndActive();
         //aktif olanlari getirme islemi yap(optional)
-        Task<IResult> Add(CategoryAddDto categoryAddDto, string createdByName);
+
+        //artik veri ekleme guncellemede bir dto donulecek
+        Task<IDataResult<CategoryDto>> Add(CategoryAddDto categoryAddDto, string createdByName);
         //dto veri transfer objesi (viewmodal)
         //frontend alaninda ihtiyacimiz olan alanlari barindirir
         //kategori eklerken adini ve aciklamasini istiyoruz modifiedbyname gibi kisimlari gostermiyor
         //yani kullanicidan sadece dtoya ait kisimlar isteniyor
         //dtolar entity katmaninda
-        Task<IResult> Update(CategoryUpdateDto categoryUpdateDto, string modifiedByName);
+        Task<IDataResult<CategoryDto>> Update(CategoryUpdateDto categoryUpdateDto, string modifiedByName);
         Task<IResult> Remove(int categoryId, string modifiedByName);//gecici silme
         Task<IResult> Delete(int categoryId);//tam silme
     }
