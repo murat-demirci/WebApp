@@ -19,7 +19,21 @@ namespace Services.Extensions
         public static IServiceCollection LoadMyServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddDbContext<dContext>();
-            serviceCollection.AddIdentity<User, Role>().AddEntityFrameworkStores<dContext>();
+            serviceCollection.AddIdentity<User, Role>(opt =>
+            {
+                //sifre
+                opt.Password.RequiredLength = 6;
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireLowercase = true;
+                opt.Password.RequiredUniqueChars = 1;//en az 1 ozel karakter sayi degeri
+                opt.Password.RequireNonAlphanumeric = true;//bu ayar zorunlu olmasini saglar
+                opt.Password.RequireUppercase = true;
+                //kullanici
+                opt.User.RequireUniqueEmail = true;
+                opt.User.AllowedUserNameCharacters =
+                "abcdefgğhiıjklmnopqrstuüvwxyzABCDEFGĞHIİJKLMNOPQRSTUÜVWXYZ0123456789-._@+";
+                //kullanici icin izin verilen karakterler
+            }).AddEntityFrameworkStores<dContext>();
             //migrations islemleri icin(identity)
             serviceCollection.AddScoped<IUnitofWork, UnitofWork>();
             //scoped: bir istekte bulundugunda ve bu islemlere baslandiginda bu islemlerin
@@ -30,7 +44,7 @@ namespace Services.Extensions
 
 
             return serviceCollection;
-            //burdan startup.cs dosyasina git
+            //burdan Program.cs dosyasina git
         }
 
     }
