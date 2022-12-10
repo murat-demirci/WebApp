@@ -2,7 +2,6 @@
 using Data.Abstract;
 using Entities.Concrete;
 using Entities.Dtos;
-using Entities.Dtos.Categories;
 using Services.Abstract;
 using Shared.Utilities.Results.Abstract;
 using Shared.Utilities.Results.ComplexTypes;

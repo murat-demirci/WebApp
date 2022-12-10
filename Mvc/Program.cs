@@ -1,3 +1,4 @@
+using Mvc.AutoMapper.Profiles;
 using Services.AutoMapper.Profiles;
 using Services.Extensions;
 using System.Text.Json.Serialization;
@@ -24,7 +25,7 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSession();
 builder.Services.LoadMyServices();
-builder.Services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile));
+builder.Services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile));
 builder.Services.ConfigureApplicationCookie(opt =>
 {
     //cookie

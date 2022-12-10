@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Data.Abstract;
 using Entities.Concrete;
-using Entities.Dtos.Articles;
+using Entities.Dtos;
 using Services.Abstract;
 using Shared.Utilities.Results.Abstract;
 using Shared.Utilities.Results.ComplexTypes;

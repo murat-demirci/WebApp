@@ -11,7 +11,6 @@ namespace Data.Concrete.EntityFramework.Mappings
             b.Property(u => u.UserPicture).IsRequired();
             b.Property(u => u.UserPicture).HasMaxLength(250);
 
-            b.ToTable("Users");
             // tum maplerden sonra db context icerisinde cagirmaya dcontexte
             // Primary key
             b.HasKey(u => u.Id);

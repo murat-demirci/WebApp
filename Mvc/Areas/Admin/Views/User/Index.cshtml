@@ -1,6 +1,6 @@
 ﻿@using Shared.Utilities.Results.ComplexTypes
 @model Entities.Dtos.UserListDto
-
+@{
     Layout = "_Layout";
     ViewBag.Title = "Kullanicilar Index";
 }
@@ -40,11 +40,11 @@
                         {
                             
                             <tr name="@user.Id">
-                                <td>@user.UserPicture</td>
+                                <td><img src="~/img/@user.UserPicture" style="max-height:50px;max-width:50px;"/></td>
                                 <td>@user.Id</td>
                                 <td>@user.UserName</td>
                                 <td>@user.Email</td>
-                                <td style="max-width:200px;min-width:100px;text-align:center;">
+                                <td>
                                     <button data-id="@user.Id" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>
                                     <button data-id="@user.Id" style="width: 90px; font-size: 12px;" class=" btn btn-danger  btn-delete"><span class="fas fa-minus-circle"></span> Kaldir</button>
                                 </td>
@@ -65,5 +65,5 @@
 }
 @section Scripts
 {
-    <script src="~/js/categoryIndex.js" type="application/javascript"></script>
+    <script src="~/js/userIndex.js" type="application/javascript"></script>
 }

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Entities.Dtos.User
+namespace Entities.Dtos
 {
     public class UserAddDto
     {
@@ -10,7 +10,7 @@ namespace Entities.Dtos.User
         [Required(ErrorMessage = "Lutfen bir {0} giriniz")]//{0} display name i gosteriyor
         [MaxLength(50, ErrorMessage = "{0}, maksimum {1} karakter alabilir")]
         [MinLength(3, ErrorMessage = "{0}, minimum {1} karakter alabilir")]
-        public string UserNmae { get; set; }
+        public string UserName { get; set; }
         [DisplayName("E-Posta Adresi")]
         [Required(ErrorMessage = "Lutfen bir {0} giriniz")]//{0} display name i gosteriyor
         [MaxLength(100, ErrorMessage = "{0}, maksimum {1} karakter alabilir")]
@@ -19,13 +19,14 @@ namespace Entities.Dtos.User
         public string Email { get; set; }
         [DisplayName("Parola")]
         [Required(ErrorMessage = "Lutfen bir {0} giriniz")]//{0} display name i gosteriyor
-        [MaxLength(30, ErrorMessage = "{0}, maksimum {1} karakter alabilir")]
+        [MaxLength(100, ErrorMessage = "{0}, maksimum {1} karakter alabilir")]
         [MinLength(6, ErrorMessage = "{0}, minimum {1} karakter alabilir")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [DisplayName("Kullanici Resmi")]
         [Required(ErrorMessage = "Lutfen bir {0} seciniz")]//{0} display name i gosteriyor
-        [DataType(DataType.Upload)]
-        public IFormFile UserPicture { get; set; }
+        [DataType(DataType.Upload)]//ifromupload oldugu icin datatype.upload olmasi onemli
+        public IFormFile UserPictureFile { get; set; }
+        public string? UserPicture { get; set; }//sadece dosya adini saklamak icin kullanilir
     }
 }

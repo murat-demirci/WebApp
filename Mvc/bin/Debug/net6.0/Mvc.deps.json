@@ -34,6 +34,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Mvc/1.0.0": {
         "dependencies": {
+          "AutoMapper": "12.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.11",
           "Services": "1.0.0",

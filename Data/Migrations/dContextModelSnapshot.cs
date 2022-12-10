@@ -157,11 +157,11 @@ namespace Data.Migrations
                         {
                             ID = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 11, 30, 21, 35, 12, 630, DateTimeKind.Local).AddTicks(7193),
+                            CreatedDate = new DateTime(2022, 12, 10, 15, 3, 8, 719, DateTimeKind.Local).AddTicks(7129),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 11, 30, 21, 35, 12, 630, DateTimeKind.Local).AddTicks(7194),
+                            ModifiedDate = new DateTime(2022, 12, 10, 15, 3, 8, 719, DateTimeKind.Local).AddTicks(7130),
                             Name = "Javascript",
                             Note = "Not Yok"
                         });

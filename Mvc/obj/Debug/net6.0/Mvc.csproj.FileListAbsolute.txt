@@ -398,3 +398,4 @@ C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\System.Formats.Asn1.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\System.Security.Cryptography.Xml.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\Mvc.MvcApplicationPartsAssemblyInfo.cs

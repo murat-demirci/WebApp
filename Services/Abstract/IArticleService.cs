@@ -1,4 +1,4 @@
-﻿using Entities.Dtos.Articles;
+﻿using Entities.Dtos;
 using Shared.Utilities.Results.Abstract;
 
 namespace Services.Abstract

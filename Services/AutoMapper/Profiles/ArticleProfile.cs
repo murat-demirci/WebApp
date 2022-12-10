@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Entities.Concrete;
-using Entities.Dtos.Articles;
+using Entities.Dtos;
 
 namespace Services.AutoMapper.Profiles
 {
