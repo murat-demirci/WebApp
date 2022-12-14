@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Entities.Concrete;
 using Entities.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -20,14 +21,19 @@ namespace Mvc.Areas.Admin.Controllers
         //wwroot dosya yolunu dinakilestirmek icin
         //farkli isletim sistemlerinde dosya yolu ayni kalir
         private readonly IMapper _mapper;
+        private readonly SignInManager<User> _signInManager;
+        //login islemleri icin signinmaneger
 
-
-        public UserController(UserManager<User> userManager, IWebHostEnvironment env, IMapper mapper)
+        public UserController(UserManager<User> userManager, IWebHostEnvironment env, IMapper mapper, SignInManager<User> signInManager)
         {
             _userManager = userManager;
             _env = env;
             _mapper = mapper;
+            _signInManager = signInManager;
         }
+        [Authorize]
+        //authorize area kismina eklenirse sonsuz dongu olusur
+        //tek tek actionlara eklenmeli
 
         public async Task<IActionResult> Index()
         {
@@ -39,6 +45,49 @@ namespace Mvc.Areas.Admin.Controllers
             });
         }
 
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View("UserLogin");
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Login(UserLoginDto userLoginDto)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByEmailAsync(userLoginDto.Email);
+                if (user != null)
+                {
+                    var result = await _signInManager.PasswordSignInAsync(user, userLoginDto.Password, userLoginDto.RememberMe, false);
+                    //sifre ile giris yapmak icin 4. deger sifrenin bir cok kez yanlis girilmesi durumunda hesap kitleme ozelligi
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "E-posta adresi veya sifre hatali");
+                        return View("UserLogin");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "E-posta adresi veya sifre hatali");
+                    return View("UserLogin");
+                    //hata isleminden sonra view dondurulmeli
+                }
+            }
+            else
+            {
+                return View("UserLogin");
+            }
+
+        }
+
+
+        [Authorize]
         [HttpGet]
         public async Task<JsonResult> GetAllUsers()
         {
@@ -54,14 +103,14 @@ namespace Mvc.Areas.Admin.Controllers
             return Json(userListDto);
         }
 
-
+        [Authorize]
         [HttpGet]
         public IActionResult Add()
         {
             return PartialView("_UserAddPartial");
         }
 
-
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Add(UserAddDto userAddDto)
         {
@@ -109,7 +158,7 @@ namespace Mvc.Areas.Admin.Controllers
             return Json(userAddAjaxErrorState);
         }
 
-
+        [Authorize]
         public async Task<IActionResult> Remove(int userId)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
@@ -141,7 +190,7 @@ namespace Mvc.Areas.Admin.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpGet]
         public async Task<PartialViewResult> Update(int userId)
         //partialviewresult da kullanilabilir (IActionResult yerine)
@@ -153,7 +202,7 @@ namespace Mvc.Areas.Admin.Controllers
             //userupdatepartial viewi ve userupdatedto yu geri don
         }
 
-
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Update(UserUpdateDto userUpdateDto)
         {

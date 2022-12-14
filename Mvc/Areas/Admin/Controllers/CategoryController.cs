@@ -1,4 +1,5 @@
 ﻿using Entities.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Mvc.Areas.Admin.Models;
 using Services.Abstract;
@@ -10,6 +11,7 @@ using System.Text.Json.Serialization;
 namespace Mvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class CategoryController : Controller
     {
         /*index icinde kategorileri goruntulemek icin categoryservice cagrilir*/
