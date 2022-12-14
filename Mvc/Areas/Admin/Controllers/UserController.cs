@@ -67,7 +67,7 @@ namespace Mvc.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                userAddDto.UserPicture = await ImageUpload(userAddDto);
+                userAddDto.UserPicture = await ImageUpload(userAddDto.UserName, userAddDto.UserPictureFile);
                 //resim adi atama
                 var user = _mapper.Map<User>(userAddDto);
                 var result = await _userManager.CreateAsync(user, userAddDto.Password);
@@ -141,23 +141,113 @@ namespace Mvc.Areas.Admin.Controllers
             }
         }
 
-        public async Task<string> ImageUpload(UserAddDto userAddDto)
+
+        [HttpGet]
+        public async Task<PartialViewResult> Update(int userId)
+        //partialviewresult da kullanilabilir (IActionResult yerine)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            //findbyidasync yerine firstordefaultasync de kullanilabilir
+            var userUpdateDto = _mapper.Map<UserUpdateDto>(user);
+            return PartialView("_UserUpdatePartial", userUpdateDto);
+            //userupdatepartial viewi ve userupdatedto yu geri don
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Update(UserUpdateDto userUpdateDto)
+        {
+            if (ModelState.IsValid)
+            {
+                bool isPictureUploaded = false;
+                var oldUser = await _userManager.FindByIdAsync(userUpdateDto.Id.ToString());
+                var oldPicture = oldUser.UserPicture;
+                if (userUpdateDto.UserPictureFile != null)
+                {
+                    userUpdateDto.UserPicture =
+                        await ImageUpload(userUpdateDto.UserName, userUpdateDto.UserPictureFile);
+                    isPictureUploaded = true;
+                }
+                var updatedUser = _mapper.Map(userUpdateDto, oldUser);
+                var result = await _userManager.UpdateAsync(updatedUser);
+                if (result.Succeeded)
+                {
+                    if (isPictureUploaded)
+                    {
+                        ImageDelete(oldPicture);
+                    }
+                    var userUpdateAjax = JsonSerializer.Serialize(new UserUpdateAjaxViewModel
+                    {
+                        UserDto = new UserDto
+                        {
+                            resultStatus = ResultStatus.Success,
+                            Message = $"{updatedUser.UserName} basariyla guncellenmistir.",
+                            User = updatedUser
+                        },
+                        UserUpdatePartial = await this.RenderViewToStringAsync("_UserUpdatePartial", userUpdateDto)
+                    });
+                    return Json(userUpdateAjax);
+                }
+                else
+                {
+                    //identity tarafinda olusacak hatalar icin
+                    foreach (var err in result.Errors)
+                    {
+                        ModelState.AddModelError("", err.Description);
+                    }
+                    var userUpdateErrAjax = JsonSerializer.Serialize(new UserUpdateAjaxViewModel
+                    {
+                        UserUpdateDto = userUpdateDto,
+                        UserUpdatePartial = await this.RenderViewToStringAsync("_UserUpdatePartial", userUpdateDto)
+                    });
+                    return Json(userUpdateErrAjax);
+                }
+            }
+            else
+            {
+                var userUpdateErrModel = JsonSerializer.Serialize(new UserUpdateAjaxViewModel
+                {
+                    UserUpdateDto = userUpdateDto,
+                    UserUpdatePartial = await this.RenderViewToStringAsync("_UserUpdatePartial", userUpdateDto)
+                });
+                return Json(userUpdateErrModel);
+            }
+        }
+
+        public async Task<string> ImageUpload(string userName, IFormFile pictureFile)
         {
             string wwwroot = _env.WebRootPath;
             //wwwrootun dosya yolunu dinamik olarak verir
-            string fileNameOrg = Path.GetFileNameWithoutExtension(userAddDto.UserPictureFile.FileName);
+            //string fileNameOrg = Path.GetFileNameWithoutExtension(userAddDto.UserPictureFile.FileName);
             //resim dosyasinin sonundaki eklentiyi almaz sadece dosya adi gelir\ ornek amacli yazildi
-            string fileExtension = Path.GetExtension(userAddDto.UserPictureFile.FileName);
+            string fileExtension = Path.GetExtension(pictureFile.FileName);
             //dosya sonundaki format alinir
-            string fileName = $"{ImageExtensions.CreateGuid()}_{fileNameOrg}{fileExtension}";
+            string fileName = $"{ImageExtensions.CreateGuid()}_{userName}{fileExtension}";
             //dosya adi olusturulud
             var path = Path.Combine($"{wwwroot}/img", fileName);
             await using (var stream = new FileStream(path, FileMode.Create))
             {
-                await userAddDto.UserPictureFile.CopyToAsync(stream);
+                await pictureFile.CopyToAsync(stream);
                 //resim img klasorune aktarilir
-                return fileName;
+                return fileName.ToString();
             }
         }
+
+        public bool ImageDelete(string pictureName)
+        {
+            //guncelleme isleminde eski resmi silmek icin kullanilacak
+            string wwwroot = _env.WebRootPath;
+            var path = Path.Combine($"{wwwroot}/img", pictureName);
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Delete(path);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

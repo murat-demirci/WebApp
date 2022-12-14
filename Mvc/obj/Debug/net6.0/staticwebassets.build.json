@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8bUhbK7uVZRDQg5/o+YlJjrSriUXLM9K+jyYOWXl4U0=",
+  "Hash": "oEI5FlVMgYxNqvVdE+DgkQ+tMBlZYXEjBTiVN+Vw7Bo=",
   "Source": "Mvc",
   "BasePath": "_content/Mvc",
   "Mode": "Default",
@@ -102,6 +102,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\error-404-monochrome.svg"
     },
     {
+      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\css\\site.css",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "css/site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
       "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\css\\styles.css",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
@@ -153,12 +170,12 @@
       "OriginalItemSpec": "wwwroot\\gif\\1479.gif"
     },
     {
-      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\4a01c4fb-ab45-4bf6-996c-d8a5478ab5b3_1479.gif",
+      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\bf1faf36-2a35-48b4-8e94-089a9c57afea_Muratde.jpg",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/4a01c4fb-ab45-4bf6-996c-d8a5478ab5b3_1479.gif",
+      "RelativePath": "img/bf1faf36-2a35-48b4-8e94-089a9c57afea_Muratde.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -167,41 +184,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\4a01c4fb-ab45-4bf6-996c-d8a5478ab5b3_1479.gif"
-    },
-    {
-      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\87214588-65dc-499d-bc6e-b94d30ae66a4_john-doe.jpg",
-      "SourceId": "Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\",
-      "BasePath": "_content/Mvc",
-      "RelativePath": "img/87214588-65dc-499d-bc6e-b94d30ae66a4_john-doe.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\87214588-65dc-499d-bc6e-b94d30ae66a4_john-doe.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\cfd6a3f6-6c39-47fc-b7d2-6628d53f260d_john-doe.jpg",
-      "SourceId": "Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\",
-      "BasePath": "_content/Mvc",
-      "RelativePath": "img/cfd6a3f6-6c39-47fc-b7d2-6628d53f260d_john-doe.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\cfd6a3f6-6c39-47fc-b7d2-6628d53f260d_john-doe.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\bf1faf36-2a35-48b4-8e94-089a9c57afea_Muratde.jpg"
     },
     {
       "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\categoryIndex.js",

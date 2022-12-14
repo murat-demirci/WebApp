@@ -10,6 +10,8 @@ namespace Mvc.AutoMapper.Profiles
         {
             CreateMap<UserAddDto, User>();
             //useradddto yu user sinifina donusturur
+            CreateMap<User, UserUpdateDto>();
+            CreateMap<UserUpdateDto, User>();
         }
     }
 }
