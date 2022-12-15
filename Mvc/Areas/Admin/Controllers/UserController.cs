@@ -21,15 +21,12 @@ namespace Mvc.Areas.Admin.Controllers
         //wwroot dosya yolunu dinakilestirmek icin
         //farkli isletim sistemlerinde dosya yolu ayni kalir
         private readonly IMapper _mapper;
-        private readonly SignInManager<User> _signInManager;
-        //login islemleri icin signinmaneger
 
-        public UserController(UserManager<User> userManager, IWebHostEnvironment env, IMapper mapper, SignInManager<User> signInManager)
+        public UserController(UserManager<User> userManager, IWebHostEnvironment env, IMapper mapper)
         {
             _userManager = userManager;
             _env = env;
             _mapper = mapper;
-            _signInManager = signInManager;
         }
         [Authorize]
         //authorize area kismina eklenirse sonsuz dongu olusur
@@ -44,48 +41,6 @@ namespace Mvc.Areas.Admin.Controllers
                 resultStatus = ResultStatus.Success
             });
         }
-
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View("UserLogin");
-        }
-
-
-        [HttpPost]
-        public async Task<IActionResult> Login(UserLoginDto userLoginDto)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = await _userManager.FindByEmailAsync(userLoginDto.Email);
-                if (user != null)
-                {
-                    var result = await _signInManager.PasswordSignInAsync(user, userLoginDto.Password, userLoginDto.RememberMe, false);
-                    //sifre ile giris yapmak icin 4. deger sifrenin bir cok kez yanlis girilmesi durumunda hesap kitleme ozelligi
-                    if (result.Succeeded)
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "E-posta adresi veya sifre hatali");
-                        return View("UserLogin");
-                    }
-                }
-                else
-                {
-                    ModelState.AddModelError("", "E-posta adresi veya sifre hatali");
-                    return View("UserLogin");
-                    //hata isleminden sonra view dondurulmeli
-                }
-            }
-            else
-            {
-                return View("UserLogin");
-            }
-
-        }
-
 
         [Authorize]
         [HttpGet]

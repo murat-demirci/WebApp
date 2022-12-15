@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SkKZMSLEiURZtnX8/d9onumehjm57bAou/t+eHhcBQE=",
+  "Hash": "pNCmtdDdFE+EOfKAxmgMHIwou5d71EVPTRzswm2srwc=",
   "Source": "Mvc",
   "BasePath": "_content/Mvc",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\bf1faf36-2a35-48b4-8e94-089a9c57afea_Muratde.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\Default\\defaultUser.jpg",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "img/Default/defaultUser.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Default\\defaultUser.jpg"
     },
     {
       "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\categoryIndex.js",
