@@ -14,6 +14,7 @@ using System.Text.Json.Serialization;
 namespace Mvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class UserController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -28,7 +29,7 @@ namespace Mvc.Areas.Admin.Controllers
             _env = env;
             _mapper = mapper;
         }
-        [Authorize]
+
         //authorize area kismina eklenirse sonsuz dongu olusur
         //tek tek actionlara eklenmeli
 
@@ -42,7 +43,6 @@ namespace Mvc.Areas.Admin.Controllers
             });
         }
 
-        [Authorize]
         [HttpGet]
         public async Task<JsonResult> GetAllUsers()
         {
@@ -58,14 +58,12 @@ namespace Mvc.Areas.Admin.Controllers
             return Json(userListDto);
         }
 
-        [Authorize]
         [HttpGet]
         public IActionResult Add()
         {
             return PartialView("_UserAddPartial");
         }
 
-        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Add(UserAddDto userAddDto)
         {
@@ -113,7 +111,6 @@ namespace Mvc.Areas.Admin.Controllers
             return Json(userAddAjaxErrorState);
         }
 
-        [Authorize]
         public async Task<IActionResult> Remove(int userId)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
@@ -145,7 +142,6 @@ namespace Mvc.Areas.Admin.Controllers
             }
         }
 
-        [Authorize]
         [HttpGet]
         public async Task<PartialViewResult> Update(int userId)
         //partialviewresult da kullanilabilir (IActionResult yerine)
@@ -157,7 +153,6 @@ namespace Mvc.Areas.Admin.Controllers
             //userupdatepartial viewi ve userupdatedto yu geri don
         }
 
-        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Update(UserUpdateDto userUpdateDto)
         {

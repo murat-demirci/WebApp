@@ -4,9 +4,10 @@ using Entities.Dtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Mvc.Areas.Login.Controllers
+namespace Mvc.Areas.Identity.Controllers
 {
-    [Area("Login")]
+    [Area("Identity")]
+
     public class SignupController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -31,16 +32,28 @@ namespace Mvc.Areas.Login.Controllers
                 var user = _mapper.Map<User>(signupDto);
                 user.UserPicture = "Default/defaultUser.jpg";
                 var result = await _userManager.CreateAsync(user, signupDto.Password);
-                if (result.Succeeded)
+                if (user != null)
                 {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("index", "Home", new { area = "Admin" });
+                    if (result.Succeeded)
+                    {
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        return RedirectToAction("index", "Home", new { area = "Admin" });
+                    }
+                    else
+                    {
+                        foreach (var err in result.Errors)
+                        {
+                            ModelState.AddModelError("", err.Description);
+                        }
+
+                        return View("Index", signupDto);
+                    }
                 }
-                foreach (var err in result.Errors)
+                else
                 {
-                    ModelState.AddModelError("", err.Description);
+                    ModelState.AddModelError(string.Empty, "hata");
+                    return View("Index");
                 }
-                ModelState.AddModelError(string.Empty, "Gecersiz giris islemi");
             }
             return View("Index");
         }

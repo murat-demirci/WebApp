@@ -67,24 +67,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Login/Views/Login/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTG9naW5cVmlld3NcTG9naW5cSW5kZXguY3NodG1s
+[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Login/Views/Shared/_userLoginLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTG9naW5cVmlld3NcU2hhcmVkXF91c2VyTG9naW5MYXlvdXQuY3NodG1s
+[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/Views/Shared/_userLoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcU2hhcmVkXF91c2VyTG9naW5MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Login/Views/Signup/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTG9naW5cVmlld3NcU2lnbnVwXEluZGV4LmNzaHRtbA==
+[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/Views/Signup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcU2lnbnVwXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Login/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTG9naW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Login/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTG9naW5cX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/demur/Desktop/Design/Mvc/Views/Home/Index.cshtml]

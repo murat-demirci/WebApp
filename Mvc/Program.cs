@@ -30,7 +30,7 @@ builder.Services.ConfigureApplicationCookie(opt =>
 {
     //cookie
     //login ve logout sayfalarinin adresi
-    opt.LoginPath = new PathString("/Login/Login/Index");
+    opt.LoginPath = new PathString("/Identity/Login/Index");
     opt.LogoutPath = new PathString("/Admin/User/Logout");
     opt.Cookie = new CookieBuilder
     {
@@ -79,9 +79,9 @@ app.UseEndpoints(end =>
         areaName: "Admin",
         pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
     end.MapAreaControllerRoute(
-        name: "Login",
-        areaName: "Login",
-        pattern: "Login/{controller=Login}/{action=Index}/{id?}"
+        name: "Identity",
+        areaName: "Identity",
+        pattern: "Identity/{controller=Login}/{action=Index}/{id?}"
     );
     end.MapDefaultControllerRoute();
     //varsayilan olarak home controller ve index e gider

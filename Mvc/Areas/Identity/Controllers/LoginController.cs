@@ -3,9 +3,11 @@ using Entities.Dtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Mvc.Areas.Login.Controllers
+namespace Mvc.Areas.Identity.Controllers
 {
-    [Area("Login")]
+    [Area("Identity")]
+    [Route("/Identity/Login/{id}")]
+    [Route("/Identity/Login")]
     public class LoginController : Controller
     {
         private readonly SignInManager<User> _signInManager;
@@ -16,6 +18,7 @@ namespace Mvc.Areas.Login.Controllers
             _userManager = userManager;
         }
         [HttpGet]
+
         public IActionResult Index()
         {
             return View();
