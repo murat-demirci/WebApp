@@ -9,6 +9,16 @@
     <title>@ViewBag.Title - Blog</title>
     <link href="~/css/styles.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/5d6e25e9b6.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url("https://www.wowpatterns.com/assets/files/resource_images/colorful-ramazan-festival-lantern-stars-seamless-background-pattern.jpg");
+        }
+        .card{
+            background:rgba(0,0,0,0.4);
+            backdrop-filter:blur(5px);
+            color:white
+        }
+    </style>
 </head>
 <body class="bg-primary">
     <div id="layoutAuthentication">
@@ -16,20 +26,6 @@
             <main>
                 @RenderBody()
             </main>
-        </div>
-        <div id="layoutAuthentication_footer">
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Blog</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.1.js"
