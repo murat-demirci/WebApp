@@ -3,6 +3,7 @@ using Entities.Concrete;
 using Entities.Dtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Mvc.Areas.Identity.Models;
 
 namespace Mvc.Areas.Identity.Controllers
 {
@@ -36,8 +37,21 @@ namespace Mvc.Areas.Identity.Controllers
                 {
                     if (result.Succeeded)
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return RedirectToAction("index", "Home", new { area = "Admin" });
+                        var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                        var confirmationLink = Url.Action("ConfirmEmail", "Email", new { token, email = user.Email }, Request.Scheme);
+                        EmailHelper emailHelper = new EmailHelper();
+                        bool emailResponse = emailHelper.SendEmail(user.Email, confirmationLink);
+                        if (emailResponse)
+                        {
+                            await _signInManager.SignInAsync(user, isPersistent: false);
+                            return RedirectToAction("index", "Home", new { area = "Admin" });
+                        }
+                        else
+                        {
+                            return View("Index");
+                        }
+
+
                     }
                     else
                     {

@@ -2,7 +2,7 @@
 using Data.Concrete;
 using Data.Concrete.EntityFramework.Contexts;
 using Entities.Concrete;
-
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Services.Abstract;
 using Services.Concrete;
@@ -32,8 +32,9 @@ namespace Services.Extensions
                 opt.User.RequireUniqueEmail = true;
                 opt.User.AllowedUserNameCharacters =
                 "abcdefgğhiıjklmnopqrstuüvwxyzABCDEFGĞHIİJKLMNOPQRSTUÜVWXYZ0123456789-._@+";
+                opt.SignIn.RequireConfirmedEmail = true;
                 //kullanici icin izin verilen karakterler
-            }).AddEntityFrameworkStores<dContext>();
+            }).AddEntityFrameworkStores<dContext>().AddTokenProvider<DataProtectorTokenProvider<User>>(TokenOptions.DefaultProvider);
             //migrations islemleri icin(identity)
             serviceCollection.AddScoped<IUnitofWork, UnitofWork>();
             //scoped: bir istekte bulundugunda ve bu islemlere baslandiginda bu islemlerin
