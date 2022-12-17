@@ -34,9 +34,15 @@ namespace Mvc.Areas.Identity.Controllers
                 {
                     var result = await _signInManager.PasswordSignInAsync(user, userLoginDto.Password, userLoginDto.RememberMe, false);
                     //sifre ile giris yapmak icin 4. deger sifrenin bir cok kez yanlis girilmesi durumunda hesap kitleme ozelligi
+                    bool emailStatus = await _userManager.IsEmailConfirmedAsync(user);
                     if (result.Succeeded)
                     {
                         return RedirectToAction("Index", "Home", new { area = "Admin" });
+                    }
+                    else if (!emailStatus)
+                    {
+                        ModelState.AddModelError("", "Giris yapabilmek icin lutfen e-posta adresinizi dogrulayiniz");
+                        return View("Index");
                     }
                     else
                     {
