@@ -18,17 +18,19 @@ namespace Mvc.Areas.Admin.Controllers
     //kullanici bazli yetkilendirme
     public class UserController : Controller
     {
+        private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
         private readonly IWebHostEnvironment _env;
         //wwroot dosya yolunu dinakilestirmek icin
         //farkli isletim sistemlerinde dosya yolu ayni kalir
         private readonly IMapper _mapper;
 
-        public UserController(UserManager<User> userManager, IWebHostEnvironment env, IMapper mapper)
+        public UserController(UserManager<User> userManager, IWebHostEnvironment env, IMapper mapper, SignInManager<User> signInManager)
         {
             _userManager = userManager;
             _env = env;
             _mapper = mapper;
+            _signInManager = signInManager;
         }
 
         //authorize area kismina eklenirse sonsuz dongu olusur
