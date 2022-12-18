@@ -42,7 +42,7 @@ $(document).ready(function () {
                         contentType: 'application/json',
                         beforeSend: function () {
                             $('#categoriesTable').attr('style', 'opacity:0.1;user-select:none;');
-                            $('iframe').removeClass('d-none');
+                            $('#loader').removeClass('d-none');
 
                         },
                         success: function (data) {
@@ -78,7 +78,7 @@ $(document).ready(function () {
                                 $('#categoriesTable tbody').html(tableBody);
                                 setTimeout(function () {
                                     $('#categoriesTable').removeAttr('style');
-                                    $('iframe').addClass('d-none');
+                                    $('#loader').addClass('d-none');
                                 }, 1000);
                             }
                             else {
@@ -89,7 +89,7 @@ $(document).ready(function () {
                             console.log(err);
                             $('#categoriesTable').removeAttr('style');
                             
-                            $('iframe').addClass('d-none');
+                            $('#loader').addClass('d-none');
                             toastr.error(`${err.responseText}`, 'Hata!');
                         }
                     });

@@ -44,7 +44,7 @@ $(document).ready(function () {
                         contentType: 'application/json',
                         beforeSend: function () {
                             $('#usersTable').attr('style', 'opacity:0.1;user-select:none;');
-                            $('iframe').removeClass('d-none');
+                            $('#loader').removeClass('d-none');
 
                         },
                         success: function (data) {
@@ -57,7 +57,8 @@ $(document).ready(function () {
                                             `<img src="/img/${user.UserPicture}" class="my-image-table"/>`,
                                             user.Id,
                                             user.UserName,
-                                            user.Email,
+                                        user.Email,
+                                            `<td>${(user.EmailConfirmed==true ? "Dogrulandi" : "Dogrulanmadi")}</td>`,
                                             `
                                
                                     <button data-id="${user.Id}" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>
@@ -72,7 +73,7 @@ $(document).ready(function () {
                                 dataTable.draw();
                                 setTimeout(function () {
                                     $('#usersTable').removeAttr('style');
-                                    $('iframe').addClass('d-none');
+                                    $('#loader').addClass('d-none');
                                 }, 1000);
                             }
                             else {
@@ -82,8 +83,7 @@ $(document).ready(function () {
                         error: function (err) {
                             console.log(err);
                             $('#usersTable').removeAttr('style');
-                            
-                            $('iframe').addClass('d-none');
+                            $('#loader').addClass('d-none');
                             toastr.error(`${err.responseText}`, 'Hata!');
                         }
                     });
@@ -160,6 +160,7 @@ $(document).ready(function () {
                             ajaxAddModel.UserDto.User.Id,
                             ajaxAddModel.UserDto.User.UserName,
                             ajaxAddModel.UserDto.User.Email,
+                            `<td>${(ajaxAddModel.userDto.User.EmailConfirmed == true ? "Dogrulandi" : "Dogrulanmadi")}</td>`,
                             `
                                
                                     <button data-id="${ajaxAddModel.UserDto.User.Id}" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>
@@ -288,6 +289,7 @@ $(document).ready(function () {
                             userUpdateAjax.UserDto.User.Id,
                             userUpdateAjax.UserDto.User.UserName,
                             userUpdateAjax.UserDto.User.Email,
+                            `<td>${(userUpdateAjax.userDto.User.EmailConfirmed == true ? "Dogrulandi" : "Dogrulanmadi")}</td>`,
                             `
                                
                                     <button data-id="${userUpdateAjax.UserDto.User.Id}" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>

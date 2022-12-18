@@ -13,8 +13,8 @@
             Kullanicilar
         </div>
         <div class="card-body">
-            <iframe role="status" src="/gif/1479.gif" class="d-none position-absolute start-50 top-50"></iframe>
-            <span class="loader d-none"></span>
+            <img id="loader" src="~/gif/1479.gif" class="d-none position-absolute"  
+                 style="left:50%;top:50%;transform:translate(-50%, -50%)"/>
             <div class="table-responsive">
                 <table class="table table-bordered" id="usersTable" width="100%" cellspacing="0">
                     <thead>
@@ -23,6 +23,7 @@
                             <th>ID</th>
                             <th>Kullanici Adı</th>
                             <th>E-Posta</th>
+                            <th>E-Posta Dogrulama</th>
                             <th>Islemler</th>
                         </tr>
                     </thead>
@@ -32,23 +33,24 @@
                             <th>ID</th>
                             <th>Kullanici Adı</th>
                             <th>E-Posta</th>
+                            <th>E-Posta Dogrulama</th>
                             <th>Islemler</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         @foreach (var user in Model.Users)
                         {
-                            
-                            <tr name="@user.Id">
-                                <td><img src="~/img/@user.UserPicture" class="my-image-table"/></td>
-                                <td>@user.Id</td>
-                                <td>@user.UserName</td>
-                                <td>@user.Email</td>
-                                <td>
-                                    <button data-id="@user.Id" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>
-                                    <button data-id="@user.Id" style="width: 90px; font-size: 12px;" class=" btn btn-danger  btn-delete"><span class="fas fa-minus-circle"></span> Kaldir</button>
-                                </td>
-                            </tr>
+                        <tr name="@user.Id">
+                            <td><img src="~/img/@user.UserPicture" class="my-image-table" /></td>
+                            <td>@user.Id</td>
+                            <td>@user.UserName</td>
+                            <td>@user.Email</td>
+                            <td>@(user.EmailConfirmed==true ? "Dogrulandi" : "Dogrulanmadi")</td>
+                            <td>
+                                <button data-id="@user.Id" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>
+                                <button data-id="@user.Id" style="width: 90px; font-size: 12px;" class=" btn btn-danger  btn-delete"><span class="fas fa-minus-circle"></span> Kaldir</button>
+                            </td>
+                        </tr>
                         }
                     </tbody>
                 </table>

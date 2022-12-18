@@ -75,6 +75,7 @@ namespace Mvc.Areas.Admin.Controllers
                 userAddDto.UserPicture = await ImageUpload(userAddDto.UserName, userAddDto.UserPictureFile);
                 //resim adi atama
                 var user = _mapper.Map<User>(userAddDto);
+                user.EmailConfirmed = true;
                 var result = await _userManager.CreateAsync(user, userAddDto.Password);
                 //kullanici ekleme
                 if (result.Succeeded)//identityresult doner
@@ -240,7 +241,7 @@ namespace Mvc.Areas.Admin.Controllers
             //guncelleme isleminde eski resmi silmek icin kullanilacak
             string wwwroot = _env.WebRootPath;
             var path = Path.Combine($"{wwwroot}/img", pictureName);
-            if (System.IO.File.Exists(path))
+            if (System.IO.File.Exists(path) && pictureName != "Default/defaultUser.jpg")
             {
                 System.IO.File.Delete(path);
                 return true;
