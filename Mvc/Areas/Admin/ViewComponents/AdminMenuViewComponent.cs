@@ -33,7 +33,7 @@ namespace Mvc.Areas.Admin.ViewComponents
             });
         }
         //sayfa yonlendirmesi icin, shared icine Components klasoru
-        //sonra AdminMenu klasoru acilir
+        //sonra AdminMenu klasoru acilir, (componenet adi ile klasor adi ayni olmali)
         //icerisinde Default.cshtml sayfasi bulunmali
     }
 }
