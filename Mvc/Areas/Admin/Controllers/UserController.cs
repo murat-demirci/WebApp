@@ -14,7 +14,8 @@ using System.Text.Json.Serialization;
 namespace Mvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
+    //kullanici bazli yetkilendirme
     public class UserController : Controller
     {
         private readonly UserManager<User> _userManager;

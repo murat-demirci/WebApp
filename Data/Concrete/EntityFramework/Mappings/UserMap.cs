@@ -49,6 +49,7 @@ namespace Data.Concrete.EntityFramework.Mappings
 
 
             //fluent api ile ilk kullaniclari ekleme
+
             var adminUser = new User()
             {
                 Id = 1,
