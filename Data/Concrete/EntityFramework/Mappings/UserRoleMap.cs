@@ -13,6 +13,22 @@ namespace Data.Concrete.EntityFramework.Mappings
 
             // Maps to the AspNetUserRoles table
             b.ToTable("AspNetUserRoles");
+
+
+            b.HasData(
+                new UserRole
+                {
+                    //admin icin atama
+                    RoleId = 1,
+                    UserId = 1,
+                },
+                new UserRole
+                {
+                    //editor icin atama
+                    RoleId = 2,
+                    UserId = 2,
+                }
+                );
         }
     }
 }

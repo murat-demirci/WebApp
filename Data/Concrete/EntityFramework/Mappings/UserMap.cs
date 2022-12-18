@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -45,6 +46,49 @@ namespace Data.Concrete.EntityFramework.Mappings
 
             // Each User can have many entries in the UserRole join table
             b.HasMany<UserRole>().WithOne().HasForeignKey(ur => ur.UserId).IsRequired();
+
+
+            //fluent api ile ilk kullaniclari ekleme
+            var adminUser = new User()
+            {
+                Id = 1,
+                UserName = "Admin",
+                NormalizedUserName = "ADMIN",
+                Email = "admin@mail.com",
+                NormalizedEmail = "ADMIN@MAIL.COM",
+                EmailConfirmed = true,
+                UserPicture = "Default/defaultUser.jpg",
+                SecurityStamp = Guid.NewGuid().ToString(),
+                //bu deger guid degeri, arada - yok, - icin tostring("D") yaz
+
+            };
+            adminUser.PasswordHash = CreatePasswordHash(adminUser, "Admin1!");
+
+            var editorUser = new User()
+            {
+                Id = 2,
+                UserName = "Editor",
+                NormalizedUserName = "EDITOR",
+                Email = "editor@mail.com",
+                NormalizedEmail = "EDITOR@MAIL.COM",
+                EmailConfirmed = true,
+                UserPicture = "Default/defaultUser.jpg",
+                SecurityStamp = Guid.NewGuid().ToString(),
+                //bu deger guid degeri, arada - yok, - icin tostring("D") yaz
+
+            };
+            editorUser.PasswordHash = CreatePasswordHash(editorUser, "Editor1!");
+
+            b.HasData(adminUser, editorUser);
+        }
+
+        //rol tablosu degerleri ekle, sonra userrole tablosundan coka cok iliski uzerinden ekle
+
+        //parola hasleme
+        private string CreatePasswordHash(User user, string password)
+        {
+            var passwordHasher = new PasswordHasher<User>();
+            return passwordHasher.HashPassword(user, password);
         }
     }
 }

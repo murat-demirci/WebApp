@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Data.Migrations
 {
     /// <inheritdoc />
@@ -249,9 +251,36 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { 1, "e93c8bb5-49b0-40b4-932e-61a871ef659e", "Admin", "ADMIN" },
+                    { 2, "e261da3f-7646-4360-b7b2-8dd9579cdae3", "Editor", "EDITOR" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserPicture" },
+                values: new object[,]
+                {
+                    { 1, 0, "59e370af-2216-4e7c-95da-f405bf6e6ed8", "admin@mail.com", true, false, null, "ADMIN@MAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAELabcGjcaJoiott2H6px5PMLaLoDgK9nc/HiOtXrNia7AVRnJX8LtSBFlsUePlpQEQ==", null, false, "3c2b7c35-165c-4a77-8306-67e3de59a7a9", false, "Admin", "Default/defaultUser.jpg" },
+                    { 2, 0, "d9d4c527-575a-4f2c-ad8c-94d8347dbc9f", "editor@mail.com", true, false, null, "EDITOR@MAIL.COM", "EDITOR", "AQAAAAIAAYagAAAAEG7NKmjJ7/KHOU71YOwQ9KeHFvt9Lf4y0dEEoQHjOJSjsy+c9y+kw1bdhaH2wLXQCg==", null, false, "06dbf546-46b6-4f57-9c7e-76fc1b518010", false, "Editor", "Default/defaultUser.jpg" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "ID", "CreatedByName", "CreatedDate", "IsActive", "IsDeleted", "ModifiedByName", "ModifiedDate", "Name", "Note" },
-                values: new object[] { 1, "InitialCreate", new DateTime(2022, 12, 10, 15, 3, 8, 719, DateTimeKind.Local).AddTicks(7129), true, false, "InitialCreate", new DateTime(2022, 12, 10, 15, 3, 8, 719, DateTimeKind.Local).AddTicks(7130), "Javascript", "Not Yok" });
+                values: new object[] { 1, "InitialCreate", new DateTime(2022, 12, 18, 15, 23, 0, 567, DateTimeKind.Local).AddTicks(2662), true, false, "InitialCreate", new DateTime(2022, 12, 18, 15, 23, 0, 567, DateTimeKind.Local).AddTicks(2663), "Javascript", "Not Yok" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 2, 2 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Articles_CategoryId",

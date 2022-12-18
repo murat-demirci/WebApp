@@ -157,11 +157,11 @@ namespace Data.Migrations
                         {
                             ID = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 10, 15, 3, 8, 719, DateTimeKind.Local).AddTicks(7129),
+                            CreatedDate = new DateTime(2022, 12, 18, 15, 23, 0, 567, DateTimeKind.Local).AddTicks(2662),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 10, 15, 3, 8, 719, DateTimeKind.Local).AddTicks(7130),
+                            ModifiedDate = new DateTime(2022, 12, 18, 15, 23, 0, 567, DateTimeKind.Local).AddTicks(2663),
                             Name = "Javascript",
                             Note = "Not Yok"
                         });
@@ -243,6 +243,22 @@ namespace Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ConcurrencyStamp = "e93c8bb5-49b0-40b4-932e-61a871ef659e",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ConcurrencyStamp = "e261da3f-7646-4360-b7b2-8dd9579cdae3",
+                            Name = "Editor",
+                            NormalizedName = "EDITOR"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Concrete.RoleClaim", b =>
@@ -340,6 +356,42 @@ namespace Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "59e370af-2216-4e7c-95da-f405bf6e6ed8",
+                            Email = "admin@mail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@MAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAELabcGjcaJoiott2H6px5PMLaLoDgK9nc/HiOtXrNia7AVRnJX8LtSBFlsUePlpQEQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "3c2b7c35-165c-4a77-8306-67e3de59a7a9",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin",
+                            UserPicture = "Default/defaultUser.jpg"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "d9d4c527-575a-4f2c-ad8c-94d8347dbc9f",
+                            Email = "editor@mail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "EDITOR@MAIL.COM",
+                            NormalizedUserName = "EDITOR",
+                            PasswordHash = "AQAAAAIAAYagAAAAEG7NKmjJ7/KHOU71YOwQ9KeHFvt9Lf4y0dEEoQHjOJSjsy+c9y+kw1bdhaH2wLXQCg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "06dbf546-46b6-4f57-9c7e-76fc1b518010",
+                            TwoFactorEnabled = false,
+                            UserName = "Editor",
+                            UserPicture = "Default/defaultUser.jpg"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Concrete.UserClaim", b =>
@@ -402,6 +454,18 @@ namespace Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            RoleId = 1
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            RoleId = 2
+                        });
                 });
 
             modelBuilder.Entity("Entities.Concrete.UserToken", b =>
