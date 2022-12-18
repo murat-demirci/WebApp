@@ -31,7 +31,7 @@ builder.Services.ConfigureApplicationCookie(opt =>
     //cookie
     //login ve logout sayfalarinin adresi
     opt.LoginPath = new PathString("/Identity/Login/Index");
-    opt.LogoutPath = new PathString("/Admin/User/Logout");
+    opt.LogoutPath = new PathString("/Identity/User/Logout");
     opt.Cookie = new CookieBuilder
     {
         Name = "BlogSiteAdmin",
@@ -48,7 +48,7 @@ builder.Services.ConfigureApplicationCookie(opt =>
     //kullaniciya zaman tanir cooki bilgileri sabit kalir
     //verilen sure sonunda cookie bilgileri sifirlanir
     opt.ExpireTimeSpan = System.TimeSpan.FromDays(7);
-    opt.AccessDeniedPath = new PathString("/Admin/User/AccessDenied");
+    opt.AccessDeniedPath = new PathString("/Identity/AccessDenied/Unauthorized");
     //sisteme giris yapmis fakat yetkisi olmayan alana girmeye calisan kullanicilar icin
 });
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pNCmtdDdFE+EOfKAxmgMHIwou5d71EVPTRzswm2srwc=",
+  "Hash": "vF709XH8kyLSvRJ7zGDJSL+dpyhs2VGGh8iLgJbbyK0=",
   "Source": "Mvc",
   "BasePath": "_content/Mvc",
   "Mode": "Default",
@@ -168,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\gif\\1479.gif"
+    },
+    {
+      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\gif\\accessDenied.gif",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "gif/accessDenied.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\gif\\accessDenied.gif"
     },
     {
       "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\0e5a80bf-5a8f-4275-b73d-8b8e5232af57_Muratdem.jpg",
