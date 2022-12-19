@@ -14,31 +14,41 @@ using System.Text.Json.Serialization;
 namespace Mvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin")]
+
     //kullanici bazli yetkilendirme
     public class UserController : Controller
     {
-        private readonly SignInManager<User> _signInManager;
-        private readonly UserManager<User> _userManager;
         private readonly IWebHostEnvironment _env;
         //wwroot dosya yolunu dinakilestirmek icin
         //farkli isletim sistemlerinde dosya yolu ayni kalir
+        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
         private readonly IMapper _mapper;
 
-        public UserController(UserManager<User> userManager, IWebHostEnvironment env, IMapper mapper, SignInManager<User> signInManager)
+        public UserController(UserManager<User> userManager, IMapper mapper, SignInManager<User> signInManager, IWebHostEnvironment env)
         {
             _userManager = userManager;
-            _env = env;
             _mapper = mapper;
             _signInManager = signInManager;
+            _env = env;
         }
 
         //authorize area kismina eklenirse sonsuz dongu olusur
         //tek tek actionlara eklenmeli
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
+            var wwwroot = _env.WebRootPath;
             var users = await _userManager.Users.ToListAsync();
+            foreach (var user in users)
+            {
+                var path = Path.Combine($"{wwwroot}/img", user.UserPicture);
+                if (!System.IO.File.Exists(path))
+                {
+                    user.UserPicture = "Default/defaultUser.jpg";
+                    await _userManager.UpdateAsync(user);
+                }
+            }
             return View(new UserListDto
             {
                 Users = users,
@@ -46,6 +56,7 @@ namespace Mvc.Areas.Admin.Controllers
             });
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<JsonResult> GetAllUsers()
         {
@@ -61,12 +72,16 @@ namespace Mvc.Areas.Admin.Controllers
             return Json(userListDto);
         }
 
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Add()
         {
             return PartialView("_UserAddPartial");
         }
 
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Add(UserAddDto userAddDto)
         {
@@ -115,6 +130,8 @@ namespace Mvc.Areas.Admin.Controllers
             return Json(userAddAjaxErrorState);
         }
 
+
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Remove(int userId)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
@@ -146,6 +163,8 @@ namespace Mvc.Areas.Admin.Controllers
             }
         }
 
+
+        [Authorize(Roles = "Admin,Editor")]
         [HttpGet]
         public async Task<PartialViewResult> Update(int userId)
         //partialviewresult da kullanilabilir (IActionResult yerine)
@@ -157,6 +176,8 @@ namespace Mvc.Areas.Admin.Controllers
             //userupdatepartial viewi ve userupdatedto yu geri don
         }
 
+
+        [Authorize(Roles = "Admin,Editor")]
         [HttpPost]
         public async Task<IActionResult> Update(UserUpdateDto userUpdateDto)
         {
@@ -217,6 +238,114 @@ namespace Mvc.Areas.Admin.Controllers
             }
         }
 
+        [Authorize]
+        [HttpGet]
+        public async Task<ViewResult> ChangeDetail()
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var updateDto = _mapper.Map<UserUpdateDto>(user);
+            return View(updateDto);
+        }
+
+
+        [Authorize]
+        [HttpPost]
+        public async Task<ViewResult> ChangeDetail(UserUpdateDto userUpdateDto)
+        {
+            if (ModelState.IsValid)
+            {
+                bool isPictureUploaded = false;
+                var oldUser = await _userManager.GetUserAsync(HttpContext.User);
+                var oldPicture = oldUser.UserPicture;
+                if (userUpdateDto.UserPictureFile != null)
+                {
+                    userUpdateDto.UserPicture =
+                        await ImageUpload(userUpdateDto.UserName, userUpdateDto.UserPictureFile);
+                    if (oldPicture != "Default/defaultUser.jpg")
+                    {
+                        isPictureUploaded = true;
+                    }
+
+                }
+                var updatedUser = _mapper.Map(userUpdateDto, oldUser);
+                var result = await _userManager.UpdateAsync(updatedUser);
+                if (result.Succeeded)
+                {
+                    if (isPictureUploaded)
+                    {
+                        ImageDelete(oldPicture);
+                    }
+                    TempData.Add("SuccessMessage", $"{updatedUser.UserName} basariyla guncellenmistir.");
+                    return View(userUpdateDto);
+                }
+                else
+                {
+                    //identity tarafinda olusacak hatalar icin
+                    foreach (var err in result.Errors)
+                    {
+                        ModelState.AddModelError("", err.Description);
+                    }
+                    return View(userUpdateDto);
+                }
+            }
+            else
+            {
+                return View(userUpdateDto);
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
+        public ViewResult PasswordChange()
+        {
+            return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> PasswordChange(PasswordChangeDto passwordChangeDto)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.GetUserAsync(HttpContext.User);
+                var isVerified = await _userManager.CheckPasswordAsync(user, passwordChangeDto.CurrentPassword);
+                if (isVerified)
+                {
+                    var result = await _userManager.ChangePasswordAsync(
+                        user,
+                        passwordChangeDto.CurrentPassword,
+                        passwordChangeDto.NewPassword
+                        );
+                    if (result.Succeeded)
+                    {
+                        //securitystamp degeri degismeli
+                        //verinin degistigini belirtir
+                        await _userManager.UpdateSecurityStampAsync(user);
+                        await _signInManager.SignOutAsync();
+                        await _signInManager.PasswordSignInAsync(
+                            user,
+                            passwordChangeDto.NewPassword,
+                            true,//remember me degeri (7 gun)
+                            false
+                            );
+                        TempData.Add("SuccessMessage", $"Sifreniz basariyla degistirilmistir");
+                        return View();
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Lutfen girmis oldugunuz bilgileri kontrol ediniz");
+                    return View(passwordChangeDto);
+                }
+            }
+            else
+            {
+                return View(passwordChangeDto);
+            }
+            return View();
+        }
+
+        [Authorize]
         public async Task<string> ImageUpload(string userName, IFormFile pictureFile)
         {
             string wwwroot = _env.WebRootPath;
@@ -236,12 +365,13 @@ namespace Mvc.Areas.Admin.Controllers
             }
         }
 
+        [Authorize]
         public bool ImageDelete(string pictureName)
         {
             //guncelleme isleminde eski resmi silmek icin kullanilacak
             string wwwroot = _env.WebRootPath;
             var path = Path.Combine($"{wwwroot}/img", pictureName);
-            if (System.IO.File.Exists(path) && pictureName != "Default/defaultUser.jpg")
+            if (System.IO.File.Exists(path))
             {
                 System.IO.File.Delete(path);
                 return true;
@@ -251,6 +381,5 @@ namespace Mvc.Areas.Admin.Controllers
                 return false;
             }
         }
-
     }
 }

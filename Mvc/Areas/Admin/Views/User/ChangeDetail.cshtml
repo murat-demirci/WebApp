@@ -1,0 +1,46 @@
+﻿@model Entities.Dtos.UserUpdateDto
+@{ 
+    Layout = "_Layout";
+    ViewBag.Title = "Profil Duzenle";
+}
+
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
+        <div class="card mt-3">
+            <div class="card-header">
+                <h4 class="text-center"><span class="fas fa-edit"></span> Profil Duzenle</h4>
+            </div>
+            <div class="card-body">
+                <form asp-area="Admin" asp-controller="User" asp-action="ChangeDetail" method="post"
+                      id="form-user-update" enctype="multipart/form-data">
+                    <div asp-validation-summary="All" class="text-danger" id="validation-summary"></div>
+                    <input asp-for="Id" type="hidden" />
+                    <div class="form-group">
+                        <label asp-for="UserName"></label>
+                        <input class="form-control" asp-for="UserName" placeholder="Lütfen, kullanıcı adı giriniz." />
+                        <span class="text-danger" asp-validation-for="UserName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input type="email" class="form-control" asp-for="Email" placeholder="Lütfen, e-posta adresi giriniz." />
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="UserPicture"></label>
+                        <input asp-for="UserPicture" type="hidden" />
+                        <img class="my-image" src="~/img/@Model.UserPicture" alt="@Model.UserName" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="UserPictureFile"></label>
+                        <input type="file" accept="image/*" class="form-control-file" asp-for="UserPictureFile" />
+                        <span class="text-danger" asp-validation-for="UserPictureFile"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"><span class="fas fa-save"></span> Kaydet</button>
+                        <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="btn btn-danger btn-block"><span class="fas fa-times"></span> Iptal</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -58,7 +58,7 @@ $(document).ready(function () {
                                             user.Id,
                                             user.UserName,
                                         user.Email,
-                                            `<td>${(user.EmailConfirmed==true ? "Dogrulandi" : "Dogrulanmadi")}</td>`,
+                                        (user.EmailConfirmed==true ? "Dogrulandi" : "Dogrulanmadi"),
                                             `
                                
                                     <button data-id="${user.Id}" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>
@@ -160,7 +160,7 @@ $(document).ready(function () {
                             ajaxAddModel.UserDto.User.Id,
                             ajaxAddModel.UserDto.User.UserName,
                             ajaxAddModel.UserDto.User.Email,
-                            `<td>${(ajaxAddModel.userDto.User.EmailConfirmed == true ? "Dogrulandi" : "Dogrulanmadi")}</td>`,
+                            (ajaxAddModel.UserDto.User.EmailConfirmed == true ? "Dogrulandi" : "Dogrulanmadi"),
                             `
                                
                                     <button data-id="${ajaxAddModel.UserDto.User.Id}" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>
@@ -218,7 +218,6 @@ $(document).ready(function () {
                     data: { userId: id },
                     success: function (data) {
                         const userDto = jQuery.parseJSON(data);
-                        console.log(userDto.User);
                         if (userDto.resultStatus === 0) {
                             Swal.fire(
                                 "Basarili Islem",
@@ -289,7 +288,7 @@ $(document).ready(function () {
                             userUpdateAjax.UserDto.User.Id,
                             userUpdateAjax.UserDto.User.UserName,
                             userUpdateAjax.UserDto.User.Email,
-                            `<td>${(userUpdateAjax.userDto.User.EmailConfirmed == true ? "Dogrulandi" : "Dogrulanmadi")}</td>`,
+                            (userUpdateAjax.UserDto.User.EmailConfirmed == true ? "Dogrulandi" : "Dogrulanmadi"),
                             `
                                
                                     <button data-id="${userUpdateAjax.UserDto.User.Id}" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>
