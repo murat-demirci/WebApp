@@ -21,7 +21,7 @@
         <div class="border-top border-success w-100 text-center"
              style="border:4px outset;"></div>
         <div class="text-center fs-4 fw-bold p-5">
-            <p>Dogrulama islemi basariyla gerceklesti.</p>
+            <p>Dogrulama islemi basariyla gerceklesti. Lutfen Bekleyiniz</p>
             <p id="closing"></p>
         </div>
     </div>
@@ -32,11 +32,12 @@
         const p = document.getElementById('closing');
         var frag = true;
         var time = 5;
+        p.textContent = `${time} saniye sonra giris sayfasina yonlendirileceksiniz`;
         setInterval(() => {
-            p.textContent = `Sayfanin ${time} saniye sonra kapanacak`;
             time--;
+            p.textContent = `${time} saniye sonra giris sayfasina yonlendirileceksiniz`;
             if (time===-1) {
-                close();
+                window.location.href = "/Admin/Home/Index";
             }
         }, 1000);       
     </script>

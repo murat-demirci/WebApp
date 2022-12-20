@@ -14,7 +14,8 @@ namespace Mvc.Areas.Identity.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IMapper _mapper;
-        public SignupController(UserManager<User> userManager, SignInManager<User> signInManager, IMapper mapper)
+        public SignupController(UserManager<User> userManager, SignInManager<User> signInManager,
+            IMapper mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -31,8 +32,10 @@ namespace Mvc.Areas.Identity.Controllers
             if (ModelState.IsValid)
             {
                 var user = _mapper.Map<User>(signupDto);
+                user.SecurityStamp = Guid.NewGuid().ToString();
                 user.UserPicture = "Default/defaultUser.jpg";
                 var result = await _userManager.CreateAsync(user, signupDto.Password);
+                await _userManager.AddToRoleAsync(user, "Editor");
                 if (user != null)
                 {
                     if (result.Succeeded)
@@ -50,8 +53,6 @@ namespace Mvc.Areas.Identity.Controllers
                         {
                             return View("Index");
                         }
-
-
                     }
                     else
                     {

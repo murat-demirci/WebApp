@@ -38,17 +38,7 @@ namespace Mvc.Areas.Admin.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
-            var wwwroot = _env.WebRootPath;
             var users = await _userManager.Users.ToListAsync();
-            foreach (var user in users)
-            {
-                var path = Path.Combine($"{wwwroot}/img", user.UserPicture);
-                if (!System.IO.File.Exists(path))
-                {
-                    user.UserPicture = "Default/defaultUser.jpg";
-                    await _userManager.UpdateAsync(user);
-                }
-            }
             return View(new UserListDto
             {
                 Users = users,

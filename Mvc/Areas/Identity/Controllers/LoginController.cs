@@ -32,7 +32,12 @@ namespace Mvc.Areas.Identity.Controllers
                 var user = await _userManager.FindByEmailAsync(userLoginDto.Email);
                 if (user != null)
                 {
-                    var result = await _signInManager.PasswordSignInAsync(user, userLoginDto.Password, userLoginDto.RememberMe, false);
+                    var result = await _signInManager.PasswordSignInAsync
+                        (
+                        user,
+                        userLoginDto.Password,
+                        userLoginDto.RememberMe,
+                        false);
                     //sifre ile giris yapmak icin 4. deger sifrenin bir cok kez yanlis girilmesi durumunda hesap kitleme ozelligi
                     bool emailStatus = await _userManager.IsEmailConfirmedAsync(user);
                     if (result.Succeeded)
@@ -41,8 +46,7 @@ namespace Mvc.Areas.Identity.Controllers
                     }
                     else if (!emailStatus)
                     {
-                        ModelState.AddModelError("", "Giris yapabilmek icin lutfen e-posta adresinizi dogrulayiniz");
-                        return View("Index");
+                        return RedirectToAction("Index", "EmailConfirmation", new { email = userLoginDto.Email });
                     }
                     else
                     {

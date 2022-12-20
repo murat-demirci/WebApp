@@ -34,6 +34,7 @@ namespace Services.Extensions
                 "abcdefgğhiıjklmnopqrstuüvwxyzABCDEFGĞHIİJKLMNOPQRSTUÜVWXYZ0123456789-._@+";
                 opt.SignIn.RequireConfirmedEmail = true;
                 //kullanici icin izin verilen karakterler
+                opt.Lockout.AllowedForNewUsers = false;
             }).AddEntityFrameworkStores<dContext>().AddTokenProvider<DataProtectorTokenProvider<User>>(TokenOptions.DefaultProvider);
             //migrations islemleri icin(identity)
             serviceCollection.AddScoped<IUnitofWork, UnitofWork>();

@@ -53,9 +53,6 @@ namespace Services.Concrete
                 resultStatus = ResultStatus.Success,
                 Message = $"Eklenen kategori \n {categoryAddDto.Name}"
             });
-
-
-
         }
 
         public async Task<IResult> Delete(int categoryId)
