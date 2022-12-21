@@ -18,14 +18,10 @@ namespace Data.Concrete.EntityFramework.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public dContext(DbContextOptions<dContext> opt) : base(opt)
         {
-            //option builder kullanilarak connection stringi ekleme
-            optionsBuilder.UseSqlServer(connectionString:
-                "data source=LAPTOP-UI9DTME8;initial catalog=dboBlog;trusted_connection=true;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;MultipleActiveResultSets=True;");
+
         }
-
-
         //mappingden sonraki kisim
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

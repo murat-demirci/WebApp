@@ -1,3 +1,5 @@
+using Data.Concrete.EntityFramework.Contexts;
+using Microsoft.EntityFrameworkCore;
 using Mvc.AutoMapper.Profiles;
 using Mvc.Helpers.Abstract;
 using Mvc.Helpers.Concrete;
@@ -26,6 +28,10 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation()
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSession();
+builder.Services.AddDbContext<dContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("LocalDB"));
+});
 builder.Services.LoadMyServices();
 builder.Services.AddScoped<IImageHelper, ImageHelper>();
 builder.Services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile));

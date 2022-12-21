@@ -1,7 +1,6 @@
 C:\Users\demur\Desktop\Design\Data\bin\Debug\net6.0\Data.deps.json
 C:\Users\demur\Desktop\Design\Data\bin\Debug\net6.0\Data.runtimeconfig.json
 C:\Users\demur\Desktop\Design\Data\bin\Debug\net6.0\Data.dll
-C:\Users\demur\Desktop\Design\Data\bin\Debug\net6.0\ref\Data.dll
 C:\Users\demur\Desktop\Design\Data\bin\Debug\net6.0\Data.pdb
 C:\Users\demur\Desktop\Design\Data\bin\Debug\net6.0\Entities.dll
 C:\Users\demur\Desktop\Design\Data\bin\Debug\net6.0\Shared.dll
@@ -36,3 +35,4 @@ C:\Users\demur\Desktop\a\WebApp\Data\obj\Debug\net6.0\Data.dll
 C:\Users\demur\Desktop\a\WebApp\Data\obj\Debug\net6.0\ref\Data.dll
 C:\Users\demur\Desktop\a\WebApp\Data\obj\Debug\net6.0\Data.pdb
 C:\Users\demur\Desktop\a\WebApp\Data\obj\Debug\net6.0\Data.genruntimeconfig.cache
+C:\Users\demur\Desktop\Design\Data\obj\Debug\net6.0\refint\Data.dll

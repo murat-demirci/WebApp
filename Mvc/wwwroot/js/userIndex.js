@@ -275,40 +275,42 @@ $(document).ready(function () {
                 success: function (data) {
                     const userUpdateAjax = jQuery.parseJSON(data);
                     console.log(userUpdateAjax);
-                    if (userUpdateAjax.UserDto !==null) {
-                        const id = userUpdateAjax.UserDto.User.Id;
-                        const tableRow = $(`[name="${id}"]`)
+                    var tableRow,id;
+                    if (userUpdateAjax.UserDto !== null) {
+                        id = userUpdateAjax.UserDto.User.Id;
+                        tableRow = $(`[name="${id}"]`);
                     }
-                    const newForm = $('.modal-body', userUpdateAjax.UserUpdatePartial);
-                    placeHolderDiv.find('.modal-body').html(newForm);
-                    const isValid = newForm.find('[name="IsValid"]').val() === 'True';
-                    if (isValid) {
-                        placeHolderDiv.find('.modal').modal('hide');
-                        dataTable.row(tableRow).data([
-                            `<img src="/img/${userUpdateAjax.UserDto.User.UserPicture}" class="my-image-table"/>`,
-                            userUpdateAjax.UserDto.User.Id,
-                            userUpdateAjax.UserDto.User.UserName,
-                            userUpdateAjax.UserDto.User.Email,
-                            (userUpdateAjax.UserDto.User.EmailConfirmed == true ? "Dogrulandi" : "Dogrulanmadi"),
-                            `
+                        const newForm = $('.modal-body', userUpdateAjax.UserUpdatePartial);
+                        placeHolderDiv.find('.modal-body').html(newForm);
+                        const isValid = newForm.find('[name="IsValid"]').val() === 'True';
+                        if (isValid) {
+                            placeHolderDiv.find('.modal').modal('hide');
+                            dataTable.row(tableRow).data([
+                                `<img src="/img/${userUpdateAjax.UserDto.User.UserPicture}" class="my-image-table"/>`,
+                                userUpdateAjax.UserDto.User.Id,
+                                userUpdateAjax.UserDto.User.UserName,
+                                userUpdateAjax.UserDto.User.Email,
+                                (userUpdateAjax.UserDto.User.EmailConfirmed == true ? "Dogrulandi" : "Dogrulanmadi"),
+                                `
                                
                                     <button data-id="${userUpdateAjax.UserDto.User.Id}" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>
                                     <button data-id="${userUpdateAjax.UserDto.User.Id}" style="width: 90px; font-size: 12px;" class=" btn btn-danger  btn-delete"><span class="fas fa-minus-circle"></span> Kaldir</button>
                                 
                             `
 
-                        ]);
-                        tableRow.attr("name", `${id}`);
-                        dataTable.row(tableRow).invalidate();//datatable verileri tekrar kontrtol eder
-                        toastr.success(`${userUpdateAjax.UserDto.Message}`, "Basarili islem");
-                    } else {
-                        let summaryText = '';
-                        $('#validation-summary  ul  li').each(function () {
-                            let text = $(this).text();
-                            summaryText += `*${text}\n`;
-                        });
-                        toastr["warning"](summaryText);
-                    }
+                            ]);
+                            tableRow.attr("name", `${id}`);
+                            dataTable.row(tableRow).invalidate();//datatable verileri tekrar kontrtol eder
+                            toastr.success(`${userUpdateAjax.UserDto.Message}`, "Basarili islem");
+                        } else {
+                            let summaryText = '';
+                            $('#validation-summary  ul  li').each(function () {
+                                let text = $(this).text();
+                                summaryText += `*${text}\n`;
+                            });
+                            toastr["warning"](summaryText);
+                        }
+                    
                 },
                 error: function (err) {
                     toastr.error(`${err.responseText}`, 'Hata!');

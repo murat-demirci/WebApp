@@ -18,7 +18,6 @@ namespace Services.Extensions
     {
         public static IServiceCollection LoadMyServices(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddDbContext<dContext>();
             serviceCollection.AddIdentity<User, Role>(opt =>
             {
                 //sifre

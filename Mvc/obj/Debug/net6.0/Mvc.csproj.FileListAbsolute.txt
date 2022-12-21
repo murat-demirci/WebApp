@@ -5,7 +5,6 @@ C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\Mvc.exe
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\Mvc.deps.json
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\Mvc.runtimeconfig.json
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\Mvc.dll
-C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\ref\Mvc.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\Mvc.pdb
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\Microsoft.AspNetCore.Antiforgery.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
@@ -1152,3 +1151,9 @@ C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Syst
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\staticwebassets\msbuild.Mvc.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\staticwebassets\msbuild.build.Mvc.props
+C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Mvc.props
+C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Mvc.props
+C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\refint\Mvc.dll

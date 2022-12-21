@@ -3,6 +3,7 @@ using Data.Abstract;
 using Entities.Concrete;
 using Entities.Dtos;
 using Services.Abstract;
+using Services.Utilities;
 using Shared.Utilities.Results.Abstract;
 using Shared.Utilities.Results.ComplexTypes;
 using Shared.Utilities.Results.Concrete;
@@ -30,7 +31,7 @@ namespace Services.Concrete
             article.UserId = 1;
             await _unitofWork.Articles.AddAsync(article);
             await _unitofWork.SaveAsync();
-            return new Result(ResultStatus.Success, $"{article.Title} baslikli makale eklenmistir");
+            return new Result(ResultStatus.Success, Messages.Article.Add(article.Title));
         }
 
         public async Task<IResult> Delete(int articleId)
@@ -41,9 +42,9 @@ namespace Services.Concrete
                 var article = await _unitofWork.Articles.GetAsync(a => a.ID == articleId);
                 await _unitofWork.Articles.DeleteAsync(article);
                 await _unitofWork.SaveAsync();
-                return new Result(ResultStatus.Success, $"{article.Title} baslikli makale silinmistir");
+                return new Result(ResultStatus.Success, Messages.Article.Delete(article.Title));
             }
-            return new Result(ResultStatus.Error, $"Boyle bir makale bulunamadi");
+            return new Result(ResultStatus.Error, Messages.Article.NotFound(false));
         }
 
         public async Task<IDataResult<ArticleDto>> Get(int articleId)
@@ -57,9 +58,9 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<ArticleDto>(ResultStatus.Error, "Boyle bir makale bulunamadi", new ArticleDto
+            return new DataResult<ArticleDto>(ResultStatus.Error, Messages.Article.NotFound(false), new ArticleDto
             {
-                Message = "Boyle bir makale bulunamadi",
+                Message = Messages.Article.NotFound(false),
                 Article = null,
                 resultStatus = ResultStatus.Error
             });
@@ -76,9 +77,9 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<ArticleListDto>(ResultStatus.Error, "Makaleler bulunamadi", new ArticleListDto
+            return new DataResult<ArticleListDto>(ResultStatus.Error, Messages.Article.NotFound(true), new ArticleListDto
             {
-                Message = "Makaleler bulunamadi",
+                Message = Messages.Article.NotFound(true),
                 Articles = null,
                 resultStatus = ResultStatus.Error
             });
@@ -98,16 +99,16 @@ namespace Services.Concrete
                         resultStatus = ResultStatus.Success,
                     });
                 }
-                return new DataResult<ArticleListDto>(ResultStatus.Error, "Bu kategoriye ait makale bulunamadi", new ArticleListDto
+                return new DataResult<ArticleListDto>(ResultStatus.Error, Messages.Article.NotFound(true), new ArticleListDto
                 {
-                    Message = "Bu kategoriye ait makale bulunamadi",
+                    Message = Messages.Article.NotFound(true),
                     Articles = null,
                     resultStatus = ResultStatus.Error
                 });
             }
-            return new DataResult<ArticleListDto>(ResultStatus.Error, "Kategori bulunamadi", new ArticleListDto
+            return new DataResult<ArticleListDto>(ResultStatus.Error, Messages.Category.NotFound(true), new ArticleListDto
             {
-                Message = "Kategori bulunamadi",
+                Message = Messages.Category.NotFound(true),
                 Articles = null,
                 resultStatus = ResultStatus.Error
             });
@@ -125,9 +126,9 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<ArticleListDto>(ResultStatus.Error, "Silinmis Makale veya Makaleler bulunamadi", new ArticleListDto
+            return new DataResult<ArticleListDto>(ResultStatus.Error, Messages.Article.NotFound(true), new ArticleListDto
             {
-                Message = "Silinmis ve aktif Makale veya Makaleler bulunamadi",
+                Message = Messages.Article.NotFound(true),
                 Articles = null,
                 resultStatus = ResultStatus.Error
             });
@@ -144,9 +145,9 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<ArticleListDto>(ResultStatus.Error, "Silinmis ve aktif Makale veya Makaleler bulunamadi", new ArticleListDto
+            return new DataResult<ArticleListDto>(ResultStatus.Error, Messages.Article.NotFound(true), new ArticleListDto
             {
-                Message = "Silinmis ve aktif Makale veya Makaleler bulunamadi",
+                Message = Messages.Article.NotFound(true),
                 Articles = null,
                 resultStatus = ResultStatus.Error
             });
@@ -163,9 +164,9 @@ namespace Services.Concrete
                 article.ModifiedDate = DateTime.Now;
                 await _unitofWork.Articles.UpdateAsync(article);
                 await _unitofWork.SaveAsync();
-                return new Result(ResultStatus.Success, $"{article.Title} baslikli makale kaldirildi");
+                return new Result(ResultStatus.Success, Messages.Article.Remove(article.Title));
             }
-            return new Result(ResultStatus.Error, $"Boyle bir makale bulunamadi");
+            return new Result(ResultStatus.Error, Messages.Article.NotFound(false));
         }
 
         public async Task<IResult> Update(ArticleUpdateDto articleUpdateDto, string modifiedName)
@@ -176,7 +177,7 @@ namespace Services.Concrete
             article.UserId = 1;
             await _unitofWork.Articles.AddAsync(article);
             await _unitofWork.SaveAsync();
-            return new Result(ResultStatus.Success, $"{article.Title} baslikli makale guncellenmistir");
+            return new Result(ResultStatus.Success, Messages.Article.Update(article.Title));
         }
     }
 }

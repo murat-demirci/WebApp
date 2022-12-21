@@ -3,6 +3,7 @@ using Data.Abstract;
 using Entities.Concrete;
 using Entities.Dtos;
 using Services.Abstract;
+using Services.Utilities;
 using Shared.Utilities.Results.Abstract;
 using Shared.Utilities.Results.ComplexTypes;
 using Shared.Utilities.Results.Concrete;
@@ -47,11 +48,11 @@ namespace Services.Concrete
             category.ModifiedByName = createdByName;
             var addedCategory = await _unitofWork.Categories.AddAsync(category);
             await _unitofWork.SaveAsync();
-            return new DataResult<CategoryDto>(ResultStatus.Success, $"Eklenen kategori \n {categoryAddDto.Name}", new CategoryDto
+            return new DataResult<CategoryDto>(ResultStatus.Success, Messages.Category.Add(addedCategory.Name), new CategoryDto
             {
                 Category = addedCategory,
                 resultStatus = ResultStatus.Success,
-                Message = $"Eklenen kategori \n {categoryAddDto.Name}"
+                Message = Messages.Category.Add(addedCategory.Name)
             });
         }
 
@@ -62,9 +63,9 @@ namespace Services.Concrete
             {
                 await _unitofWork.Categories.DeleteAsync(category);
                 await _unitofWork.SaveAsync();
-                return new Result(ResultStatus.Success, $"Silinen kategori: \n{category.Name}");
+                return new Result(ResultStatus.Success, Messages.Category.Delete(category.Name));
             }
-            return new Result(ResultStatus.Error, "Beklenmedik bir hata olustu, lutfen daha sonra tekrar deneyiniz");
+            return new Result(ResultStatus.Error, Messages.Category.NotFound(false));
         }
 
         public async Task<IDataResult<CategoryDto>> Get(int categoryId)
@@ -78,11 +79,11 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<CategoryDto>(ResultStatus.Error, "Kategori bulunamadi", new CategoryDto
+            return new DataResult<CategoryDto>(ResultStatus.Error, Messages.Category.NotFound(false), new CategoryDto
             {
                 Category = null,
                 resultStatus = ResultStatus.Error,
-                Message = "Kategori bulunamadi"
+                Message = Messages.Category.NotFound(false)
             });
         }
 
@@ -97,11 +98,11 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<CategoryListDto>(ResultStatus.Error, "Kategori bulunamadi", new CategoryListDto
+            return new DataResult<CategoryListDto>(ResultStatus.Error, Messages.Category.NotFound(true), new CategoryListDto
             {
                 Categories = null,
                 resultStatus = ResultStatus.Error,
-                Message = "Kategori bulunamadi"
+                Message = Messages.Category.NotFound(true)
             });
         }
 
@@ -116,11 +117,11 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<CategoryListDto>(ResultStatus.Error, "Kategori bulunamadi", new CategoryListDto
+            return new DataResult<CategoryListDto>(ResultStatus.Error, Messages.Category.NotFound(true), new CategoryListDto
             {
                 Categories = null,
                 resultStatus = ResultStatus.Error,
-                Message = "Kategori bulunamadi"
+                Message = Messages.Category.NotFound(true)
             });
         }
 
@@ -135,11 +136,11 @@ namespace Services.Concrete
                     resultStatus = ResultStatus.Success,
                 });
             }
-            return new DataResult<CategoryListDto>(ResultStatus.Error, "Boyle bir kategori bulunamadi", new CategoryListDto
+            return new DataResult<CategoryListDto>(ResultStatus.Error, Messages.Category.NotFound(true), new CategoryListDto
             {
                 Categories = null,
                 resultStatus = ResultStatus.Error,
-                Message = "Kategori bulunamadi"
+                Message = Messages.Category.NotFound(true)
             });
         }
 
@@ -152,7 +153,7 @@ namespace Services.Concrete
                 var categoryUpdateDto = _mapper.Map<CategoryUpdateDto>(category);
                 return new DataResult<CategoryUpdateDto>(ResultStatus.Success, categoryUpdateDto);
             }
-            return new DataResult<CategoryUpdateDto>(ResultStatus.Error, "Boyle bir kategori bulunamadi", null);
+            return new DataResult<CategoryUpdateDto>(ResultStatus.Error, Messages.Category.NotFound(false), null);
         }
 
         public async Task<IDataResult<CategoryDto>> Remove(int categoryId, string modifiedByName)
@@ -165,18 +166,18 @@ namespace Services.Concrete
                 category.ModifiedDate = DateTime.Now;
                 var deletedCategory = await _unitofWork.Categories.UpdateAsync(category);
                 await _unitofWork.SaveAsync();
-                return new DataResult<CategoryDto>(ResultStatus.Success, $"Kaldirilan kategori \n {deletedCategory.Name}", new CategoryDto
+                return new DataResult<CategoryDto>(ResultStatus.Success, Messages.Category.Remove(deletedCategory.Name), new CategoryDto
                 {
                     Category = deletedCategory,
                     resultStatus = ResultStatus.Success,
-                    Message = $"Kaldirilan kategori \n {deletedCategory.Name}"
+                    Message = Messages.Category.Remove(deletedCategory.Name)
                 });
             }
-            return new DataResult<CategoryDto>(ResultStatus.Error, "Boyle bir kategori bulunamadi", new CategoryDto
+            return new DataResult<CategoryDto>(ResultStatus.Error, Messages.Category.NotFound(false), new CategoryDto
             {
                 Category = null,
                 resultStatus = ResultStatus.Error,
-                Message = "Boyle bir kategori bulunamadi"
+                Message = Messages.Category.NotFound(false)
             });
         }
 
@@ -197,11 +198,11 @@ namespace Services.Concrete
             category.ModifiedByName = modifiedByName;
             var updatedCategory = await _unitofWork.Categories.UpdateAsync(category);
             await _unitofWork.SaveAsync();
-            return new DataResult<CategoryDto>(ResultStatus.Success, $"Guncellenen kategori \n {categoryUpdateDto.Name}", new CategoryDto
+            return new DataResult<CategoryDto>(ResultStatus.Success, Messages.Category.Update(updatedCategory.Name), new CategoryDto
             {
                 Category = updatedCategory,
                 resultStatus = ResultStatus.Success,
-                Message = $"Guncellenen kategori \n {categoryUpdateDto.Name}"
+                Message = Messages.Category.Update(updatedCategory.Name)
             });
         }
     }

@@ -11,5 +11,18 @@ namespace Data.Concrete.EntityFramework.Repositories
         {
 
         }
+
+        //public async Task<Category> GetById(int categoryId)
+        //{
+        //    return await dContext.Categories.SingleOrDefault(c => c.ID == categoryId);
+        //}
+        //private dContext dContext
+        //{
+        //    get
+        //    {
+        //        return _context as dContext;
+        //    }
+        //}
+        //efrepository icindeki dbcontexti kullanima ornek
     }
 }

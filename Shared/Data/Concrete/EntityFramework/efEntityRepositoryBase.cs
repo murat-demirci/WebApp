@@ -13,7 +13,9 @@ namespace Shared.Data.Concrete.Dapper
         where TEntity : class, IEntity, new()
         //generic olmali, IEntityRepository de kosul oldugundan buraya da eklenmesi lazim
     {
-        private readonly DbContext _context;//ctor olmali,entitiyframework
+        protected readonly DbContext _context;//ctor olmali,entitiyframework
+        //protected olmali, cunku tureyen diger siniflarda da dbcontexte erismek icin
+        //ornek icin Icategoryrepository efcategory
         public efEntityRepositoryBase(DbContext context)
         {
             _context = context;
@@ -63,10 +65,8 @@ namespace Shared.Data.Concrete.Dapper
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties)
         {
             IQueryable<TEntity> query = _context.Set<TEntity>();
-            if (predicate != null)
-            {
-                query = query.Where(predicate);
-            }
+            query = query.Where(predicate);
+
             if (includeProperties.Any())
             {
                 foreach (var include in includeProperties)

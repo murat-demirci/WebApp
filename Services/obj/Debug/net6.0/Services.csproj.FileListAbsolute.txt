@@ -1,6 +1,5 @@
 C:\Users\demur\Desktop\Design\Services\bin\Debug\net6.0\Services.deps.json
 C:\Users\demur\Desktop\Design\Services\bin\Debug\net6.0\Services.dll
-C:\Users\demur\Desktop\Design\Services\bin\Debug\net6.0\ref\Services.dll
 C:\Users\demur\Desktop\Design\Services\bin\Debug\net6.0\Services.pdb
 C:\Users\demur\Desktop\Design\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
 C:\Users\demur\Desktop\Design\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
@@ -36,3 +35,4 @@ C:\Users\demur\Desktop\a\WebApp\Services\obj\Debug\net6.0\Services.csproj.CopyCo
 C:\Users\demur\Desktop\a\WebApp\Services\obj\Debug\net6.0\Services.dll
 C:\Users\demur\Desktop\a\WebApp\Services\obj\Debug\net6.0\ref\Services.dll
 C:\Users\demur\Desktop\a\WebApp\Services\obj\Debug\net6.0\Services.pdb
+C:\Users\demur\Desktop\Design\Services\obj\Debug\net6.0\refint\Services.dll
