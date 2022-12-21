@@ -157,11 +157,11 @@ namespace Data.Migrations
                         {
                             ID = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 18, 15, 23, 0, 567, DateTimeKind.Local).AddTicks(2662),
+                            CreatedDate = new DateTime(2022, 12, 21, 20, 28, 30, 757, DateTimeKind.Local).AddTicks(9812),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 18, 15, 23, 0, 567, DateTimeKind.Local).AddTicks(2663),
+                            ModifiedDate = new DateTime(2022, 12, 21, 20, 28, 30, 757, DateTimeKind.Local).AddTicks(9812),
                             Name = "Javascript",
                             Note = "Not Yok"
                         });
@@ -248,14 +248,14 @@ namespace Data.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "e93c8bb5-49b0-40b4-932e-61a871ef659e",
+                            ConcurrencyStamp = "d74fd6ab-fab7-4853-9ca4-0d473f51a910",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "e261da3f-7646-4360-b7b2-8dd9579cdae3",
+                            ConcurrencyStamp = "d5df8a9a-d3ee-4d62-b179-8f7165cd694e",
                             Name = "Editor",
                             NormalizedName = "EDITOR"
                         });
@@ -362,15 +362,15 @@ namespace Data.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "59e370af-2216-4e7c-95da-f405bf6e6ed8",
+                            ConcurrencyStamp = "58e1a8ba-766c-4f96-8b2a-24472800c9a9",
                             Email = "admin@mail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@MAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAELabcGjcaJoiott2H6px5PMLaLoDgK9nc/HiOtXrNia7AVRnJX8LtSBFlsUePlpQEQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELmaGOMYnRLntE2IPMozE7scxKWJQD+KeHPLz+Dpou5GjozAf9r2opcE0dRVd+ne1g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3c2b7c35-165c-4a77-8306-67e3de59a7a9",
+                            SecurityStamp = "110e7ca2-f8aa-473d-a81e-58ff2c1cc99b",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             UserPicture = "Default/defaultUser.jpg"
@@ -379,15 +379,15 @@ namespace Data.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d9d4c527-575a-4f2c-ad8c-94d8347dbc9f",
+                            ConcurrencyStamp = "f1c53903-d995-458e-ac0d-5bfc6784f383",
                             Email = "editor@mail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "EDITOR@MAIL.COM",
                             NormalizedUserName = "EDITOR",
-                            PasswordHash = "AQAAAAIAAYagAAAAEG7NKmjJ7/KHOU71YOwQ9KeHFvt9Lf4y0dEEoQHjOJSjsy+c9y+kw1bdhaH2wLXQCg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMKfEfyi21hklxOKsAul9stGsG6Zb9tI8mz2n08paT2jG9MBgM7+oP4UW+tMCOGN0A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "06dbf546-46b6-4f57-9c7e-76fc1b518010",
+                            SecurityStamp = "17f32bbc-438d-4e99-8035-75d5c569857d",
                             TwoFactorEnabled = false,
                             UserName = "Editor",
                             UserPicture = "Default/defaultUser.jpg"

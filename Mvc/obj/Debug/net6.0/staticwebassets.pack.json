@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\img\\UserImages\\defaultUser.jpg"
     },
     {
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\postImages\\defaultThumbnail.jpg",
+      "PackagePath": "staticwebassets\\img\\postImages\\defaultThumbnail.jpg"
+    },
+    {
       "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\categoryIndex.js",
       "PackagePath": "staticwebassets\\js\\categoryIndex.js"
     },

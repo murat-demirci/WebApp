@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fInp23rWU30C1pitlGDmIswo+VNSH+COBk5NO27mkVQ=",
+  "Hash": "H4HhDD3exSFPY6+Nbt7YCyKN7tjHLEkw75qq3+tFYMM=",
   "Source": "Mvc",
   "BasePath": "_content/Mvc",
   "Mode": "Default",
@@ -202,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\gif\\login.gif"
+    },
+    {
+      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\postImages\\defaultThumbnail.jpg",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "img/postImages/defaultThumbnail.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\postImages\\defaultThumbnail.jpg"
     },
     {
       "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\UserImages\\6bbebd5e-5187-4b4e-91dc-0b9abd2f3c08_muratdemirci21.jpg",

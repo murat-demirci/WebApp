@@ -246,8 +246,6 @@ C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\System.ServiceProcess.dl
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\System.Text.Encoding.CodePages.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\System.Text.Encoding.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\System.Text.Encoding.Extensions.dll
-C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\System.Text.Encodings.Web.dll
-C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\System.Text.Json.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\System.Text.RegularExpressions.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\System.Threading.Channels.dll
 C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\refs\System.Threading.dll
@@ -1157,3 +1155,9 @@ C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\staticwebassets\msbuild.build
 C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Mvc.props
 C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\demur\Desktop\Design\Mvc\obj\Debug\net6.0\refint\Mvc.dll
+C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\demur\Desktop\Design\Mvc\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
