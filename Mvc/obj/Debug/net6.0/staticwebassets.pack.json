@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\js\\categoryIndex.js"
     },
     {
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\homeindex.js",
+      "PackagePath": "staticwebassets\\js\\homeindex.js"
+    },
+    {
       "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\scripts.js",
       "PackagePath": "staticwebassets\\js\\scripts.js"
     },
