@@ -81,7 +81,6 @@ $(document).ready(function () {
                             }
                         },
                         error: function (err) {
-                            console.log(err);
                             $('#usersTable').removeAttr('style');
                             $('#loader').addClass('d-none');
                             toastr.error(`${err.responseText}`, 'Hata!');
@@ -185,7 +184,7 @@ $(document).ready(function () {
                     }
                 },
                 error: function (err) {
-                    console.log(err);
+                    toastr.error(`${err.responseText}`, 'Hata!');
                 }
             });
         });
@@ -257,8 +256,8 @@ $(document).ready(function () {
                 $.get(url, { userId: id }).done(function (data) {
                     placeHolderDiv.html(data);
                     placeHolderDiv.find('.modal').modal('show');
-                }).fail(function () {
-                    toastr.error("Bir hata oluştu.");
+                }).fail(function (err) {
+                    toastr.error(`${err.responseText}`, 'Hata!');
                 });
             });
         //post edit
@@ -276,8 +275,10 @@ $(document).ready(function () {
                 success: function (data) {
                     const userUpdateAjax = jQuery.parseJSON(data);
                     console.log(userUpdateAjax);
-                    const id = userUpdateAjax.UserDto.User.Id;
-                    const tableRow = $(`[name="${id}"]`)
+                    if (userUpdateAjax.UserDto !==null) {
+                        const id = userUpdateAjax.UserDto.User.Id;
+                        const tableRow = $(`[name="${id}"]`)
+                    }
                     const newForm = $('.modal-body', userUpdateAjax.UserUpdatePartial);
                     placeHolderDiv.find('.modal-body').html(newForm);
                     const isValid = newForm.find('[name="IsValid"]').val() === 'True';
@@ -310,7 +311,7 @@ $(document).ready(function () {
                     }
                 },
                 error: function (err) {
-                    console.log(err);
+                    toastr.error(`${err.responseText}`, 'Hata!');
                 }
             });
         });

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wbeNGKh9otjyGNiqq1uDOn5txdrFQoThinsnG0CsWuI=",
+  "Hash": "VlGNa5cNrTMqP/7yWT6+Y27vmcxWMQ2t+a/dQVpth/I=",
   "Source": "Mvc",
   "BasePath": "_content/Mvc",
   "Mode": "Default",
@@ -204,12 +204,12 @@
       "OriginalItemSpec": "wwwroot\\gif\\login.gif"
     },
     {
-      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\Default\\defaultUser.jpg",
+      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\UserImages\\dc5559a5-1146-4ea4-a4a9-8c11d628c8dc_muratdemirci.jpg",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/Default/defaultUser.jpg",
+      "RelativePath": "img/UserImages/dc5559a5-1146-4ea4-a4a9-8c11d628c8dc_muratdemirci.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -218,7 +218,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Default\\defaultUser.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\UserImages\\dc5559a5-1146-4ea4-a4a9-8c11d628c8dc_muratdemirci.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\UserImages\\defaultUser.jpg",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "img/UserImages/defaultUser.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\UserImages\\defaultUser.jpg"
     },
     {
       "Identity": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\categoryIndex.js",

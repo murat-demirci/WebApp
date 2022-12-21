@@ -44,7 +44,6 @@ namespace Services.Extensions
             serviceCollection.AddScoped<IArticleService, ArticleManager>();
             serviceCollection.AddScoped<ICategoryService, CategoryManager>();
 
-
             return serviceCollection;
             //burdan Program.cs dosyasina git
         }
