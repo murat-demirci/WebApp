@@ -15,7 +15,7 @@ namespace Services.Concrete
             _unitofWork = unitofWork;
         }
 
-        public async Task<IDataResult<int>> Count()
+        public async Task<IDataResult<int>> CountAsync()
         {
             var commentCount = await _unitofWork.Comments.CountAsync();
             //makale sayisi alma
@@ -26,7 +26,7 @@ namespace Services.Concrete
             return new DataResult<int>(ResultStatus.Error, "Beklenmedik bir hata olustu", -1);
         }
 
-        public async Task<IDataResult<int>> CountByIsDeleted()
+        public async Task<IDataResult<int>> CountByNonDeletedAsync()
         {
             var commentCount = await _unitofWork.Comments.CountAsync(c => !c.IsDeleted);
             //makale sayisi alma

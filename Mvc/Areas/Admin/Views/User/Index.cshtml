@@ -4,6 +4,10 @@
     Layout = "_Layout";
     ViewBag.Title = "Kullanicilar Index";
 }
+<ol class="breadcrumb mb-3 mt-2">
+    <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a></li>
+    <li class="breadcrumb-item active"><a asp-area="Admin" asp-controller="User" asp-action="Index">Kullanicilar</a></li>
+</ol>
 @if (Model.resultStatus == ResultStatus.Success)
 {
     <div id="modalPlaceHolder" aria-hidden="true"></div>
@@ -67,5 +71,5 @@
 }
 @section Scripts
 {
-    <script src="~/js/userIndex.js" type="application/javascript"></script>
+    <script src="~/Admin/js/userIndex.js" type="application/javascript"></script>
 }

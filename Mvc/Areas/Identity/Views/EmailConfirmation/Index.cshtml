@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Mvc.Areas.Identity.Models.EmailConfirmViewModel
+@{
     Layout = "_userLoginLayout";
     ViewBag.Title = "E-Posta Dogrulama";
 }
@@ -10,8 +11,44 @@
                 <div class="card-body text-center">
                     <p class="text-center">Lutfen e-posta adresinize gelen dogrulama linkine tiklayiniz</p>
                 </div>
+                <div class="mailText text-center my-2 mb-2">
+                    <p class="email" hidden>@Model.Email</p>
+                    <p class="result mt-3"></p>
+                    <button class="btn btn-outline-light">Tekrar Gonder</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<script>
+    var email = $('.email').text();
+    
+    $('.btn').click(e => {
+        let time = 30;
+        $('.result').text('Mail Tekrar Gonderildi');
+        $('.btn').text(time);
+        $('.btn').attr('disabled', 'true');
+        var intervalId = setInterval(function () {
+            time--;
+            $('.btn').text(time);
+            $('.btn').attr('disabled', 'true');
+            if (time === -1) {
+                $('.btn').removeAttr('disabled');
+                $('.btn').text('Tekrar Gonder');
+                clearInterval(intervalId);
+            }
+            console.log(time);
+        }, 1000);
+        $.ajax({
+            type: "POST",
+            url: "/Identity/EmailConfirmation/SendMail?email="+email,
+            success: function (result) {
+            },
+            Error: function (err) {
+                alert("hata", err);
+            }
+            })
+    });
+</script>
 

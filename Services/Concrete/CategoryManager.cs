@@ -21,7 +21,7 @@ namespace Services.Concrete
             _mapper = mapper;
         }
 
-        public async Task<IDataResult<CategoryDto>> Add(CategoryAddDto categoryAddDto, string createdByName)
+        public async Task<IDataResult<CategoryDto>> AddAsync(CategoryAddDto categoryAddDto, string createdByName)
         {
             //burda el ile yapilacak diger managerlarda outomapper ile yapilacak
             //await _unitofWork.Categories.AddAsync(new Category
@@ -56,7 +56,7 @@ namespace Services.Concrete
             });
         }
 
-        public async Task<IDataResult<int>> Count()
+        public async Task<IDataResult<int>> CountAsync()
         {
             var categoriesCount = await _unitofWork.Categories.CountAsync();
             //kategori sayisi alma
@@ -67,7 +67,7 @@ namespace Services.Concrete
             return new DataResult<int>(ResultStatus.Error, "Beklenmedik bir hata olustu", -1);
         }
 
-        public async Task<IDataResult<int>> CountByIsDeleted()
+        public async Task<IDataResult<int>> CountByNonDeletedAsync()
         {
             var categoriesCount = await _unitofWork.Categories.CountAsync(c => !c.IsDeleted);
             //silinmemis kategori sayisi
@@ -79,7 +79,7 @@ namespace Services.Concrete
             return new DataResult<int>(ResultStatus.Error, "Beklenmedik bir hata olustu", -1);
         }
 
-        public async Task<IResult> Delete(int categoryId)
+        public async Task<IResult> DeleteAsync(int categoryId)
         {
             var category = await _unitofWork.Categories.GetAsync(c => c.ID == categoryId);
             if (category != null)
@@ -91,7 +91,7 @@ namespace Services.Concrete
             return new Result(ResultStatus.Error, Messages.Category.NotFound(false));
         }
 
-        public async Task<IDataResult<CategoryDto>> Get(int categoryId)
+        public async Task<IDataResult<CategoryDto>> GetAsync(int categoryId)
         {
             var category = await _unitofWork.Categories.GetAsync(c => c.ID == categoryId, c => c.Articles);
             if (category != null)
@@ -110,7 +110,7 @@ namespace Services.Concrete
             });
         }
 
-        public async Task<IDataResult<CategoryListDto>> GetAll()
+        public async Task<IDataResult<CategoryListDto>> GetAllAsync()
         {
             var categories = await _unitofWork.Categories.GetAllAsync(null, c => c.Articles);
             if (categories.Count > -1)
@@ -129,7 +129,7 @@ namespace Services.Concrete
             });
         }
 
-        public async Task<IDataResult<CategoryListDto>> GetAllByNonDeleted()
+        public async Task<IDataResult<CategoryListDto>> GetAllByNonDeletedAsync()
         {
             var categories = await _unitofWork.Categories.GetAllAsync(c => !c.IsDeleted, c => c.Articles);
             if (categories.Count > -1)
@@ -148,9 +148,9 @@ namespace Services.Concrete
             });
         }
 
-        public async Task<IDataResult<CategoryListDto>> GetAllByNonDeletedAndActive()
+        public async Task<IDataResult<CategoryListDto>> GetAllByNonDeletedAndActiveAsync()
         {
-            var categories = await _unitofWork.Categories.GetAllAsync(c => c.IsActive && !c.IsDeleted);
+            var categories = await _unitofWork.Categories.GetAllAsync(c => c.IsActive && !c.IsDeleted, c => c.Articles);
             if (categories.Count > -1)
             {
                 return new DataResult<CategoryListDto>(ResultStatus.Success, new CategoryListDto
@@ -167,7 +167,7 @@ namespace Services.Concrete
             });
         }
 
-        public async Task<IDataResult<CategoryUpdateDto>> GetCategoryUpdateDto(int categoryId)
+        public async Task<IDataResult<CategoryUpdateDto>> GetCategoryUpdateDtoAsync(int categoryId)
         {
             var result = await _unitofWork.Categories.AnyAsync(c => c.ID == categoryId);
             if (result)
@@ -179,7 +179,7 @@ namespace Services.Concrete
             return new DataResult<CategoryUpdateDto>(ResultStatus.Error, Messages.Category.NotFound(false), null);
         }
 
-        public async Task<IDataResult<CategoryDto>> Remove(int categoryId, string modifiedByName)
+        public async Task<IDataResult<CategoryDto>> RemoveAsync(int categoryId, string modifiedByName)
         {
             var category = await _unitofWork.Categories.GetAsync(c => c.ID == categoryId);
             if (category != null)
@@ -204,7 +204,7 @@ namespace Services.Concrete
             });
         }
 
-        public async Task<IDataResult<CategoryDto>> Update(CategoryUpdateDto categoryUpdateDto, string modifiedByName)
+        public async Task<IDataResult<CategoryDto>> UpdateAsync(CategoryUpdateDto categoryUpdateDto, string modifiedByName)
         {
             var oldCategory = await _unitofWork.Categories.GetAsync(c => c.ID == categoryUpdateDto.Id);
             //var category = await _unitofWork.Categories.GetAsync(c => c.ID == categoryUpdateDto.Id);

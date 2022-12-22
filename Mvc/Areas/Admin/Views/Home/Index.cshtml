@@ -1,16 +1,17 @@
-﻿@{
+﻿@model Mvc.Areas.Admin.Models.DashboardViewModel
+@{
     Layout = "_Layout";
     ViewBag.Title = "Yonetim Paneli";
 }
 @*<h1 class="mt-4">Dashboard</h1>*@
-<ol class="breadcrumb mb-4 mt-2">
+<ol class="breadcrumb mb-3 mt-2">
     <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a></li>
     <li class="breadcrumb-item active"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Yonetim Panaeli</a></li>
 </ol>
 <div class="row">
     <div class="col-xl-3 col-md-6">
         <div class="card bg-primary text-white mb-4">
-            <div class="card-body">Makaleler (4)</div>
+            <div class="card-body">Makaleler (@Model.ArticlesCount)</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class="small text-white stretched-link" asp-area="Admin" asp-controller="Article" asp-action="Index">Detaylar</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -19,7 +20,7 @@
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card bg-warning text-white mb-4">
-            <div class="card-body">Kategoriler (6)</div>
+            <div class="card-body">Kategoriler (@Model.CategoriesCount)</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class="small text-white stretched-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Detaylar</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -28,7 +29,7 @@
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card bg-success text-white mb-4">
-            <div class="card-body">Kullanicilar (5)</div>
+            <div class="card-body">Kullanicilar (@Model.UsersCount)</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class="small text-white stretched-link" asp-area="Admin" asp-controller="User" asp-action="Index">Detaylar</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -37,7 +38,7 @@
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card bg-danger text-white mb-4">
-            <div class="card-body">Yorumlar (3)</div>
+            <div class="card-body">Yorumlar (@Model.CommentsCount)</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class="small text-white stretched-link" asp-area="Admin" asp-controller="Comment" asp-action="Index">Detaylar</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -100,45 +101,26 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>paris</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>tokyo</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
+                    @foreach (var article in Model.Articles.Articles)
+                    {
+                        <tr>
+                            <td>@article.ID</td>
+                            <td>@article.Title</td>
+                            <td>@article.Category.Name</td>
+                            <td><img src="~/img/@article.ArticleThumbnail" class="my-image-table" /></td>
+                            <td>@article.CreatedDate.ToShortDateString()</td>
+                            <td>@article.ArticleView</td>
+                            <td>@article.ArticleComment</td>
+                            <td>@article.ArticleLike</td>
+                            <td>@(article.IsActive ? "Evet" : "Hayir")</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 @section Scripts{
-    <script src="~/js/homeindex.js" type="application/ecmascript"></script>
+    <script src="~/Admin/js/homeindex.js" type="application/ecmascript"></script>
 
 }

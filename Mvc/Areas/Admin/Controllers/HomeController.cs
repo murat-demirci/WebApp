@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Mvc.Areas.Admin.Models;
+using Services.Abstract;
+using Shared.Utilities.Results.ComplexTypes;
 
 namespace Mvc.Areas.Admin.Controllers
 {
@@ -11,29 +14,42 @@ namespace Mvc.Areas.Admin.Controllers
     [Authorize(Roles = "Admin,Editor")]
     public class HomeController : Controller
     {
-        private readonly IWebHostEnvironment _env;
         private readonly UserManager<User> _userManager;
+        private readonly ICategoryService _cateogryService;
+        private readonly ICommentService _commentService;
+        private readonly IArticleService _articleService;
 
-        public HomeController(UserManager<User> userManager, IWebHostEnvironment env)
+
+        public HomeController(UserManager<User> userManager, ICategoryService cateogryService, ICommentService commentService, IArticleService articleService)
         {
             _userManager = userManager;
-            _env = env;
+            _cateogryService = cateogryService;
+            _commentService = commentService;
+            _articleService = articleService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var wwwroot = _env.WebRootPath;
-            var users = await _userManager.Users.ToListAsync();
-            foreach (var user in users)
+            //tum iceriklerin sayisinin index saytfasina dinamik olarak getirilmesi
+            var categoriesCount = await _cateogryService.CountByNonDeletedAsync();
+            var articlesCount = await _articleService.CountByNonDeletedAsync();
+            var commentCount = await _commentService.CountByNonDeletedAsync();
+            var userCount = await _userManager.Users.CountAsync();
+            var article = await _articleService.GetAllAsync();
+
+            if (categoriesCount.ResultStatus == ResultStatus.Success && articlesCount.ResultStatus == ResultStatus.Success
+                && commentCount.ResultStatus == ResultStatus.Success && userCount > -1 && article.ResultStatus == ResultStatus.Success)
             {
-                var path = Path.Combine($"{wwwroot}/img", user.UserPicture);
-                if (!System.IO.File.Exists(path))
+                return View(new DashboardViewModel
                 {
-                    user.UserPicture = "Default/defaultUser.jpg";
-                    await _userManager.UpdateAsync(user);
-                }
+                    CategoriesCount = categoriesCount.Data,
+                    ArticlesCount = articlesCount.Data,
+                    CommentsCount = commentCount.Data,
+                    UsersCount = userCount,
+                    Articles = article.Data
+                });
             }
-            return View();
+            return NotFound();
         }
     }
 }

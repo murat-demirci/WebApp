@@ -1,32 +1,52 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\assets\\demo\\chart-area-demo.js",
-      "PackagePath": "staticwebassets\\assets\\demo\\chart-area-demo.js"
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\assets\\demo\\chart-area-demo.js",
+      "PackagePath": "staticwebassets\\Admin\\assets\\demo\\chart-area-demo.js"
     },
     {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\assets\\demo\\chart-bar-demo.js",
-      "PackagePath": "staticwebassets\\assets\\demo\\chart-bar-demo.js"
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\assets\\demo\\chart-bar-demo.js",
+      "PackagePath": "staticwebassets\\Admin\\assets\\demo\\chart-bar-demo.js"
     },
     {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\assets\\demo\\chart-pie-demo.js",
-      "PackagePath": "staticwebassets\\assets\\demo\\chart-pie-demo.js"
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\assets\\demo\\chart-pie-demo.js",
+      "PackagePath": "staticwebassets\\Admin\\assets\\demo\\chart-pie-demo.js"
     },
     {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\assets\\demo\\datatables-demo.js",
-      "PackagePath": "staticwebassets\\assets\\demo\\datatables-demo.js"
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\assets\\demo\\datatables-demo.js",
+      "PackagePath": "staticwebassets\\Admin\\assets\\demo\\datatables-demo.js"
     },
     {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\assets\\img\\error-404-monochrome.svg",
-      "PackagePath": "staticwebassets\\assets\\img\\error-404-monochrome.svg"
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\assets\\img\\error-404-monochrome.svg",
+      "PackagePath": "staticwebassets\\Admin\\assets\\img\\error-404-monochrome.svg"
     },
     {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\css\\site.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\css\\styles.css",
-      "PackagePath": "staticwebassets\\css\\styles.css"
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\css\\styles.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\js\\categoryIndex.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\categoryIndex.js"
+    },
+    {
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\js\\homeindex.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\homeindex.js"
+    },
+    {
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\scripts.js"
+    },
+    {
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\js\\site.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\Admin\\js\\userIndex.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\userIndex.js"
     },
     {
       "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\favicon.ico",
@@ -59,26 +79,6 @@
     {
       "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\img\\postImages\\defaultThumbnail.jpg",
       "PackagePath": "staticwebassets\\img\\postImages\\defaultThumbnail.jpg"
-    },
-    {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\categoryIndex.js",
-      "PackagePath": "staticwebassets\\js\\categoryIndex.js"
-    },
-    {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\homeindex.js",
-      "PackagePath": "staticwebassets\\js\\homeindex.js"
-    },
-    {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\scripts.js",
-      "PackagePath": "staticwebassets\\js\\scripts.js"
-    },
-    {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
-    },
-    {
-      "Id": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\wwwroot\\js\\userIndex.js",
-      "PackagePath": "staticwebassets\\js\\userIndex.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",

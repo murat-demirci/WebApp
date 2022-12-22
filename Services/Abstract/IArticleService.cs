@@ -5,16 +5,16 @@ namespace Services.Abstract
 {
     public interface IArticleService
     {
-        Task<IDataResult<ArticleDto>> Get(int articleId);
-        Task<IDataResult<ArticleListDto>> GetAll();
-        Task<IDataResult<ArticleListDto>> GetlAllByNoneDeleted();
-        Task<IDataResult<ArticleListDto>> GetlAllByNoneDeletedAnActive();
-        Task<IDataResult<ArticleListDto>> GetAllByCategory(int categoryId);
-        Task<IResult> Add(ArticleAddDto articleAddDto, string createdName);
-        Task<IResult> Update(ArticleUpdateDto articleUpdateDto, string modifiedName);
-        Task<IResult> Delete(int articleId);
-        Task<IResult> Remove(int articleId, string modifiedName);
-        Task<IDataResult<int>> Count();
-        Task<IDataResult<int>> CountByIsDeleted();
+        Task<IDataResult<ArticleDto>> GetAsync(int articleId);
+        Task<IDataResult<ArticleListDto>> GetAllAsync();
+        Task<IDataResult<ArticleListDto>> GetlAllByNoneDeletedAsync();
+        Task<IDataResult<ArticleListDto>> GetlAllByNoneDeletedAnActiveAsync();
+        Task<IDataResult<ArticleListDto>> GetAllByCategoryAsync(int categoryId);
+        Task<IResult> AddAsync(ArticleAddDto articleAddDto, string createdName);
+        Task<IResult> UpdateAsync(ArticleUpdateDto articleUpdateDto, string modifiedName);
+        Task<IResult> DeleteAsync(int articleId);
+        Task<IResult> RemoveAsync(int articleId, string modifiedName);
+        Task<IDataResult<int>> CountAsync();
+        Task<IDataResult<int>> CountByNonDeletedAsync();
     }
 }

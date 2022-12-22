@@ -50,24 +50,28 @@ $(document).ready(function () {
                             if (categoryListDto.resultStatus === 0) {
                                 let tableBody = '';
                                 $.each(categoryListDto.Categories.$values, function (index, category) {
+                                    let count = 0;
                                     if (category.Note == null || category.Note == "") {
                                         category.Note = "Note yok";
                                     }
-                                    if (category.Articles.$values.length == null || category.Articles.$values.length == undefined) {
-                                        category.Articles.$values.length = 0;
+                                    if (category.Articles == null) {
+                                        count = 0;
+                                    }
+                                    else {
+                                        count = category.Articles.$values.length;
                                     }
                                     tableBody +=
                                         `
                                                 <tr name="${category.ID}">
                                 <td>${category.ID}</td>
                                 <td>${category.Name}</td>
-                                <td>${convertFirstToUpper(category.IsActive.toString())}</td>
+                                <td>${category.IsActive ? "Aktif" : "Aktif Degil"}</td>
                                 <td>${category.Note}</td>
                                 <td>${convertToShortDate(category.CreatedDate)}</td>
                                 <td>${category.CreatedByName}</td>
                                 <td>${convertToShortDate(category.ModifiedDate)}</td>
                                 <td>${category.ModifiedByName}</td>
-                                <td>${category.Articles.$values.length}</td>
+                                <td>${count}</td>
                                 <td style="max-width:200px;min-width:100px;text-align:center;">
                                     <button data-id="${category.ID}" style="width:90px;font-size:12px;" class="btn btn-primary btn-edit"><span class="fas fa-edit"></span> Duzenle</button>
                                     <button style="width:90px;font-size:12px;" data-id="${category.ID}" class="btn-delete btn btn-danger"><span class="fas fa-minus-circle"></span> Kaldir</button>
@@ -164,7 +168,7 @@ $(document).ready(function () {
                         <tr name="${ajaxAddModel.CategoryDto.Category.ID}">
                                                     <td>${ajaxAddModel.CategoryDto.Category.ID}</td>
                                                     <td>${ajaxAddModel.CategoryDto.Category.Name}</td>
-                                                    <td>${convertFirstToUpper(ajaxAddModel.CategoryDto.Category.IsActive.toString())}</td>
+                                                    <td>${ajaxAddModel.CategoryDto.Category.IsActive ? "Aktif" : "Aktif Degil"}</td>
                                                     <td>${ajaxAddModel.CategoryDto.Category.Note}</td>
                                                     <td>${convertToShortDate(ajaxAddModel.CategoryDto.Category.CreatedDate)}</td>
                                                     <td>${ajaxAddModel.CategoryDto.Category.CreatedByName}</td>
@@ -182,7 +186,7 @@ $(document).ready(function () {
                         <tr name="${ajaxAddModel.CategoryDto.Category.ID}">
                                                     <td>${ajaxAddModel.CategoryDto.Category.ID}</td>
                                                     <td>${ajaxAddModel.CategoryDto.Category.Name}</td>
-                                                    <td>${convertFirstToUpper(ajaxAddModel.CategoryDto.Category.IsActive.toString())}</td>
+                                                    <td>${ajaxAddModel.CategoryDto.Category.IsActive ? "Aktif" : "Aktif Degil"}</td>
                                                     <td>${ajaxAddModel.CategoryDto.Category.Note}</td>
                                                     <td>${convertToShortDate(ajaxAddModel.CategoryDto.Category.CreatedDate)}</td>
                                                     <td>${ajaxAddModel.CategoryDto.Category.CreatedByName}</td>
@@ -313,7 +317,7 @@ $(document).ready(function () {
                         <tr name="${categoryUpdateAjax.CategoryDto.Category.ID}">
                                                     <td>${categoryUpdateAjax.CategoryDto.Category.ID}</td>
                                                     <td>${categoryUpdateAjax.CategoryDto.Category.Name}</td>
-                                                    <td>${convertFirstToUpper(categoryUpdateAjax.CategoryDto.Category.IsActive.toString())}</td>
+                                                    <td>${categoryUpdateAjax.CategoryDto.Category.IsActive ? "Aktif" : "Aktif Degil"}</td>
                                                     <td>${categoryUpdateAjax.CategoryDto.Category.Note}</td>
                                                     <td>${convertToShortDate(categoryUpdateAjax.CategoryDto.Category.CreatedDate)}</td>
                                                     <td>${categoryUpdateAjax.CategoryDto.Category.CreatedByName}</td>
@@ -331,7 +335,7 @@ $(document).ready(function () {
                         <tr name="${categoryUpdateAjax.CategoryDto.Category.ID}">
                                                     <td>${categoryUpdateAjax.CategoryDto.Category.ID}</td>
                                                     <td>${categoryUpdateAjax.CategoryDto.Category.Name}</td>
-                                                    <td>${convertFirstToUpper(categoryUpdateAjax.CategoryDto.Category.IsActive.toString())}</td>
+                                                    <td>${categoryUpdateAjax.CategoryDto.Category.IsActive ? "Aktif" : "Aktif Degil"}</td>
                                                     <td>${categoryUpdateAjax.CategoryDto.Category.Note}</td>
                                                     <td>${convertToShortDate(categoryUpdateAjax.CategoryDto.Category.CreatedDate)}</td>
                                                     <td>${categoryUpdateAjax.CategoryDto.Category.CreatedByName}</td>

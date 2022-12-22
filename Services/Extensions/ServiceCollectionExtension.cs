@@ -42,6 +42,7 @@ namespace Services.Extensions
             //tum islemler bittikten sonra (site ile baglanti kesildiignde) scope da kendini kapatir
             serviceCollection.AddScoped<IArticleService, ArticleManager>();
             serviceCollection.AddScoped<ICategoryService, CategoryManager>();
+            serviceCollection.AddScoped<ICommentService, CommentManager>();
 
             return serviceCollection;
             //burdan Program.cs dosyasina git

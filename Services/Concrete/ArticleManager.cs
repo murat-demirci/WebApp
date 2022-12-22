@@ -22,7 +22,7 @@ namespace Services.Concrete
         }
 
 
-        public async Task<IResult> Add(ArticleAddDto articleAddDto, string createdName)
+        public async Task<IResult> AddAsync(ArticleAddDto articleAddDto, string createdName)
         {
             //map isleminden sonra hangi tip donecegi verilir (Map<>)
             var article = _mapper.Map<Article>(articleAddDto);
@@ -34,7 +34,7 @@ namespace Services.Concrete
             return new Result(ResultStatus.Success, Messages.Article.Add(article.Title));
         }
 
-        public async Task<IDataResult<int>> Count()
+        public async Task<IDataResult<int>> CountAsync()
         {
             var articlesCount = await _unitofWork.Articles.CountAsync();
             //makale sayisi alma
@@ -45,7 +45,7 @@ namespace Services.Concrete
             return new DataResult<int>(ResultStatus.Error, "Beklenmedik bir hata olustu", -1);
         }
 
-        public async Task<IDataResult<int>> CountByIsDeleted()
+        public async Task<IDataResult<int>> CountByNonDeletedAsync()
         {
             var articlesCount = await _unitofWork.Articles.CountAsync(a => !a.IsDeleted);
             //makale sayisi alma
@@ -56,7 +56,7 @@ namespace Services.Concrete
             return new DataResult<int>(ResultStatus.Error, "Beklenmedik bir hata olustu", -1);
         }
 
-        public async Task<IResult> Delete(int articleId)
+        public async Task<IResult> DeleteAsync(int articleId)
         {
             var result = await _unitofWork.Articles.AnyAsync(a => a.ID == articleId);
             if (result)
@@ -69,7 +69,7 @@ namespace Services.Concrete
             return new Result(ResultStatus.Error, Messages.Article.NotFound(false));
         }
 
-        public async Task<IDataResult<ArticleDto>> Get(int articleId)
+        public async Task<IDataResult<ArticleDto>> GetAsync(int articleId)
         {
             var article = await _unitofWork.Articles.GetAsync(a => a.ID == articleId, a => a.User, a => a.Category);
             if (article != null)
@@ -88,7 +88,7 @@ namespace Services.Concrete
             });
         }
 
-        public async Task<IDataResult<ArticleListDto>> GetAll()
+        public async Task<IDataResult<ArticleListDto>> GetAllAsync()
         {
             var articles = await _unitofWork.Articles.GetAllAsync(null, a => a.User, a => a.Category);
             if (articles.Count > -1)
@@ -107,7 +107,7 @@ namespace Services.Concrete
             });
         }
 
-        public async Task<IDataResult<ArticleListDto>> GetAllByCategory(int categoryId)
+        public async Task<IDataResult<ArticleListDto>> GetAllByCategoryAsync(int categoryId)
         {
             var result = await _unitofWork.Categories.AnyAsync(c => c.ID == categoryId);
             if (result)
@@ -137,7 +137,7 @@ namespace Services.Concrete
 
         }
 
-        public async Task<IDataResult<ArticleListDto>> GetlAllByNoneDeleted()
+        public async Task<IDataResult<ArticleListDto>> GetlAllByNoneDeletedAsync()
         {
             var articles = await _unitofWork.Articles.GetAllAsync(a => !a.IsDeleted, a => a.User, a => a.Category);
             if (articles.Count > -1)
@@ -156,7 +156,7 @@ namespace Services.Concrete
             });
         }
 
-        public async Task<IDataResult<ArticleListDto>> GetlAllByNoneDeletedAnActive()
+        public async Task<IDataResult<ArticleListDto>> GetlAllByNoneDeletedAnActiveAsync()
         {
             var articles = await _unitofWork.Articles.GetAllAsync(a => !a.IsDeleted && !a.IsDeleted, a => a.User, a => a.Category);
             if (articles.Count > -1)
@@ -175,7 +175,7 @@ namespace Services.Concrete
             });
         }
 
-        public async Task<IResult> Remove(int articleId, string modifiedName)
+        public async Task<IResult> RemoveAsync(int articleId, string modifiedName)
         {
             var result = await _unitofWork.Articles.AnyAsync(a => a.ID == articleId);
             if (result)
@@ -191,7 +191,7 @@ namespace Services.Concrete
             return new Result(ResultStatus.Error, Messages.Article.NotFound(false));
         }
 
-        public async Task<IResult> Update(ArticleUpdateDto articleUpdateDto, string modifiedName)
+        public async Task<IResult> UpdateAsync(ArticleUpdateDto articleUpdateDto, string modifiedName)
         {
             //map isleminden sonra hangi tip donecegi verilir (Map<>)
             var article = _mapper.Map<Article>(articleUpdateDto);
