@@ -14,5 +14,7 @@ namespace Services.Abstract
         Task<IResult> Update(ArticleUpdateDto articleUpdateDto, string modifiedName);
         Task<IResult> Delete(int articleId);
         Task<IResult> Remove(int articleId, string modifiedName);
+        Task<IDataResult<int>> Count();
+        Task<IDataResult<int>> CountByIsDeleted();
     }
 }

@@ -32,7 +32,8 @@ namespace Shared.Data.Abstract
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
         //any bir kullanici var mi? ayni makale varmi ? gibi sorgu yapmamizi saglar
         //var result = _userRepository.AnyAsync(u=>u.FirstName=="murat) murat isimli kullanici var mi?
-        Task<int> CountAsync(Expression<Func<T, bool>> predicate);
+        Task<int> CountAsync(Expression<Func<T, bool>> predicate = null);
+
 
 
     }

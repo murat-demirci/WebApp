@@ -56,6 +56,29 @@ namespace Services.Concrete
             });
         }
 
+        public async Task<IDataResult<int>> Count()
+        {
+            var categoriesCount = await _unitofWork.Categories.CountAsync();
+            //kategori sayisi alma
+            if (categoriesCount > -1)
+            {
+                return new DataResult<int>(ResultStatus.Success, categoriesCount);
+            }
+            return new DataResult<int>(ResultStatus.Error, "Beklenmedik bir hata olustu", -1);
+        }
+
+        public async Task<IDataResult<int>> CountByIsDeleted()
+        {
+            var categoriesCount = await _unitofWork.Categories.CountAsync(c => !c.IsDeleted);
+            //silinmemis kategori sayisi
+            //kategori sayisi alma
+            if (categoriesCount > -1)
+            {
+                return new DataResult<int>(ResultStatus.Success, categoriesCount);
+            }
+            return new DataResult<int>(ResultStatus.Error, "Beklenmedik bir hata olustu", -1);
+        }
+
         public async Task<IResult> Delete(int categoryId)
         {
             var category = await _unitofWork.Categories.GetAsync(c => c.ID == categoryId);

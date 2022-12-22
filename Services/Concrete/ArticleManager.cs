@@ -34,6 +34,28 @@ namespace Services.Concrete
             return new Result(ResultStatus.Success, Messages.Article.Add(article.Title));
         }
 
+        public async Task<IDataResult<int>> Count()
+        {
+            var articlesCount = await _unitofWork.Articles.CountAsync();
+            //makale sayisi alma
+            if (articlesCount > -1)
+            {
+                return new DataResult<int>(ResultStatus.Success, articlesCount);
+            }
+            return new DataResult<int>(ResultStatus.Error, "Beklenmedik bir hata olustu", -1);
+        }
+
+        public async Task<IDataResult<int>> CountByIsDeleted()
+        {
+            var articlesCount = await _unitofWork.Articles.CountAsync(a => !a.IsDeleted);
+            //makale sayisi alma
+            if (articlesCount > -1)
+            {
+                return new DataResult<int>(ResultStatus.Success, articlesCount);
+            }
+            return new DataResult<int>(ResultStatus.Error, "Beklenmedik bir hata olustu", -1);
+        }
+
         public async Task<IResult> Delete(int articleId)
         {
             var result = await _unitofWork.Articles.AnyAsync(a => a.ID == articleId);

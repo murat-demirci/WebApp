@@ -28,5 +28,7 @@ namespace Services.Abstract
         Task<IDataResult<CategoryDto>> Remove(int categoryId, string modifiedByName);//gecici silme
         //remove islemini idataresult yap. 
         Task<IResult> Delete(int categoryId);//tam silme
+        Task<IDataResult<int>> Count();
+        Task<IDataResult<int>> CountByIsDeleted();
     }
 }
