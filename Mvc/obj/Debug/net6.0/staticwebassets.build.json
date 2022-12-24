@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hKF7Uoa9WTwcIY495qZFqW4dGqT8+ng1Bb8bhvplODU=",
+  "Hash": "hJIL84ZxraEL8rfQtSYKS31WFmAr1+4+zzvsyDox9lY=",
   "Source": "Mvc",
   "BasePath": "_content/Mvc",
   "Mode": "Default",
@@ -321,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\gif\\login.gif"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "img/postImages/08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\postImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\defaultThumbnail.jpg",

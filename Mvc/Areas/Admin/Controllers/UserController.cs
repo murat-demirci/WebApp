@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Entities.ComplexTypes;
 using Entities.Concrete;
 using Entities.Dtos;
 using Microsoft.AspNetCore.Authorization;
@@ -76,7 +77,7 @@ namespace Mvc.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var uploadedResult = await _imageHelper.UploadUserImage(userAddDto.UserName, userAddDto.UserPictureFile);
+                var uploadedResult = await _imageHelper.Upload(userAddDto.UserName, userAddDto.UserPictureFile, PictureType.User);
                 userAddDto.UserPicture = uploadedResult.ResultStatus == ResultStatus.Success
                     ? uploadedResult.Data.FullName
                     : "UserImages/defaultUser.jpg";
@@ -180,7 +181,7 @@ namespace Mvc.Areas.Admin.Controllers
                 var oldPicture = oldUser.UserPicture;
                 if (userUpdateDto.UserPictureFile != null)
                 {
-                    var uploadedResult = await _imageHelper.UploadUserImage(userUpdateDto.UserName, userUpdateDto.UserPictureFile);
+                    var uploadedResult = await _imageHelper.Upload(userUpdateDto.UserName, userUpdateDto.UserPictureFile, PictureType.User);
                     userUpdateDto.UserPicture = uploadedResult.ResultStatus == ResultStatus.Success
                         ? uploadedResult.Data.FullName
                         : "UserImages/defaultUser.jpg";
@@ -256,7 +257,7 @@ namespace Mvc.Areas.Admin.Controllers
                 var oldPicture = oldUser.UserPicture;
                 if (userUpdateDto.UserPictureFile != null)
                 {
-                    var uploadedResult = await _imageHelper.UploadUserImage(userUpdateDto.UserName, userUpdateDto.UserPictureFile);
+                    var uploadedResult = await _imageHelper.Upload(userUpdateDto.UserName, userUpdateDto.UserPictureFile, PictureType.User);
                     userUpdateDto.UserPicture = uploadedResult.ResultStatus == ResultStatus.Success
                         ? uploadedResult.Data.FullName
                         : "UserImages/defaultUser.jpg";

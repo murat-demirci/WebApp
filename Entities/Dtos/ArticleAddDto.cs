@@ -42,7 +42,5 @@ namespace Entities.Dtos
         [DisplayName("Aktif")]
         [Required(ErrorMessage = "Lutfen bir {0} durumu seciniz")]
         public bool isActive { get; set; }
-
-
     }
 }
