@@ -9,125 +9,133 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Mvc
 build_property.RootNamespace = Mvc
-build_property.ProjectDir = C:\Users\demur\Desktop\Design\Mvc\
+build_property.ProjectDir = C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\demur\Desktop\Design\Mvc
+build_property.MSBuildProjectDirectory = C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/Category/Index.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Article/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXJ0aWNsZVxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Article/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXJ0aWNsZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/Category/_CategoryAddPartial.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Category/_CategoryAddPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcX0NhdGVnb3J5QWRkUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/Category/_CategoryUpdatePartial.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Category/_CategoryUpdatePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcX0NhdGVnb3J5VXBkYXRlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/Shared/Components/AdminMenu/Default.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Shared/Components/AdminMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRtaW5NZW51XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/Shared/Components/TopBar/Default.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Shared/Components/TopBar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcVG9wQmFyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/Shared/_Layout.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/Shared/_layoutCssPartial.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Shared/_layoutCssPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9sYXlvdXRDc3NQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/Shared/_layoutJsPartial.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/Shared/_layoutJsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9sYXlvdXRKc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/User/ChangeDetail.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/User/ChangeDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxDaGFuZ2VEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/User/Index.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/User/PasswordChange.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/User/PasswordChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxQYXNzd29yZENoYW5nZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/User/_UserAddPartial.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/User/_UserAddPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxfVXNlckFkZFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/User/_UserUpdatePartial.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/User/_UserUpdatePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxfVXNlclVwZGF0ZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/Views/AccessDenied/403.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Identity/Views/AccessDenied/403.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjZXNzRGVuaWVkXDQwMy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/Views/EmailConfirmation/Index.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Identity/Views/EmailConfirmation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcRW1haWxDb25maXJtYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/Views/Email/ConfirmEmail.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Identity/Views/Email/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcRW1haWxcQ29uZmlybUVtYWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/Views/Email/Error.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Identity/Views/Email/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcRW1haWxcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/Views/Login/Index.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Identity/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/Views/Shared/_userLoginLayout.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Identity/Views/Shared/_userLoginLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcU2hhcmVkXF91c2VyTG9naW5MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/Views/Signup/Index.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Identity/Views/Signup/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcU2lnbnVwXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/_ViewImports.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Identity/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Areas/Identity/_ViewStart.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Areas/Identity/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Views/Home/Index.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Views/Shared/_Layout.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Views/_ViewImports.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/demur/Desktop/Design/Mvc/Views/_ViewStart.cshtml]
+[C:/Users/Hp/Desktop/WebApp-FirstPartCompleted/Mvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

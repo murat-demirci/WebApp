@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\demur\\Desktop\\Design\\Data\\Data.csproj": {}
+    "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\demur\\Desktop\\Design\\Data\\Data.csproj": {
+    "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\demur\\Desktop\\Design\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\demur\\Desktop\\Design\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\demur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\demur\\Desktop\\Design\\Data\\obj\\",
+        "projectPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\demur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\demur\\Desktop\\Design\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\demur\\Desktop\\Design\\Entities\\Entities.csproj"
+              "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\demur\\Desktop\\Design\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\demur\\Desktop\\Design\\Shared\\Shared.csproj"
+              "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Shared\\Shared.csproj"
               }
             }
           }
@@ -86,21 +86,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\demur\\Desktop\\Design\\Entities\\Entities.csproj": {
+    "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\demur\\Desktop\\Design\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\demur\\Desktop\\Design\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\demur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\demur\\Desktop\\Design\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\demur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -114,8 +114,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\demur\\Desktop\\Design\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\demur\\Desktop\\Design\\Shared\\Shared.csproj"
+              "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Shared\\Shared.csproj"
               }
             }
           }
@@ -155,21 +155,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\demur\\Desktop\\Design\\Shared\\Shared.csproj": {
+    "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\demur\\Desktop\\Design\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\demur\\Desktop\\Design\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\demur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\demur\\Desktop\\Design\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\demur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -220,7 +220,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
