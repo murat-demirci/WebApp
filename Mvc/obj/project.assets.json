@@ -12838,19 +12838,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\demur\\.nuget\\packages\\": {}
+    "C:\\Users\\Hp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\Mvc.csproj",
+      "projectUniqueName": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\Mvc.csproj",
       "projectName": "Mvc",
-      "projectPath": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\Mvc.csproj",
-      "packagesPath": "C:\\Users\\demur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\demur\\Desktop\\Design\\Mvc\\obj\\",
+      "projectPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\Mvc.csproj",
+      "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\demur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12864,8 +12864,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\demur\\Desktop\\Design\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\demur\\Desktop\\Design\\Services\\Services.csproj"
+            "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Services\\Services.csproj"
             }
           }
         }
@@ -12926,7 +12926,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

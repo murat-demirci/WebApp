@@ -8,6 +8,8 @@
     <meta name="author" content="" />
     <title>@ViewBag.Title - Blog</title>
     @await Html.PartialAsync("_layoutCssPartial")
+    @await RenderSectionAsync("Styles",false);
+    <link href="~/Admin/css/site.css" rel="stylesheet" />
 </head>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
