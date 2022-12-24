@@ -1,4 +1,5 @@
-﻿using Entities.Dtos;
+﻿using Entities.ComplexTypes;
+using Entities.Dtos;
 using Mvc.Helpers.Abstract;
 using Shared.Utilities.Extensions;
 using Shared.Utilities.Results.Abstract;
@@ -14,6 +15,8 @@ namespace Mvc.Helpers.Concrete
         //farkli isletim sistemlerinde dosya yolu ayni kalir
         private readonly string _wwwroot;
         private readonly string imgFolder = "img";
+        private const string userImagesFolder = "UserImages";
+        private const string postImagesFolder = "PostImages";
 
         public ImageHelper(IWebHostEnvironment env)
         {
@@ -48,8 +51,11 @@ namespace Mvc.Helpers.Concrete
             }
         }
 
-        public async Task<IDataResult<UploadedImageDto>> UploadUserImage(string userName, IFormFile pictureFile, string folderName = "UserImages")
+        public async Task<IDataResult<UploadedImageDto>> Upload(string name, IFormFile pictureFile, PictureType pictureType, string folderName = null)
         {
+            //folderName null gelirse pictureType'a bakılarak folderName'e atama yapılır
+            folderName ??= pictureType == PictureType.User ? userImagesFolder : postImagesFolder;
+
             if (!Directory.Exists($"{_wwwroot}/{imgFolder}/{folderName}"))
             {
                 //klasor var mi yok mu kontrolu
@@ -59,25 +65,28 @@ namespace Mvc.Helpers.Concrete
             //resim dosyasinin sonundaki eklentiyi almaz sadece dosya adi gelir\ ornek amacli yazildi
             string fileExtension = Path.GetExtension(pictureFile.FileName);
             //dosya sonundaki format alinir
-            string newFileName = $"{ImageExtensions.CreateGuid()}_{userName}{fileExtension}";
+            string newFileName = $"{ImageExtensions.CreateGuid()}_{name}{fileExtension}";
             //dosya adi olusturulud
             var path = Path.Combine($"{_wwwroot}/{imgFolder}/{folderName}", newFileName);
             //foldername kullanici resimlerini kullanici klasorunde saklamamizi saglayacak
             await using (var stream = new FileStream(path, FileMode.Create))
             {
                 await pictureFile.CopyToAsync(stream);
-                //resim img klasorune aktarilir
-                return new DataResult<UploadedImageDto>
-                    (ResultStatus.Success, $"{userName} adli kullanicinin resmi basariyla yuklenmistir", new UploadedImageDto
-                    {
-                        FullName = $"{folderName}/{newFileName}",
-                        OldName = oldFileName,
-                        Extension = fileExtension,
-                        FolderName = folderName,
-                        Path = path,
-                        Size = pictureFile.Length
-                    });
             }
-        }
+            //resim img klasorune aktarilir
+            string message = pictureType == PictureType.User
+                ? $"{name} adli kullanicinin resmi basariyla yuklenmistir"
+                : $"{name} adli makalenin resmi basariyla yuklenmistir";
+            return new DataResult<UploadedImageDto>
+                (ResultStatus.Success, message, new UploadedImageDto
+                {
+                    FullName = $"{folderName}/{newFileName}",
+                    OldName = oldFileName,
+                    Extension = fileExtension,
+                    FolderName = folderName,
+                    Path = path,
+                    Size = pictureFile.Length
+                });
+            }
     }
 }

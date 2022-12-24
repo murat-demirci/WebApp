@@ -197,7 +197,7 @@ namespace Services.Concrete
             var article = _mapper.Map<Article>(articleUpdateDto);
             article.ModifiedByName = modifiedName;
             article.UserId = 1;
-            await _unitofWork.Articles.AddAsync(article);
+            await _unitofWork.Articles.UpdateAsync(article);
             await _unitofWork.SaveAsync();
             return new Result(ResultStatus.Success, Messages.Article.Update(article.Title));
         }

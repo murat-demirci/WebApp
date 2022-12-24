@@ -85,6 +85,10 @@
       "PackagePath": "staticwebassets\\img\\UserImages\\defaultUser.jpg"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png",
+      "PackagePath": "staticwebassets\\img\\postImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\defaultThumbnail.jpg",
       "PackagePath": "staticwebassets\\img\\postImages\\defaultThumbnail.jpg"
     },

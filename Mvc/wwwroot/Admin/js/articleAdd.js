@@ -77,8 +77,10 @@
         showMonthAfterYear: false,
         yearSuffix: "",
         duration: 1000,
-        minDate: 0,
-        maxDate: +3,
+        showAnim: "blind",
+        showOptions: {direction: "down"},
+        minDate: 0, //bugünden başlayarak seçmeye başlar
+        maxDate: +3, //en fazla 3 gün sonrasını seçebilir
         });
     //jquery ui - datepicker
 })
