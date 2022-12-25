@@ -21,10 +21,10 @@ namespace Mvc.Areas.Admin.Models
         public string Content { get; set; }
 
         [DisplayName("Küçük Resim")]
-        public string? Thumbnail { get; set; }
+        public string ArticleThumbnail { get; set; }
 
         [DisplayName("Küçük Resim Ekle")]
-        public IFormFile ThumbnailFile { get; set; }
+        public IFormFile? ArticleThumbnailFile { get; set; }
 
         [DisplayName("Tarih")]
         [Required(ErrorMessage = "{0} alanı boş geçilmemelidir.")]

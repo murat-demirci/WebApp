@@ -52,7 +52,7 @@ namespace Mvc.Areas.Admin.Controllers
             {
                 var articleAddDto = Mapper.Map<ArticleAddDto>(articleAddViewModel);
                 var imageResult = await ImageHelper.Upload(articleAddViewModel.Title,
-                    articleAddViewModel.ThumbnailFile, PictureType.Post);
+                    articleAddViewModel.ArticleThumbnailFile, PictureType.Post);
                 articleAddDto.ArticleThumbnail = imageResult.Data.FullName;
                 var result = await _articleService.AddAsync(articleAddDto, LoggedInUser.UserName, LoggedInUser.Id);
                 if (result.ResultStatus == ResultStatus.Success)
@@ -94,15 +94,15 @@ namespace Mvc.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 bool isNewThumbnailUploaded = false;
-                var oldThumbnail = articleUpdateViewModel.Thumbnail;
-                if (articleUpdateViewModel.ThumbnailFile != null)
+                var oldThumbnail = articleUpdateViewModel.ArticleThumbnail;
+                if (articleUpdateViewModel.ArticleThumbnailFile != null)
                 {
                     var uploadedImageResult = await ImageHelper.Upload(articleUpdateViewModel.Title,
-                        articleUpdateViewModel.ThumbnailFile, PictureType.Post);
-                    articleUpdateViewModel.Thumbnail = uploadedImageResult.ResultStatus == ResultStatus.Success
+                        articleUpdateViewModel.ArticleThumbnailFile, PictureType.Post);
+                    articleUpdateViewModel.ArticleThumbnail = uploadedImageResult.ResultStatus == ResultStatus.Success
                         ? uploadedImageResult.Data.FullName
-                        : "postImages/defaultThumbnail.jpg";
-                    if (oldThumbnail != "postImages/defaultThumbnail.jpg")
+                        : "PostImages/defaultThumbnail.jpg";
+                    if (oldThumbnail != "PostImages/defaultThumbnail.jpg")
                     {
                         isNewThumbnailUploaded = true;
                     }

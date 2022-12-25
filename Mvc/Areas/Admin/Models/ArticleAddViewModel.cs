@@ -19,7 +19,7 @@ namespace Mvc.Areas.Admin.Models
 
         [DisplayName("Kücük Resim")]
         [Required(ErrorMessage = "{0} alanı boş geçilmemelidir.")]
-        public IFormFile ThumbnailFile { get; set; }
+        public IFormFile ArticleThumbnailFile { get; set; }
 
         [DisplayName("Tarih")]
         [Required(ErrorMessage = "{0} alanı boş geçilmemelidir.")]

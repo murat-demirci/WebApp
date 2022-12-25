@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KifZJ/ZzUaALpoq48wnE91LbH8lr1b7iMLnLwUiQW5E=",
+  "Hash": "YthFk4QwdG8FBq7TQmqBsk2gOXUCvppVsvWcR96UDDk=",
   "Source": "Mvc",
   "BasePath": "_content/Mvc",
   "Mode": "Default",
@@ -323,12 +323,12 @@
       "OriginalItemSpec": "wwwroot\\gif\\login.gif"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png",
+      "RelativePath": "img/PostImages/0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -337,15 +337,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png",
+      "RelativePath": "img/PostImages/0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -354,15 +354,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png",
+      "RelativePath": "img/PostImages/08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -371,15 +371,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png",
+      "RelativePath": "img/PostImages/1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -388,15 +388,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png",
+      "RelativePath": "img/PostImages/3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -405,15 +405,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png",
+      "RelativePath": "img/PostImages/3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -422,15 +422,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png",
+      "RelativePath": "img/PostImages/518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -439,15 +439,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png",
+      "RelativePath": "img/PostImages/5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -456,15 +456,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png",
+      "RelativePath": "img/PostImages/7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -473,15 +473,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\defaultThumbnail.jpg",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\defaultThumbnail.jpg",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/defaultThumbnail.jpg",
+      "RelativePath": "img/PostImages/defaultThumbnail.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -490,15 +490,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\defaultThumbnail.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\defaultThumbnail.jpg"
     },
     {
-      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png",
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png",
       "SourceId": "Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
       "BasePath": "_content/Mvc",
-      "RelativePath": "img/postImages/f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png",
+      "RelativePath": "img/PostImages/f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -507,7 +507,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\postImages\\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png"
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\6bbebd5e-5187-4b4e-91dc-0b9abd2f3c08_muratdemirci21.jpg",
@@ -525,6 +525,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\UserImages\\6bbebd5e-5187-4b4e-91dc-0b9abd2f3c08_muratdemirci21.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\923b19ee-f38d-4857-b9bc-bb4100a1dada_kairaa81.jpg",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "img/UserImages/923b19ee-f38d-4857-b9bc-bb4100a1dada_kairaa81.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\UserImages\\923b19ee-f38d-4857-b9bc-bb4100a1dada_kairaa81.jpg"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\dc5559a5-1146-4ea4-a4a9-8c11d628c8dc_muratdemirci.jpg",
@@ -559,6 +576,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\UserImages\\defaultUser.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\fa72b231-7dc8-43e2-bf9d-23bb9135b2d7_kairaa8.png",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "img/UserImages/fa72b231-7dc8-43e2-bf9d-23bb9135b2d7_kairaa8.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\UserImages\\fa72b231-7dc8-43e2-bf9d-23bb9135b2d7_kairaa8.png"
     }
   ]
 }

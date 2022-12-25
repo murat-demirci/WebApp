@@ -46,15 +46,15 @@
                         <span asp-validation-for="Date" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="thumbnail" asp-for="Thumbnail"></label>
-                        <input type="hidden" id="thumbnail" class="form-control-file" asp-for="Thumbnail" />
-                        <img class="my-image" src="~/img/@Model.Thumbnail" alt="@Model.Title" />
-                        <span asp-validation-for="Thumbnail" class="text-danger"></span>
+                        <label for="thumbnail" asp-for="ArticleThumbnail"></label>
+                        <input type="hidden" id="thumbnail" class="form-control-file" asp-for="ArticleThumbnail" />
+                        <img class="my-image" src="~/img/@Model.ArticleThumbnail" alt="@Model.Title" />
+                        <span asp-validation-for="ArticleThumbnail" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="thumbnailUpload" asp-for="ThumbnailFile"></label>
-                        <input type="file" id="thumbnailUpload" accept="image/*" class="form-control-file" asp-for="ThumbnailFile" />
-                        <span asp-validation-for="ThumbnailFile" class="text-danger"></span>
+                        <label for="thumbnailUpload" asp-for="ArticleThumbnailFile"></label>
+                        <input type="file" id="thumbnailUpload" accept="image/*" class="form-control-file" asp-for="ArticleThumbnailFile" />
+                        <span asp-validation-for="ArticleThumbnailFile" class="text-danger"></span>
                     </div>
                     <div class="form-check">
                         <input type="checkbox" id="isActive" class="form-check-input" asp-for="IsActive" />
