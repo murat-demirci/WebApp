@@ -18,19 +18,13 @@ namespace Mvc.Areas.Admin.Controllers
     [Area("Admin")]
 
     //kullanici bazli yetkilendirme
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private readonly SignInManager<User> _signInManager;
-        private readonly UserManager<User> _userManager;
-        private readonly IMapper _mapper;
-        private readonly IImageHelper _imageHelper;
 
-        public UserController(UserManager<User> userManager, IMapper mapper, SignInManager<User> signInManager, IImageHelper imageHelper)
+        public UserController(UserManager<User> userManager, IMapper mapper, SignInManager<User> signInManager, IImageHelper imageHelper) : base(userManager, mapper, imageHelper)
         {
-            _userManager = userManager;
-            _mapper = mapper;
             _signInManager = signInManager;
-            _imageHelper = imageHelper;
         }
 
         //authorize area kismina eklenirse sonsuz dongu olusur
@@ -38,7 +32,7 @@ namespace Mvc.Areas.Admin.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
-            var users = await _userManager.Users.ToListAsync();
+            var users = await UserManager.Users.ToListAsync();
             return View(new UserListDto
             {
                 Users = users,
@@ -50,7 +44,7 @@ namespace Mvc.Areas.Admin.Controllers
         [HttpGet]
         public async Task<JsonResult> GetAllUsers()
         {
-            var users = await _userManager.Users.ToListAsync();
+            var users = await UserManager.Users.ToListAsync();
             var userListDto = JsonSerializer.Serialize(new UserListDto
             {
                 Users = users,
@@ -77,14 +71,14 @@ namespace Mvc.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var uploadedResult = await _imageHelper.Upload(userAddDto.UserName, userAddDto.UserPictureFile, PictureType.User);
+                var uploadedResult = await ImageHelper.Upload(userAddDto.UserName, userAddDto.UserPictureFile, PictureType.User);
                 userAddDto.UserPicture = uploadedResult.ResultStatus == ResultStatus.Success
                     ? uploadedResult.Data.FullName
                     : "UserImages/defaultUser.jpg";
                 //Imagehelper ile resim adi atama
-                var user = _mapper.Map<User>(userAddDto);
+                var user = Mapper.Map<User>(userAddDto);
                 user.EmailConfirmed = true;
-                var result = await _userManager.CreateAsync(user, userAddDto.Password);
+                var result = await UserManager.CreateAsync(user, userAddDto.Password);
                 //kullanici ekleme
                 if (result.Succeeded)//identityresult doner
                 {
@@ -127,8 +121,8 @@ namespace Mvc.Areas.Admin.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Remove(int userId)
         {
-            var user = await _userManager.FindByIdAsync(userId.ToString());
-            var result = await _userManager.DeleteAsync(user);
+            var user = await UserManager.FindByIdAsync(userId.ToString());
+            var result = await UserManager.DeleteAsync(user);
             if (result.Succeeded)
             {
                 var deletedUser = JsonSerializer.Serialize(new UserDto
@@ -162,9 +156,9 @@ namespace Mvc.Areas.Admin.Controllers
         public async Task<PartialViewResult> Update(int userId)
         //partialviewresult da kullanilabilir (IActionResult yerine)
         {
-            var user = await _userManager.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            var user = await UserManager.Users.FirstOrDefaultAsync(u => u.Id == userId);
             //findbyidasync yerine firstordefaultasync de kullanilabilir
-            var userUpdateDto = _mapper.Map<UserUpdateDto>(user);
+            var userUpdateDto = Mapper.Map<UserUpdateDto>(user);
             return PartialView("_UserUpdatePartial", userUpdateDto);
             //userupdatepartial viewi ve userupdatedto yu geri don
         }
@@ -177,11 +171,11 @@ namespace Mvc.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 bool isPictureUploaded = false;
-                var oldUser = await _userManager.FindByIdAsync(userUpdateDto.Id.ToString());
+                var oldUser = await UserManager.FindByIdAsync(userUpdateDto.Id.ToString());
                 var oldPicture = oldUser.UserPicture;
                 if (userUpdateDto.UserPictureFile != null)
                 {
-                    var uploadedResult = await _imageHelper.Upload(userUpdateDto.UserName, userUpdateDto.UserPictureFile, PictureType.User);
+                    var uploadedResult = await ImageHelper.Upload(userUpdateDto.UserName, userUpdateDto.UserPictureFile, PictureType.User);
                     userUpdateDto.UserPicture = uploadedResult.ResultStatus == ResultStatus.Success
                         ? uploadedResult.Data.FullName
                         : "UserImages/defaultUser.jpg";
@@ -190,13 +184,13 @@ namespace Mvc.Areas.Admin.Controllers
                         isPictureUploaded = true;
                     }
                 }
-                var updatedUser = _mapper.Map(userUpdateDto, oldUser);
-                var result = await _userManager.UpdateAsync(updatedUser);
+                var updatedUser = Mapper.Map(userUpdateDto, oldUser);
+                var result = await UserManager.UpdateAsync(updatedUser);
                 if (result.Succeeded)
                 {
                     if (isPictureUploaded)
                     {
-                        _imageHelper.Delete(oldPicture);
+                        ImageHelper.Delete(oldPicture);
                     }
                     var userUpdateAjax = JsonSerializer.Serialize(new UserUpdateAjaxViewModel
                     {
@@ -240,8 +234,8 @@ namespace Mvc.Areas.Admin.Controllers
         [HttpGet]
         public async Task<ViewResult> ChangeDetail()
         {
-            var user = await _userManager.GetUserAsync(HttpContext.User);
-            var updateDto = _mapper.Map<UserUpdateDto>(user);
+            var user = await UserManager.GetUserAsync(HttpContext.User);
+            var updateDto = Mapper.Map<UserUpdateDto>(user);
             return View(updateDto);
         }
 
@@ -253,11 +247,11 @@ namespace Mvc.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 bool isPictureUploaded = false;
-                var oldUser = await _userManager.GetUserAsync(HttpContext.User);
+                var oldUser = await UserManager.GetUserAsync(HttpContext.User);
                 var oldPicture = oldUser.UserPicture;
                 if (userUpdateDto.UserPictureFile != null)
                 {
-                    var uploadedResult = await _imageHelper.Upload(userUpdateDto.UserName, userUpdateDto.UserPictureFile, PictureType.User);
+                    var uploadedResult = await ImageHelper.Upload(userUpdateDto.UserName, userUpdateDto.UserPictureFile, PictureType.User);
                     userUpdateDto.UserPicture = uploadedResult.ResultStatus == ResultStatus.Success
                         ? uploadedResult.Data.FullName
                         : "UserImages/defaultUser.jpg";
@@ -267,13 +261,13 @@ namespace Mvc.Areas.Admin.Controllers
                     }
 
                 }
-                var updatedUser = _mapper.Map(userUpdateDto, oldUser);
-                var result = await _userManager.UpdateAsync(updatedUser);
+                var updatedUser = Mapper.Map(userUpdateDto, oldUser);
+                var result = await UserManager.UpdateAsync(updatedUser);
                 if (result.Succeeded)
                 {
                     if (isPictureUploaded)
                     {
-                        _imageHelper.Delete(oldPicture);
+                        ImageHelper.Delete(oldPicture);
                     }
                     TempData.Add("SuccessMessage", $"{updatedUser.UserName} basariyla guncellenmistir.");
                     return View(userUpdateDto);
@@ -307,11 +301,11 @@ namespace Mvc.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.GetUserAsync(HttpContext.User);
-                var isVerified = await _userManager.CheckPasswordAsync(user, passwordChangeDto.CurrentPassword);
+                var user = await UserManager.GetUserAsync(HttpContext.User);
+                var isVerified = await UserManager.CheckPasswordAsync(user, passwordChangeDto.CurrentPassword);
                 if (isVerified)
                 {
-                    var result = await _userManager.ChangePasswordAsync(
+                    var result = await UserManager.ChangePasswordAsync(
                         user,
                         passwordChangeDto.CurrentPassword,
                         passwordChangeDto.NewPassword
@@ -320,7 +314,7 @@ namespace Mvc.Areas.Admin.Controllers
                     {
                         //securitystamp degeri degismeli
                         //verinin degistigini belirtir
-                        await _userManager.UpdateSecurityStampAsync(user);
+                        await UserManager.UpdateSecurityStampAsync(user);
                         await _signInManager.SignOutAsync();
                         await _signInManager.PasswordSignInAsync(
                             user,

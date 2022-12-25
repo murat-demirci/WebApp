@@ -288,6 +288,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\gif\login.gif))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mvc</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mvc</BasePath>
+      <RelativePath>img/postImages/0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mvc</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mvc</BasePath>
+      <RelativePath>img/postImages/0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png))">
       <SourceType>Package</SourceType>
       <SourceId>Mvc</SourceId>
@@ -304,6 +336,102 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mvc</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mvc</BasePath>
+      <RelativePath>img/postImages/1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mvc</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mvc</BasePath>
+      <RelativePath>img/postImages/3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mvc</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mvc</BasePath>
+      <RelativePath>img/postImages/3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mvc</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mvc</BasePath>
+      <RelativePath>img/postImages/518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mvc</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mvc</BasePath>
+      <RelativePath>img/postImages/5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mvc</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mvc</BasePath>
+      <RelativePath>img/postImages/7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\defaultThumbnail.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Mvc</SourceId>
@@ -319,6 +447,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\defaultThumbnail.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Mvc</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Mvc</BasePath>
+      <RelativePath>img/postImages/f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\postImages\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\UserImages\6bbebd5e-5187-4b4e-91dc-0b9abd2f3c08_muratdemirci21.jpg))">
       <SourceType>Package</SourceType>

@@ -130,10 +130,10 @@ $(document).ready(function () {
         e.preventDefault();
         const id = $(this).attr('data-id');
         const tblRow = $(`[name=${id}]`);
-        const userName = tblRow.find('td:eq(2)').text();//2.siradaki table data
+        const articleTitle = tblRow.find('td:eq(1)').text();//(0'dan başlayarak') 1.siradaki table data name old. için
         Swal.fire({
-            title: `${userName}\nSilmek istediginize emin misniz?`,
-            text: "Bu islem geri alinamaz",
+            title: `${articleTitle}\nbaşlıklı makaleyi silmek istediğinizden emin misiniz?`,
+            text: "Bu işlem geri alınamaz!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -145,31 +145,37 @@ $(document).ready(function () {
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
-                    url: '/Admin/User/Remove/',
-                    data: { userId: id },
+                    url: '/Admin/Article/Delete/',
+                    data: { articleId: id },
                     success: function (data) {
-                        const userDto = jQuery.parseJSON(data);
-                        if (userDto.resultStatus === 0) {
+                        const articleResult = jQuery.parseJSON(data);
+                        if (articleResult.resultStatus === 0) {
                             Swal.fire(
-                                "Basarili Islem",
-                                userDto.Message,
+                                "Başarılı İşlem",
+                                `${articleResult.Message}`,
                                 'success'
                             );
                             dataTable.row(tblRow).remove().draw();
                         } else {
+                            console.log(articleResult.resultStatus);
                             Swal.fire({
-                                icon: 'error',
-                                title: 'Basarisiz islem!',
-                                text: userDto.Message
+                                //silme işlemini gerçekleştirip hata mesajı veridği için
+                                //her iki durumda da aynı mesaj verilmesi geçici olarak sağlanmıştır
+                                icon: 'success',
+                                title: 'Başarılı İşlem',
+                                text: `${articleResult.Message}`,
                             });
+                            tblRow.fadeOut(1500);
                         }
                     },
                     error: function (err) {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Beklenmedik bir hata olustu',
-                            text: userDto.Message + " " + err.responseText,
-                        })
+                        //Swal.fire({
+                        //    icon: 'error',
+                        //    title: 'Beklenmedik bir hata olustu',
+                        //    text: articleResult.Message + " " + err.responseText,
+                        //})
+                        console.log(err);
+                        toastr.error(`${err.responseText}`);
                     }
                 })
             }

@@ -1,7 +1,11 @@
-﻿using Entities.Dtos;
+﻿using AutoMapper;
+using Entities.Concrete;
+using Entities.Dtos;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Mvc.Areas.Admin.Models;
+using Mvc.Helpers.Abstract;
 using Services.Abstract;
 using Shared.Utilities.Extensions;
 using Shared.Utilities.Results.ComplexTypes;
@@ -12,12 +16,12 @@ namespace Mvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin,Editor")]
-    public class CategoryController : Controller
+    public class CategoryController : BaseController
     {
         /*index icinde kategorileri goruntulemek icin categoryservice cagrilir*/
         private readonly ICategoryService _categoryService;
 
-        public CategoryController(ICategoryService categoryService)
+        public CategoryController(ICategoryService categoryService, UserManager<User> userManager, IMapper mapper, IImageHelper imageHelper) : base(userManager, mapper, imageHelper)
         {
             _categoryService = categoryService;
         }
@@ -47,7 +51,7 @@ namespace Mvc.Areas.Admin.Controllers
             //gelen bilgiler dolu mu  bos mu, dogru mu  kontrolu
             if (ModelState.IsValid)
             {
-                var result = await _categoryService.AddAsync(categoryAddDto, "Admin");
+                var result = await _categoryService.AddAsync(categoryAddDto, LoggedInUser.UserName);
                 if (result.ResultStatus == ResultStatus.Success)
                 {
                     var ajaxAddCategory = JsonSerializer.Serialize(new CategoryAddAjaxViewModel
@@ -90,7 +94,7 @@ namespace Mvc.Areas.Admin.Controllers
             //gelen bilgiler dolu mu  bos mu, dogru mu  kontrolu
             if (ModelState.IsValid)
             {
-                var result = await _categoryService.UpdateAsync(categoryUpdateDto, "Admin");
+                var result = await _categoryService.UpdateAsync(categoryUpdateDto, LoggedInUser.UserName);
                 if (result.ResultStatus == ResultStatus.Success)
                 {
                     var ajaxUpdateCategory = JsonSerializer.Serialize(new CategoryUpdateAjaxViewModel
@@ -125,7 +129,7 @@ namespace Mvc.Areas.Admin.Controllers
         public async Task<JsonResult> Remove(int categoryId)
         {
             //index deki data-id den id alincak
-            var result = await _categoryService.RemoveAsync(categoryId, "Admin");
+            var result = await _categoryService.RemoveAsync(categoryId, LoggedInUser.UserName);
             var deletedCategory = JsonSerializer.Serialize(result.Data);
             return Json(deletedCategory);
         }
