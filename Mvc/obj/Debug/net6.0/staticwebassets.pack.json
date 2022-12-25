@@ -73,8 +73,56 @@
       "PackagePath": "staticwebassets\\gif\\login.gif"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\defaultThumbnail.jpg",
+      "PackagePath": "staticwebassets\\img\\PostImages\\defaultThumbnail.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\6bbebd5e-5187-4b4e-91dc-0b9abd2f3c08_muratdemirci21.jpg",
       "PackagePath": "staticwebassets\\img\\UserImages\\6bbebd5e-5187-4b4e-91dc-0b9abd2f3c08_muratdemirci21.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\923b19ee-f38d-4857-b9bc-bb4100a1dada_kairaa81.jpg",
+      "PackagePath": "staticwebassets\\img\\UserImages\\923b19ee-f38d-4857-b9bc-bb4100a1dada_kairaa81.jpg"
     },
     {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\dc5559a5-1146-4ea4-a4a9-8c11d628c8dc_muratdemirci.jpg",
@@ -85,48 +133,8 @@
       "PackagePath": "staticwebassets\\img\\UserImages\\defaultUser.jpg"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png",
-      "PackagePath": "staticwebassets\\img\\postImages\\0423b4fc-9186-4ac7-8b1a-6fdb62e56b2c_asdasda.png"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png",
-      "PackagePath": "staticwebassets\\img\\postImages\\0538f4c1-170b-4cb7-9d46-b8f7c68d3ddb_Test Kategori Makalesi Deneme.png"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png",
-      "PackagePath": "staticwebassets\\img\\postImages\\08a71258-5bab-458c-ac57-4b60bd35645e_Deneme Başlık.png"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png",
-      "PackagePath": "staticwebassets\\img\\postImages\\1c415bd8-0d95-4483-a038-7c55551df969_asdasdasd.png"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png",
-      "PackagePath": "staticwebassets\\img\\postImages\\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png",
-      "PackagePath": "staticwebassets\\img\\postImages\\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png",
-      "PackagePath": "staticwebassets\\img\\postImages\\518d4c80-8519-4de2-b469-b74f522229e5_Silcem.png"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png",
-      "PackagePath": "staticwebassets\\img\\postImages\\5f5bac2a-ce78-49d9-afe4-7dd6f0e731f5_Ekleme Deneme.png"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png",
-      "PackagePath": "staticwebassets\\img\\postImages\\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\defaultThumbnail.jpg",
-      "PackagePath": "staticwebassets\\img\\postImages\\defaultThumbnail.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\postImages\\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png",
-      "PackagePath": "staticwebassets\\img\\postImages\\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png"
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\fa72b231-7dc8-43e2-bf9d-23bb9135b2d7_kairaa8.png",
+      "PackagePath": "staticwebassets\\img\\UserImages\\fa72b231-7dc8-43e2-bf9d-23bb9135b2d7_kairaa8.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",
