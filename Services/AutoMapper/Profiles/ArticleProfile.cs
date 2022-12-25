@@ -13,6 +13,7 @@ namespace Services.AutoMapper.Profiles
             CreateMap<ArticleAddDto, Article>().ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(x => DateTime.Now));
             //articleadddto icinde createddate yok burada ayarlamasi yapiliyor
             CreateMap<ArticleUpdateDto, Article>().ForMember(dest => dest.ModifiedDate, opt => opt.MapFrom(x => DateTime.Now));
+            CreateMap<Article, ArticleUpdateDto>();
         }
     }
 }
