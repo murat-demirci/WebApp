@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Hp\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\noty.js",
+      "PackagePath": "staticwebassets\\noty.js"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\toastr.js",
+      "PackagePath": "staticwebassets\\toastr.js"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\assets\\demo\\chart-area-demo.js",
       "PackagePath": "staticwebassets\\Admin\\assets\\demo\\chart-area-demo.js"
     },
@@ -93,6 +101,10 @@
       "PackagePath": "staticwebassets\\img\\PostImages\\3958bea7-bae7-4f81-98d1-c76f5ca4fae8_Son Bir Deneme.png"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\3c665bc6-42e1-4693-bd69-533a22c82447_Yeni Makale.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\3c665bc6-42e1-4693-bd69-533a22c82447_Yeni Makale.png"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png",
       "PackagePath": "staticwebassets\\img\\PostImages\\3ee9ce30-b332-4e9c-8470-3276fa4d6b67_Deneme 2.png"
     },
@@ -109,12 +121,12 @@
       "PackagePath": "staticwebassets\\img\\PostImages\\7e28e574-327a-4352-981e-cab4cc68f94c_Silcem.png"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\defaultThumbnail.jpg",
-      "PackagePath": "staticwebassets\\img\\PostImages\\defaultThumbnail.jpg"
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\9de09b3e-fb08-496d-953b-8441891bfee0_Denmeee güncel.jpg",
+      "PackagePath": "staticwebassets\\img\\PostImages\\9de09b3e-fb08-496d-953b-8441891bfee0_Denmeee güncel.jpg"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png",
-      "PackagePath": "staticwebassets\\img\\PostImages\\f9c7f74b-db38-4312-aae2-541392c71e3d_Denmeee.png"
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\defaultThumbnail.jpg",
+      "PackagePath": "staticwebassets\\img\\PostImages\\defaultThumbnail.jpg"
     },
     {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\6bbebd5e-5187-4b4e-91dc-0b9abd2f3c08_muratdemirci21.jpg",

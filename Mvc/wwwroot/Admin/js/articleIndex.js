@@ -15,10 +15,11 @@
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
 };
-
-
 $(document).ready(function () {
-   const dataTable = $('#articlesTable').DataTable({
+
+    /* DataTables start here. */
+
+    const dataTable = $('#articlesTable').DataTable({
         dom:
             "<'row'<'col-sm-3'l><'col-sm-6 text-center'B><'col-sm-3'f>>" +
             "<'row'<'col-sm-12'tr>>" +
@@ -31,9 +32,6 @@ $(document).ready(function () {
                 },
                 className: 'btn btn-success',
                 action: function (e, dt, node, config) {
-                    let url = window.location.href;
-                    url = url.replace("/Index", "");
-                    window.open(`${url}/Add`, "_self");
                 }
             },
             {
@@ -42,49 +40,63 @@ $(document).ready(function () {
                 action: function (e, dt, node, config) {
                     $.ajax({
                         type: 'GET',
-                        url: '/Admin/User/GetAllUsers/',
-                        contentType: 'application/json',
+                        url: '/Admin/Article/GetAllArticles/',
+                        contentType: "application/json",
                         beforeSend: function () {
-                            $('#usersTable').attr('style', 'opacity:0.1;user-select:none;');
-                            $('#loader').removeClass('d-none');
-
+                            $('#articlesTable').hide();
+                            $('.spinner-border').show();
                         },
                         success: function (data) {
-                            const userListDto = jQuery.parseJSON(data);
+                            const articleResult = jQuery.parseJSON(data);
                             dataTable.clear();
-                            if (userListDto.resultStatus === 0) {
-                                $.each(userListDto.Users.$values,
-                                    function (index, user) {
-                                    const newTableRow = dataTable.row.add([
-                                            `<img src="/img/${user.UserPicture}" class="my-image-table"/>`,
-                                            user.Id,
-                                            user.UserName,
-                                        user.Email,
-                                        (user.EmailConfirmed==true ? "Dogrulandi" : "Dogrulanmadi"),
+                            if (articleResult.Result.Data.resultStatus === 0) {
+                                let categoriesArray = [];
+                                $.each(articleResult.Result.Data.Articles.$values,
+                                    function (index, article) {
+                                        const newArticle = getJsonNetObject(article, articleResult.Result.Data.Articles.$values);
+                                        let newCategory = getJsonNetObject(newArticle.Category, newArticle);
+                                        if (newCategory !== null) {
+                                            categoriesArray.push(newCategory);
+                                        }
+                                        if (newCategory === null) {
+                                            newCategory = categoriesArray.find((category) => {
+                                                return category.$id === newArticle.Category.$ref;
+                                            });
+                                        }
+                                        const newTableRow = dataTable.row.add([
+                                            newArticle.ID,
+                                            newArticle.Title,
+                                            newCategory.Name,                                            
+                                            `<img src="/img/${newArticle.ArticleThumbnail}" alt="${newArticle.Title}" class="my-image-table" />`,
+                                            `${convertToShortDate(newArticle.CreatedDate)}`,
+                                            newArticle.ArticleView,
+                                            newArticle.ArticleComment,
+                                            newArticle.ArticleLike,
+                                            `${newArticle.IsActive ? "Evet" : "Hayır"}`,
+                                            //`${newArticle.IsDeleted ? "Evet" : "Hayır"}`,
+                                            `${convertToShortDate(newArticle.CreatedDate)}`,
+                                            newArticle.CreatedByName,
+                                            `${convertToShortDate(newArticle.ModifiedDate)}`,
+                                            newArticle.ModifiedByName,
                                             `
-                               
-                                    <button data-id="${user.Id}" class="btn btn-primary btn-edit" style="width: 90px; font-size: 12px;"><span class="fas fa-edit"></span> Duzenle</button>
-                                    <button data-id="${user.Id}" style="width: 90px; font-size: 12px;" class=" btn btn-danger  btn-delete"><span class="fas fa-minus-circle"></span> Kaldir</button>
-                                
-                            `
-
-                                    ]).node();
-                                        const jqTableRow = $(newTableRow);
-                                        jqTableRow.attr("name", `${user.Id}`);
+                                <a class="btn btn-primary btn-sm btn-update" href="/Admin/Article/Update?articleId=${newArticle.ID}"><span class="fas fa-edit"></span></a>
+                                <button class="btn btn-danger btn-sm btn-delete" data-id="${newArticle.ID}"><span class="fas fa-minus-circle"></span></button>
+                                            `
+                                        ]).node();
+                                        const jqueryTableRow = $(newTableRow);
+                                        jqueryTableRow.attr('name', `${newArticle.ID}`);
                                     });
                                 dataTable.draw();
-                                setTimeout(function () {
-                                    $('#usersTable').removeAttr('style');
-                                    $('#loader').addClass('d-none');
-                                }, 1000);
-                            }
-                            else {
-                                toastr.error(`${userListDto.Message}`, 'İşlem Başarısız!');
+                                $('.spinner-border').hide();
+                                $('#articlesTable').fadeIn(1400);
+                            } else {
+                                toastr.error(`${articleResult.Result.Data.Message}`, 'İşlem Başarısız!');
                             }
                         },
                         error: function (err) {
-                            $('#usersTable').removeAttr('style');
-                            $('#loader').addClass('d-none');
+                            console.log(err);
+                            $('.spinner-border').hide();
+                            $('#articlesTable').fadeIn(1000);
                             toastr.error(`${err.responseText}`, 'Hata!');
                         }
                     });
@@ -123,64 +135,67 @@ $(document).ready(function () {
             }
         }
     });
-    // DataTables ends here 
 
-    //Delete
-    $(document).on('click', '.btn-delete', function (e) {
-        e.preventDefault();
-        const id = $(this).attr('data-id');
-        const tblRow = $(`[name=${id}]`);
-        const articleTitle = tblRow.find('td:eq(1)').text();//(0'dan başlayarak') 1.siradaki table data name old. için
-        Swal.fire({
-            title: `${articleTitle}\nbaşlıklı makaleyi silmek istediğinizden emin misiniz?`,
-            text: "Bu işlem geri alınamaz!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Evet, silmek istiyorum',
-            cancelButtonText: 'Hayir, silmek istemiyorum'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    type: 'POST',
-                    dataType: 'json',
-                    url: '/Admin/Article/Delete/',
-                    data: { articleId: id },
-                    success: function (data) {
-                        const articleResult = jQuery.parseJSON(data);
-                        if (articleResult.resultStatus === 0) {
-                            Swal.fire(
-                                "Başarılı İşlem",
-                                `${articleResult.Message}`,
-                                'success'
-                            );
-                            dataTable.row(tblRow).remove().draw();
-                        } else {
-                            console.log(articleResult.resultStatus);
-                            Swal.fire({
-                                //silme işlemini gerçekleştirip hata mesajı veridği için
-                                //her iki durumda da aynı mesaj verilmesi geçici olarak sağlanmıştır
-                                icon: 'success',
-                                title: 'Başarılı İşlem',
-                                text: `${articleResult.Message}`,
-                            });
-                            tblRow.fadeOut(1500);
+    /* DataTables end here */
+
+
+    /* Ajax POST / Posting the FormData as UserAddDto starts from here. */
+
+
+
+    /* Ajax POST / Posting the FormData as UserAddDto ends here. */
+
+    /* Ajax POST / Deleting a User starts from here */
+
+    $(document).on('click',
+        '.btn-delete',
+        function (event) {
+            event.preventDefault();
+            const id = $(this).attr('data-id');
+            console.log($(this).attr(''))
+            const tableRow = $(`[name="${id}"]`);
+            const articleTitle = tableRow.find('td:eq(1)').text();
+            console.log(typeof(articleTitle));
+            Swal.fire({
+                title: 'Silmek istediğinize emin misiniz?',
+                text: `${articleTitle} baslikli makale silinicektir!`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Evet, silmek istiyorum.',
+                cancelButtonText: 'Hayır, silmek istemiyorum.'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        data: { articleId: id },
+                        url: '/Admin/Article/Delete/',
+                        success: function (data) {
+                            const articleResult = jQuery.parseJSON(data);
+                            if (articleResult.ResultStatus === 0) {
+                                Swal.fire(
+                                    'Silindi!',
+                                    `${articleResult.Message} `,
+                                    'success'
+                                );
+                                dataTable.row(tableRow).remove().draw();
+                            }
+                            else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Başarısız İşlem!',
+                                    text: `${articleResult.Message}`,
+                                });
+                            }
+                        },
+                        error: function (err) {
+                            console.log(err);
+                            toastr.error(`${err.responseText}`, "Hata!");
                         }
-                    },
-                    error: function (err) {
-                        //Swal.fire({
-                        //    icon: 'error',
-                        //    title: 'Beklenmedik bir hata olustu',
-                        //    text: articleResult.Message + " " + err.responseText,
-                        //})
-                        console.log(err);
-                        toastr.error(`${err.responseText}`);
-                    }
-                })
-            }
-        })
-    });
-    //Delete
-
+                    });
+                }
+            });
+        });
 });
