@@ -1747,3 +1747,5 @@ C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\obj\Debug\net6.0\refint\Mvc.dl
 C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\obj\Debug\net6.0\Mvc.pdb
 C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\obj\Debug\net6.0\Mvc.genruntimeconfig.cache
 C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\obj\Debug\net6.0\ref\Mvc.dll
+C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\bin\Debug\net6.0\libman.json
+C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\bin\Debug\net6.0\NToastNotify.dll

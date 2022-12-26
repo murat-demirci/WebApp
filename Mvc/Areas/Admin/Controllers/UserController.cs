@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Mvc.Areas.Admin.Models;
 using Mvc.Helpers.Abstract;
+using NToastNotify;
 using Shared.Utilities.Extensions;
 using Shared.Utilities.Results.ComplexTypes;
 using System.Text.Json;
@@ -21,10 +22,12 @@ namespace Mvc.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         private readonly SignInManager<User> _signInManager;
+        private readonly IToastNotification _toastNotification;
 
-        public UserController(UserManager<User> userManager, IMapper mapper, SignInManager<User> signInManager, IImageHelper imageHelper) : base(userManager, mapper, imageHelper)
+        public UserController(UserManager<User> userManager, IMapper mapper, SignInManager<User> signInManager, IImageHelper imageHelper, IToastNotification toastNotification) : base(userManager, mapper, imageHelper)
         {
             _signInManager = signInManager;
+            _toastNotification = toastNotification;
         }
 
         //authorize area kismina eklenirse sonsuz dongu olusur
@@ -269,7 +272,7 @@ namespace Mvc.Areas.Admin.Controllers
                     {
                         ImageHelper.Delete(oldPicture);
                     }
-                    TempData.Add("SuccessMessage", $"{updatedUser.UserName} basariyla guncellenmistir.");
+                    _toastNotification.AddSuccessToastMessage($"{updatedUser.UserName} adlı kullanıcı başarıyla güncellenmiştir");
                     return View(userUpdateDto);
                 }
                 else
@@ -322,7 +325,7 @@ namespace Mvc.Areas.Admin.Controllers
                             true,//remember me degeri (7 gun)
                             false
                             );
-                        TempData.Add("SuccessMessage", $"Sifreniz basariyla degistirilmistir");
+                        _toastNotification.AddSuccessToastMessage("Şifreniz başarıyla değiştirilmiştir");
                         return View();
                     }
                     else

@@ -24,7 +24,7 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation()
         //json formati icerisinde farkli objeler varsa burdan sorun cikmamsi icin,
         //(bug olma ihtimaline karsi controller sinifina da eklenir)
         opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
-    });//mvc uygulamasi oldugu belirtilir
+    }).AddNToastNotifyToastr();//mvc uygulamasi oldugu belirtilir
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSession();
@@ -81,6 +81,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthentication();//kullanici kontrolu
 app.UseAuthorization();//yetki kontrolu
+app.UseNToastNotify();
 app.UseEndpoints(end =>
 {
     end.MapAreaControllerRoute(
