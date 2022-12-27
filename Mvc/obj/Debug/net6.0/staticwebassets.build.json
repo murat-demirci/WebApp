@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/vJy1Smt7OSJOqC+SHbkimN+4vSaOnz1VXooY1CDs38=",
+  "Hash": "LyraChkB6F16u/cxMComWtQibSt+iceUlsAhbFetPWs=",
   "Source": "Mvc",
   "BasePath": "_content/Mvc",
   "Mode": "Default",
@@ -253,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Admin\\js\\categoryIndex.js"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\js\\commentIndex.js",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "Admin/js/commentIndex.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Admin\\js\\commentIndex.js"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\js\\homeindex.js",
@@ -576,6 +593,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\PostImages\\9de09b3e-fb08-496d-953b-8441891bfee0_Denmeee güncel.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\c5ce9f45-3d46-4503-8115-42595c5a6368_Deneme Makale.png",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "img/PostImages/c5ce9f45-3d46-4503-8115-42595c5a6368_Deneme Makale.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\c5ce9f45-3d46-4503-8115-42595c5a6368_Deneme Makale.png"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\defaultThumbnail.jpg",

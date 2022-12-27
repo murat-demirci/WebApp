@@ -12,7 +12,7 @@ namespace Data.Concrete.EntityFramework.Mappings
             b.HasKey(uc => uc.Id);
 
             // Maps to the AspNetUserClaims table
-            b.ToTable("AspNetUserClaims");
+            b.ToTable("UserClaims");
         }
     }
 }

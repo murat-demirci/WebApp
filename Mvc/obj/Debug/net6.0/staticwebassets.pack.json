@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\Admin\\js\\categoryIndex.js"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\js\\commentIndex.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\commentIndex.js"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\js\\homeindex.js",
       "PackagePath": "staticwebassets\\Admin\\js\\homeindex.js"
     },
@@ -123,6 +127,10 @@
     {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\9de09b3e-fb08-496d-953b-8441891bfee0_Denmeee güncel.jpg",
       "PackagePath": "staticwebassets\\img\\PostImages\\9de09b3e-fb08-496d-953b-8441891bfee0_Denmeee güncel.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\c5ce9f45-3d46-4503-8115-42595c5a6368_Deneme Makale.png",
+      "PackagePath": "staticwebassets\\img\\PostImages\\c5ce9f45-3d46-4503-8115-42595c5a6368_Deneme Makale.png"
     },
     {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\defaultThumbnail.jpg",

@@ -26,14 +26,14 @@
                         <span class="text-danger" asp-validation-for="Email"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="UserPicture"></label>
-                        <input asp-for="UserPicture" type="hidden" />
-                        <img class="my-image" src="~/img/@Model.UserPicture" alt="@Model.UserName" />
+                        <label asp-for="Picture"></label>
+                        <input asp-for="Picture" type="hidden" />
+                        <img class="my-image" src="~/img/@Model.Picture" alt="@Model.UserName" />
                     </div>
                     <div class="form-group">
-                        <label asp-for="UserPictureFile"></label>
-                        <input type="file" accept="image/*" class="form-control-file" asp-for="UserPictureFile" />
-                        <span class="text-danger" asp-validation-for="UserPictureFile"></span>
+                        <label asp-for="PictureFile"></label>
+                        <input type="file" accept="image/*" class="form-control-file" asp-for="PictureFile" />
+                        <span class="text-danger" asp-validation-for="PictureFile"></span>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-block"><span class="fas fa-save"></span> Kaydet</button>

@@ -34,7 +34,7 @@ builder.Services.AddDbContext<dContext>(opt =>
 });
 builder.Services.LoadMyServices();
 builder.Services.AddScoped<IImageHelper, ImageHelper>();
-builder.Services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile), typeof(ViewModelsProfile));
+builder.Services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile), typeof(CommentProfile), typeof(ViewModelsProfile));
 builder.Services.ConfigureApplicationCookie(opt =>
 {
     //cookie
