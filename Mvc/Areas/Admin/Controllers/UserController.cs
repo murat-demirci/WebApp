@@ -74,8 +74,8 @@ namespace Mvc.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var uploadedResult = await ImageHelper.Upload(userAddDto.UserName, userAddDto.UserPictureFile, PictureType.User);
-                userAddDto.UserPicture = uploadedResult.ResultStatus == ResultStatus.Success
+                var uploadedResult = await ImageHelper.Upload(userAddDto.UserName, userAddDto.PictureFile, PictureType.User);
+                userAddDto.Picture = uploadedResult.ResultStatus == ResultStatus.Success
                     ? uploadedResult.Data.FullName
                     : "UserImages/defaultUser.jpg";
                 //Imagehelper ile resim adi atama
@@ -175,11 +175,11 @@ namespace Mvc.Areas.Admin.Controllers
             {
                 bool isPictureUploaded = false;
                 var oldUser = await UserManager.FindByIdAsync(userUpdateDto.Id.ToString());
-                var oldPicture = oldUser.UserPicture;
-                if (userUpdateDto.UserPictureFile != null)
+                var oldPicture = oldUser.Picture;
+                if (userUpdateDto.PictureFile != null)
                 {
-                    var uploadedResult = await ImageHelper.Upload(userUpdateDto.UserName, userUpdateDto.UserPictureFile, PictureType.User);
-                    userUpdateDto.UserPicture = uploadedResult.ResultStatus == ResultStatus.Success
+                    var uploadedResult = await ImageHelper.Upload(userUpdateDto.UserName, userUpdateDto.PictureFile, PictureType.User);
+                    userUpdateDto.Picture = uploadedResult.ResultStatus == ResultStatus.Success
                         ? uploadedResult.Data.FullName
                         : "UserImages/defaultUser.jpg";
                     if (oldPicture != "UserImages/defaultUser.jpg")
@@ -251,11 +251,11 @@ namespace Mvc.Areas.Admin.Controllers
             {
                 bool isPictureUploaded = false;
                 var oldUser = await UserManager.GetUserAsync(HttpContext.User);
-                var oldPicture = oldUser.UserPicture;
-                if (userUpdateDto.UserPictureFile != null)
+                var oldPicture = oldUser.Picture;
+                if (userUpdateDto.PictureFile != null)
                 {
-                    var uploadedResult = await ImageHelper.Upload(userUpdateDto.UserName, userUpdateDto.UserPictureFile, PictureType.User);
-                    userUpdateDto.UserPicture = uploadedResult.ResultStatus == ResultStatus.Success
+                    var uploadedResult = await ImageHelper.Upload(userUpdateDto.UserName, userUpdateDto.PictureFile, PictureType.User);
+                    userUpdateDto.Picture = uploadedResult.ResultStatus == ResultStatus.Success
                         ? uploadedResult.Data.FullName
                         : "UserImages/defaultUser.jpg";
                     if (oldPicture != "UserImages/defaultUser.jpg")
@@ -347,6 +347,13 @@ namespace Mvc.Areas.Admin.Controllers
             {
                 return View(passwordChangeDto);
             }
+        }
+
+        [HttpGet]
+        public async Task<PartialViewResult> GetDetail(int userId)
+        {
+            var user = await UserManager.Users.SingleOrDefaultAsync(u => u.Id == userId);
+            return PartialView("_GetDetailPartial", new UserDto { User = user });
         }
     }
 }
