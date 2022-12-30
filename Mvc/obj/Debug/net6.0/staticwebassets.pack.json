@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\Admin\\js\\homeindex.js"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\js\\roleIndex.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\roleIndex.js"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\js\\scripts.js",
       "PackagePath": "staticwebassets\\Admin\\js\\scripts.js"
     },
@@ -137,12 +141,36 @@
       "PackagePath": "staticwebassets\\img\\PostImages\\defaultThumbnail.jpg"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\2e7224eb-9ce0-412c-8de8-0d93230a088d_deneme3.png",
+      "PackagePath": "staticwebassets\\img\\UserImages\\2e7224eb-9ce0-412c-8de8-0d93230a088d_deneme3.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\41d5edda-6c4e-4f1a-a086-52dcba7d2b93_bokcu.png",
+      "PackagePath": "staticwebassets\\img\\UserImages\\41d5edda-6c4e-4f1a-a086-52dcba7d2b93_bokcu.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\42c03239-47f5-455b-b7b8-c2f282833597_deneme4.png",
+      "PackagePath": "staticwebassets\\img\\UserImages\\42c03239-47f5-455b-b7b8-c2f282833597_deneme4.png"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\6bbebd5e-5187-4b4e-91dc-0b9abd2f3c08_muratdemirci21.jpg",
       "PackagePath": "staticwebassets\\img\\UserImages\\6bbebd5e-5187-4b4e-91dc-0b9abd2f3c08_muratdemirci21.jpg"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\8d0930e4-1b31-4243-8d30-28758fc21b4b_bokcu.png",
+      "PackagePath": "staticwebassets\\img\\UserImages\\8d0930e4-1b31-4243-8d30-28758fc21b4b_bokcu.png"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\923b19ee-f38d-4857-b9bc-bb4100a1dada_kairaa81.jpg",
       "PackagePath": "staticwebassets\\img\\UserImages\\923b19ee-f38d-4857-b9bc-bb4100a1dada_kairaa81.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\b572de57-5543-4fce-8c2b-6b1f2448455a_deneme5.png",
+      "PackagePath": "staticwebassets\\img\\UserImages\\b572de57-5543-4fce-8c2b-6b1f2448455a_deneme5.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\ce3d9eba-cfc3-49fa-af53-11693a8120a2_deneme2.png",
+      "PackagePath": "staticwebassets\\img\\UserImages\\ce3d9eba-cfc3-49fa-af53-11693a8120a2_deneme2.png"
     },
     {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\dc5559a5-1146-4ea4-a4a9-8c11d628c8dc_muratdemirci.jpg",
@@ -153,8 +181,16 @@
       "PackagePath": "staticwebassets\\img\\UserImages\\defaultUser.jpg"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\e8e73e21-32c3-450a-9753-4b75e0471bc0_bokcu.png",
+      "PackagePath": "staticwebassets\\img\\UserImages\\e8e73e21-32c3-450a-9753-4b75e0471bc0_bokcu.png"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\fa72b231-7dc8-43e2-bf9d-23bb9135b2d7_kairaa8.png",
       "PackagePath": "staticwebassets\\img\\UserImages\\fa72b231-7dc8-43e2-bf9d-23bb9135b2d7_kairaa8.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\fd0712dc-bea4-4c58-abdc-87b69955e19e_deneme.png",
+      "PackagePath": "staticwebassets\\img\\UserImages\\fd0712dc-bea4-4c58-abdc-87b69955e19e_deneme.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",

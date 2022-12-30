@@ -11,7 +11,6 @@ namespace Mvc.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
-    [Authorize(Roles = "Admin,Editor")]
     public class HomeController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -28,6 +27,7 @@ namespace Mvc.Areas.Admin.Controllers
             _articleService = articleService;
         }
 
+        [Authorize(Roles = "SuperAdmin,AdminArea.Home.Read")]
         public async Task<IActionResult> Index()
         {
             //tum iceriklerin sayisinin index saytfasina dinamik olarak getirilmesi
