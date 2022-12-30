@@ -34,8 +34,10 @@ namespace Mvc.Areas.Identity.Controllers
                 var user = _mapper.Map<User>(signupDto);
                 user.SecurityStamp = Guid.NewGuid().ToString();
                 user.Picture = "~/img/UserImages/defaultUser.jpg";
+                //isim sayisim eklenecek
                 var result = await _userManager.CreateAsync(user, signupDto.Password);
-                await _userManager.AddToRoleAsync(user, "Editor");
+                List<string> roles = new List<string> { "Article.Create", "Article.Read", "AdminArea.Home.Read" };
+                await _userManager.AddToRolesAsync(user, roles);
                 if (user != null)
                 {
                     if (result.Succeeded)
