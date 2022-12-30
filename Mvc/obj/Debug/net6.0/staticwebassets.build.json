@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cjzKdbkSt4RK8MouAy0gJt2AQlCWKgtpKSMnwLDCMPU=",
+  "Hash": "FTlwDzVtJMS0IAfmO36o1G3+C6T9JcFxYl8S1FxcISQ=",
   "Source": "Mvc",
   "BasePath": "_content/Mvc",
   "Mode": "Default",
@@ -865,6 +865,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\UserImages\\fd0712dc-bea4-4c58-abdc-87b69955e19e_deneme.png"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\ffbaeafd-de7d-465d-903a-8d473d6103aa_deneme6.png",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "img/UserImages/ffbaeafd-de7d-465d-903a-8d473d6103aa_deneme6.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\UserImages\\ffbaeafd-de7d-465d-903a-8d473d6103aa_deneme6.png"
     }
   ]
 }

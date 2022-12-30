@@ -193,6 +193,10 @@
       "PackagePath": "staticwebassets\\img\\UserImages\\fd0712dc-bea4-4c58-abdc-87b69955e19e_deneme.png"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\ffbaeafd-de7d-465d-903a-8d473d6103aa_deneme6.png",
+      "PackagePath": "staticwebassets\\img\\UserImages\\ffbaeafd-de7d-465d-903a-8d473d6103aa_deneme6.png"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

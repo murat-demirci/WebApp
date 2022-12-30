@@ -33,7 +33,7 @@ namespace Mvc.Areas.Identity.Controllers
             {
                 var user = _mapper.Map<User>(signupDto);
                 user.SecurityStamp = Guid.NewGuid().ToString();
-                user.Picture = "Default/defaultUser.jpg";
+                user.Picture = "~/img/UserImages/defaultUser.jpg";
                 var result = await _userManager.CreateAsync(user, signupDto.Password);
                 await _userManager.AddToRoleAsync(user, "Editor");
                 if (user != null)

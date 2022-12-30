@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form asp-action="Assign" id="form-role-assign">
+                <form asp-area="Admin" asp-controller="Role" asp-action="Assign" id="form-role-assign">
                     <input name="IsValid" type="hidden" value="@ViewData.ModelState.IsValid.ToString()" />
                     <div asp-validation-summary="All" class="text-danger" id="validation-summary" aria-hidden="true" style="display: none;"></div>
                     <input type="hidden" asp-for="UserId" />

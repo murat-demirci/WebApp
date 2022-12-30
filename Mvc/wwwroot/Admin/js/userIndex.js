@@ -152,7 +152,7 @@
                             userAddAjaxModel.UserDto.User.FirstName,
                             userAddAjaxModel.UserDto.User.LastName,
                             userAddAjaxModel.UserDto.User.PhoneNumber,
-                            userAddAjaxModel.UserDto.User.About.length > 75 ? userAddAjaxModel.UserDto.User.About.substring(0, 75) : userAddAjaxModel.UserDto.User.About,
+                            userAddAjaxModel.UserDto.User.About == null ? "Hakkında bilgisi bulunamadı" :  userAddAjaxModel.UserDto.User.About.length > 75 ? userAddAjaxModel.UserDto.User.About.substring(0, 75) : userAddAjaxModel.UserDto.User.About,
                             `<img src="/img/${userAddAjaxModel.UserDto.User.Picture}" alt="${userAddAjaxModel.UserDto.User.UserName}" class="my-image-table" />`,
                             `
                                 <button class="btn btn-info btn-sm btn-detail" data-id="${userAddAjaxModel.UserDto.User.Id}"><span class="fas fa-newspaper"></span></button>

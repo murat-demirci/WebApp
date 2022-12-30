@@ -50,6 +50,7 @@ namespace Mvc.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Assign(int userId)
         {
+            //var user = await UserManager.FindByIdAsync(userId.ToString());
             var user = await UserManager.Users.SingleOrDefaultAsync(u => u.Id == userId);
             var roles = await _roleManager.Roles.ToListAsync();
             var userRoles = await UserManager.GetRolesAsync(user);
@@ -77,7 +78,7 @@ namespace Mvc.Areas.Admin.Controllers
         public async Task<IActionResult> Assign(UserRoleAssignDto userRoleAssignDto)
         {
             if (ModelState.IsValid)
-            {
+            { 
                 var user = await UserManager.Users.SingleOrDefaultAsync(u => u.Id == userRoleAssignDto.UserId);
                 foreach (var roleAssignDto in userRoleAssignDto.RoleAssignDtos)
                 {
