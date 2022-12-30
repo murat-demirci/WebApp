@@ -32,7 +32,7 @@ namespace Mvc.Areas.Admin.Controllers
 
         //authorize area kismina eklenirse sonsuz dongu olusur
         //tek tek actionlara eklenmeli
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "SuperAdmin,User.Read")]
         public async Task<IActionResult> Index()
         {
             var users = await UserManager.Users.ToListAsync();
@@ -43,7 +43,7 @@ namespace Mvc.Areas.Admin.Controllers
             });
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "SuperAdmin,User.Read")]
         [HttpGet]
         public async Task<JsonResult> GetAllUsers()
         {
@@ -60,7 +60,7 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "SuperAdmin, User.Create")]
         [HttpGet]
         public IActionResult Add()
         {
@@ -68,7 +68,7 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "SuperAdmin,User.Create")]
         [HttpPost]
         public async Task<IActionResult> Add(UserAddDto userAddDto)
         {
@@ -121,7 +121,8 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "SuperAdmin,User.Delete")]
+        [HttpPost]
         public async Task<IActionResult> Remove(int userId)
         {
             var user = await UserManager.FindByIdAsync(userId.ToString());
@@ -154,7 +155,7 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
 
-        [Authorize(Roles = "Admin,Editor")]
+        [Authorize(Roles = "SuperAdmin,User.Update")]
         [HttpGet]
         public async Task<PartialViewResult> Update(int userId)
         //partialviewresult da kullanilabilir (IActionResult yerine)
@@ -167,7 +168,7 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
 
-        [Authorize(Roles = "Admin,Editor")]
+        [Authorize(Roles = "SuperAdmin,User.Update")]
         [HttpPost]
         public async Task<IActionResult> Update(UserUpdateDto userUpdateDto)
         {
@@ -350,6 +351,7 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin,User.Read")]
         public async Task<PartialViewResult> GetDetail(int userId)
         {
             var user = await UserManager.Users.SingleOrDefaultAsync(u => u.Id == userId);

@@ -15,7 +15,6 @@ using System.Text.Json.Serialization;
 namespace Mvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin,Editor")]
     public class CategoryController : BaseController
     {
         /*index icinde kategorileri goruntulemek icin categoryservice cagrilir*/
@@ -26,6 +25,7 @@ namespace Mvc.Areas.Admin.Controllers
             _categoryService = categoryService;
         }
 
+        [Authorize(Roles = "SuperAdmin,Category.Read")]
         public async Task<IActionResult> Index()
         {
             var result = await _categoryService.GetAllByNonDeletedAsync();
@@ -37,7 +37,9 @@ namespace Mvc.Areas.Admin.Controllers
 
 
         }
+
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin,Category.Create")]
         public IActionResult Add()
         {
             return PartialView("_CategoryAddPartial");
@@ -46,6 +48,7 @@ namespace Mvc.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin,Category.Create")]
         public async Task<IActionResult> Add(CategoryAddDto categoryAddDto)
         {
             //gelen bilgiler dolu mu  bos mu, dogru mu  kontrolu
@@ -74,6 +77,7 @@ namespace Mvc.Areas.Admin.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin,Category.Update")]
         public async Task<IActionResult> Update(int categoryId)
         {
             var result = await _categoryService.GetCategoryUpdateDtoAsync(categoryId);
@@ -89,6 +93,7 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin,Category.Update")]
         public async Task<IActionResult> Update(CategoryUpdateDto categoryUpdateDto)
         {
             //gelen bilgiler dolu mu  bos mu, dogru mu  kontrolu
@@ -115,6 +120,7 @@ namespace Mvc.Areas.Admin.Controllers
             return Json(ajaxUpdateError);
         }
 
+        [Authorize(Roles = "SuperAdmin,Category.Read")]
         public async Task<JsonResult> GetAllCategories()
         {
             var result = await _categoryService.GetAllByNonDeletedAsync();
@@ -126,6 +132,7 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin,Category.Delete")]
         public async Task<JsonResult> Remove(int categoryId)
         {
             //index deki data-id den id alincak

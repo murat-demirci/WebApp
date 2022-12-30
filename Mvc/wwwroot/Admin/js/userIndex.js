@@ -31,29 +31,29 @@
                         },
                         success: function (data) {
                             const userListDto = jQuery.parseJSON(data);
+                            console.log(userListDto)
                             dataTable.clear();
-                            console.log(userListDto);
-                            if (userListDto.ResultStatus === 0) {
+                            if (userListDto.resultStatus === 0) {
                                 $.each(userListDto.Users.$values,
                                     function (index, user) {
                                        const newTableRow =  dataTable.row.add([
-                                            user.ID,
+                                            user.Id,
                                             user.UserName,
                                            user.Email,
                                            user.FirstName,
                                             user.LastName,
                                            user.PhoneNumber,
-                                           user.About.length > 75 ? user.About.substring(0, 75) : user.About,
+                                           user.About == null ? "Hakkında bilgisi bulunamadı" : user.About.length > 75 ? user.About.substring(0, 75) : user.About,
                                             `<img src="/img/${user.Picture}" alt="${user.UserName}" class="my-image-table" />`,
                                             `
-                                <button class="btn btn-info btn-sm btn-detail" data-id="${user.ID}"><span class="fas fa-newspaper"></span></button>
-                                <button class="btn btn-warning btn-sm btn-assign" data-id="${user.ID}"><span class="fas fa-user-shield"></span></button>
-                                <button class="btn btn-primary btn-sm btn-update" data-id="${user.ID}"><span class="fas fa-edit"></span></button>
+                                <button class="btn btn-info btn-sm btn-detail" data-id="${user.Id}"><span class="fas fa-newspaper"></span></button>
+                                <button class="btn btn-warning btn-sm btn-assign" data-id="${user.Id}"><span class="fas fa-user-shield"></span></button>
+                                <button class="btn btn-primary btn-sm btn-update" data-id="${user.Id}"><span class="fas fa-edit"></span></button>
                                 <button class="btn btn-danger btn-sm btn-delete" data-id="${user.ID}"><span class="fas fa-minus-circle"></span></button>
                                             `
                                        ]).node();
                                         const jqueryTableRow = $(newTableRow);
-                                        jqueryTableRow.attr('name', `${user.ID}`);
+                                        jqueryTableRow.attr('name', `${user.Id}`);
                                     });
                                 dataTable.draw();
                                 $('.spinner-border').hide();
@@ -146,7 +146,7 @@
                     if (isValid) {
                         placeHolderDiv.find('.modal').modal('hide');
                         const newTableRow = dataTable.row.add([
-                            userAddAjaxModel.UserDto.User.ID,
+                            userAddAjaxModel.UserDto.User.Id,
                             userAddAjaxModel.UserDto.User.UserName,
                             userAddAjaxModel.UserDto.User.Email,
                             userAddAjaxModel.UserDto.User.FirstName,
@@ -155,14 +155,14 @@
                             userAddAjaxModel.UserDto.User.About.length > 75 ? userAddAjaxModel.UserDto.User.About.substring(0, 75) : userAddAjaxModel.UserDto.User.About,
                             `<img src="/img/${userAddAjaxModel.UserDto.User.Picture}" alt="${userAddAjaxModel.UserDto.User.UserName}" class="my-image-table" />`,
                             `
-                                <button class="btn btn-info btn-sm btn-detail" data-id="${userAddAjaxModel.UserDto.User.ID}"><span class="fas fa-newspaper"></span></button>
-                                <button class="btn btn-warning btn-sm btn-assign" data-id="${userAddAjaxModel.UserDto.User.ID}"><span class="fas fa-user-shield"></span></button>
-                                <button class="btn btn-primary btn-sm btn-update" data-id="${userAddAjaxModel.UserDto.User.ID}"><span class="fas fa-edit"></span></button>
-                                <button class="btn btn-danger btn-sm btn-delete" data-id="${userAddAjaxModel.UserDto.User.ID}"><span class="fas fa-minus-circle"></span></button>
+                                <button class="btn btn-info btn-sm btn-detail" data-id="${userAddAjaxModel.UserDto.User.Id}"><span class="fas fa-newspaper"></span></button>
+                                <button class="btn btn-warning btn-sm btn-assign" data-id="${userAddAjaxModel.UserDto.User.Id}"><span class="fas fa-user-shield"></span></button>
+                                <button class="btn btn-primary btn-sm btn-update" data-id="${userAddAjaxModel.UserDto.User.Id}"><span class="fas fa-edit"></span></button>
+                                <button class="btn btn-danger btn-sm btn-delete" data-id="${userAddAjaxModel.UserDto.User.Id}"><span class="fas fa-minus-circle"></span></button>
                             `
                         ]).node();
                         const jqueryTableRow = $(newTableRow);
-                        jqueryTableRow.attr('name', `${userAddAjaxModel.UserDto.User.ID}`);
+                        jqueryTableRow.attr('name', `${userAddAjaxModel.UserDto.User.Id}`);
                         dataTable.row(newTableRow).draw();
                         toastr.success(`${userAddAjaxModel.UserDto.Message}`, 'Başarılı İşlem!');
                     } else {
@@ -208,10 +208,10 @@
                         type: 'POST',
                         dataType: 'json',
                         data: { userId: id },
-                        url: '/Admin/User/Delete/',
+                        url: '/Admin/User/Remove/',
                         success: function (data) {
                             const userDto = jQuery.parseJSON(data);
-                            if (userDto.ResultStatus === 0) {
+                            if (userDto.resultStatus === 0) {
                                 Swal.fire(
                                     'Silindi!',
                                     `${userDto.User.UserName} adlı kullanıcı başarıyla silinmiştir.`,
@@ -281,7 +281,7 @@
                         const tableRow = $(`[name="${id}"]`);
                         placeHolderDiv.find('.modal').modal('hide');
                         dataTable.row(tableRow).data([
-                            userUpdateAjaxModel.UserDto.User.ID,
+                            userUpdateAjaxModel.UserDto.User.Id,
                             userUpdateAjaxModel.UserDto.User.UserName,
                             userUpdateAjaxModel.UserDto.User.Email,
                             userUpdateAjaxModel.UserDto.User.FirstName,
@@ -290,10 +290,10 @@
                             userUpdateAjaxModel.UserDto.User.About.length > 75 ? userUpdateAjaxModel.UserDto.User.About.substring(0, 75) : userUpdateAjaxModel.UserDto.User.About,
                             `<img src="/img/${userUpdateAjaxModel.UserDto.User.Picture}" alt="${userUpdateAjaxModel.UserDto.User.UserName}" class="my-image-table" />`,
                             `
-                                <button class="btn btn-info btn-sm btn-detail" data-id="${userUpdateAjaxModel.UserDto.User.ID}"><span class="fas fa-newspaper"></span></button>
-                                <button class="btn btn-warning btn-sm btn-assign" data-id="${userUpdateAjaxModel.UserDto.User.ID}"><span class="fas fa-user-shield"></span></button>
-                                <button class="btn btn-primary btn-sm btn-update" data-id="${userUpdateAjaxModel.UserDto.User.ID}"><span class="fas fa-edit"></span></button>
-                                <button class="btn btn-danger btn-sm btn-delete" data-id="${userUpdateAjaxModel.UserDto.User.ID}"><span class="fas fa-minus-circle"></span></button>
+                                <button class="btn btn-info btn-sm btn-detail" data-id="${userUpdateAjaxModel.UserDto.User.Id}"><span class="fas fa-newspaper"></span></button>
+                                <button class="btn btn-warning btn-sm btn-assign" data-id="${userUpdateAjaxModel.UserDto.User.Id}"><span class="fas fa-user-shield"></span></button>
+                                <button class="btn btn-primary btn-sm btn-update" data-id="${userUpdateAjaxModel.UserDto.User.Id}"><span class="fas fa-edit"></span></button>
+                                <button class="btn btn-danger btn-sm btn-delete" data-id="${userUpdateAjaxModel.UserDto.User.Id}"><span class="fas fa-minus-circle"></span></button>
                             `
                         ]);
                         tableRow.attr("name", `${id}`);
@@ -336,4 +336,68 @@
             });
 
     });
+
+
+    $(function () {
+        const url = '/Admin/Role/Assign/';
+        const placeHolderDiv = $('#modalPlaceHolder');
+        $(document).on('click',
+            '.btn-assign',
+            function (event) {
+                event.preventDefault();
+                const id = $(this).attr('data-id');
+                $.get(url, { userId: id }).done(function (data) {
+                    placeHolderDiv.html(data);
+                    placeHolderDiv.find('.modal').modal('show');
+                }).fail(function (err) {
+                    toastr.error(`${err.responseText}`, 'Hata!');
+                });
+            });
+
+        /* Ajax POST / Updating a Role Assign starts from here */
+
+        placeHolderDiv.on('click',
+            '#btnAssign',
+            function (event) {
+                event.preventDefault();
+                const form = $('#form-role-assign');
+                const actionUrl = form.attr('action');
+                const dataToSend = new FormData(form.get(0));
+                $.ajax({
+                    url: actionUrl,
+                    type: 'POST',
+                    data: dataToSend,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        const userRoleAssignAjaxModel = jQuery.parseJSON(data);
+                        console.log(userRoleAssignAjaxModel);
+                        const newFormBody = $('.modal-body', userRoleAssignAjaxModel.RoleAssignPartial);
+                        placeHolderDiv.find('.modal-body').replaceWith(newFormBody);
+                        const isValid = newFormBody.find('[name="IsValid"]').val() === 'True';
+                        console.log("isValid: " + isValid)
+                        if (isValid) {
+                            const id = userRoleAssignAjaxModel.UserDto.User.Id;
+                            console.log("id:" + id);
+                            const tableRow = $(`[name="${id}"]`);
+                            //placeHolderDiv.find('.modal').modal('hide');
+                            toastr.success(`${userRoleAssignAjaxModel.UserDto.Message}`, "Başarılı İşlem!");
+                        } else {
+                            let summaryText = "";
+                            $('#validation-summary > ul > li').each(function () {
+                                let text = $(this).text();
+                                summaryText = `*${text}\n`;
+                            });
+                            toastr.warning(summaryText);
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error);
+                        toastr.error(`${err.responseText}`, 'Hata!');
+                    }
+                });
+            });
+
+    });
+
 });

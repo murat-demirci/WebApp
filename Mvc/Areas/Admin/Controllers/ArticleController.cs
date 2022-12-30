@@ -2,6 +2,7 @@
 using Entities.ComplexTypes;
 using Entities.Concrete;
 using Entities.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Mvc.Areas.Admin.Models;
@@ -29,13 +30,16 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin,Article.Read")]
         public async Task<IActionResult> Index()
         {
             var result = await _articleService.GetAllByNonDeletedAsync();
             if (result.ResultStatus == ResultStatus.Success) return View(result.Data);
             return NotFound();
         }
+
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin,Article.Create")]
         public async Task<IActionResult> Add()
         {
             var result = await _categoryService.GetAllByNonDeletedAndActiveAsync();
@@ -49,6 +53,8 @@ namespace Mvc.Areas.Admin.Controllers
 
             return NotFound();
         }
+
+        [Authorize(Roles = "SuperAdmin,Article.Create")]
         [HttpPost]
         public async Task<IActionResult> Add(ArticleAddViewModel articleAddViewModel)
         {
@@ -77,6 +83,8 @@ namespace Mvc.Areas.Admin.Controllers
             articleAddViewModel.Categories = categories.Data.Categories;
             return View(articleAddViewModel);
         }
+
+        [Authorize(Roles = "SuperAdmin,Article.Update")]
         [HttpGet]
         public async Task<IActionResult> Update(int articleId)
         {
@@ -93,6 +101,8 @@ namespace Mvc.Areas.Admin.Controllers
                 return NotFound();
             }
         }
+
+        [Authorize(Roles = "SuperAdmin,Article.Update")]
         [HttpPost]
         public async Task<IActionResult> Update(ArticleUpdateViewModel articleUpdateViewModel)
         {
@@ -135,6 +145,7 @@ namespace Mvc.Areas.Admin.Controllers
             return View(articleUpdateViewModel);
         }
 
+        [Authorize(Roles = "SuperAdmin,Article.Delete")]
         [HttpPost]
         public async Task<JsonResult> Delete(int articleId)
         {
@@ -144,6 +155,7 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin,Article.Read")]
         public async Task<JsonResult> GetAllArticles()
         {
             var articles = _articleService.GetAllByNonDeletedAndActiveAsync();
