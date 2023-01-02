@@ -38,6 +38,11 @@ namespace Services.Utilities
             {
                 return $"Guncellenen kategori \n {categoryName}";
             }
+
+            public static string UndoDelete(string categoryName)
+            {
+                return $"{categoryName} adlı kategori başarıyla arşivden geri getirilmiştir.";
+            }
         }
 
         public static class Article
@@ -71,6 +76,11 @@ namespace Services.Utilities
             {
                 return $"{articleTitle} başlıklı makale başarıyla veritabanından silinmiştir.";
             }
+
+            public static string UndoDelete(string articleTitle)
+            {
+                return $"{articleTitle} başlıklı makale başarıyla arşivden geri getirilmiştir.";
+            }
         }
 
         public static class Comment
@@ -101,6 +111,11 @@ namespace Services.Utilities
             public static string HardDelete(string createdByName)
             {
                 return $"{createdByName} tarafından eklenen yorum başarıyla veritabanından silinmiştir.";
+            }
+
+            public static string UndoDelete(string createdByName)
+            {
+                return $"{createdByName} adlı kişinin yorumu başarıyla arşivden geri getirilmiştir.";
             }
         }
     }

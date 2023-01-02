@@ -140,6 +140,7 @@ namespace Services.Concrete
             {
                 var article = await UnitOfWork.Articles.GetAsync(a => a.ID == articleId);
                 article.IsDeleted = true;
+                article.IsActive = false;
                 article.ModifiedByName = modifiedByName;
                 article.ModifiedDate = DateTime.Now;
                 await UnitOfWork.Articles.UpdateAsync(article);
@@ -187,5 +188,51 @@ namespace Services.Concrete
                 return new DataResult<int>(ResultStatus.Error, $"Beklenmeyen bir hata ile karşılaşıldı.", -1);
             }
         }
+
+
+        public async Task<IDataResult<ArticleListDto>> GetAllByDeletedAsync()
+        {
+            var articles =
+                await UnitOfWork.Articles.GetAllAsync(a => a.IsDeleted, ar => ar.User,
+                    ar => ar.Category);
+            if (articles.Count > -1)
+            {
+                return new DataResult<ArticleListDto>(ResultStatus.Success, new ArticleListDto
+                {
+                    Articles = articles,
+                    resultStatus = ResultStatus.Success
+                });
+            }
+            return new DataResult<ArticleListDto>(ResultStatus.Error, Messages.Article.NotFound(isPlural: true), null);
+        }
+
+
+        public async Task<IDataResult<ArticleDto>> UndoDeleteAsync(int articleId, string modifiedByName)
+        {
+            var result = await UnitOfWork.Articles.AnyAsync(a => a.ID == articleId);
+            if (result)
+            {
+                var article = await UnitOfWork.Articles.GetAsync(a => a.ID == articleId);
+                article.IsDeleted = false;
+                article.IsActive = true;
+                article.ModifiedByName = modifiedByName;
+                article.ModifiedDate = DateTime.Now;
+                await UnitOfWork.Articles.UpdateAsync(article);
+                await UnitOfWork.SaveAsync();
+                return new DataResult<ArticleDto>(ResultStatus.Success, Messages.Article.UndoDelete(article.Title), new ArticleDto
+                {
+                    Article = article,
+                    resultStatus = ResultStatus.Success,
+                    Message = Messages.Article.UndoDelete(article.Title)
+                });
+            }
+            return new DataResult<ArticleDto>(ResultStatus.Error, Messages.Article.NotFound(false), new ArticleDto
+            {
+                Article = null,
+                resultStatus = ResultStatus.Error,
+                Message = Messages.Article.NotFound(false)
+            });
+        }
+
     }
 }
