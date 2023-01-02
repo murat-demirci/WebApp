@@ -53,6 +53,18 @@
       "PackagePath": "staticwebassets\\Admin\\js\\commentIndex.js"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\js\\deletedArticles.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\deletedArticles.js"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\js\\deletedCategories.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\deletedCategories.js"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\js\\deletedComments.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\deletedComments.js"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\Admin\\js\\homeindex.js",
       "PackagePath": "staticwebassets\\Admin\\js\\homeindex.js"
     },

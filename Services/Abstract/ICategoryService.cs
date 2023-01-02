@@ -24,6 +24,8 @@ namespace Services.Abstract
         //categoryid ver categoryi bulsun
         Task<IDataResult<CategoryListDto>> GetAllAsync();
         Task<IDataResult<CategoryListDto>> GetAllByNonDeletedAsync();
+        //silinmiş olan kategorileri çöp kutusunda görüntülemek için kullanılır
+        Task<IDataResult<CategoryListDto>> GetAllByDeletedAsync();
         Task<IDataResult<CategoryListDto>> GetAllByNonDeletedAndActiveAsync();
         //aktif olanlari getirme islemi yap(optional)
 
@@ -37,6 +39,8 @@ namespace Services.Abstract
         Task<IDataResult<CategoryDto>> UpdateAsync(CategoryUpdateDto categoryUpdateDto, string modifiedByName);
         Task<IDataResult<CategoryDto>> RemoveAsync(int categoryId, string modifiedByName);//gecici silme
         //remove islemini idataresult yap. 
+        //UndoDeleteAsync çöp kutusuna atılmış kategoriyi geri yüklemeyi sağlar
+        Task<IDataResult<CategoryDto>> UndoDeleteAsync(int categoryId, string modifiedByName);
         Task<IResult> DeleteAsync(int categoryId);//tam silme
         Task<IDataResult<int>> CountAsync();
         Task<IDataResult<int>> CountByNonDeletedAsync();

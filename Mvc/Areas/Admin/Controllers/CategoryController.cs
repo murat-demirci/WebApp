@@ -34,8 +34,6 @@ namespace Mvc.Areas.Admin.Controllers
             //data => categorylistdto dur
             //dtobase e message eklendi ve manageri a bu message eklendi bu sayede result i successs veya
             //error olma durumunu tek yerden aldik
-
-
         }
 
         [HttpGet]
@@ -121,6 +119,7 @@ namespace Mvc.Areas.Admin.Controllers
         }
 
         [Authorize(Roles = "SuperAdmin,Category.Read")]
+        [HttpGet]
         public async Task<JsonResult> GetAllCategories()
         {
             var result = await _categoryService.GetAllByNonDeletedAsync();
@@ -138,6 +137,47 @@ namespace Mvc.Areas.Admin.Controllers
             //index deki data-id den id alincak
             var result = await _categoryService.RemoveAsync(categoryId, LoggedInUser.UserName);
             var deletedCategory = JsonSerializer.Serialize(result.Data);
+            return Json(deletedCategory);
+        }
+
+        [Authorize(Roles = "SuperAdmin,Category.Read")]
+        [HttpGet]
+        public async Task<IActionResult> DeletedCategories()
+        {
+            var result = await _categoryService.GetAllByDeletedAsync();
+            return View(result.Data);
+        }
+
+        [Authorize(Roles = "SuperAdmin,Category.Read")]
+        [HttpGet]
+        public async Task<JsonResult> GetAllDeletedCategories()
+        {
+            var result = await _categoryService.GetAllByDeletedAsync();
+            var categories = JsonSerializer.Serialize(result.Data, new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve
+            });
+            return Json(categories);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "SuperAdmin,Category.Update")]
+        public async Task<JsonResult> UndoDelete(int categoryId)
+        {
+            //index deki data-id den id alincak
+            var result = await _categoryService.UndoDeleteAsync(categoryId, LoggedInUser.UserName);
+            var undoDeletedCategory = JsonSerializer.Serialize(result.Data);
+            return Json(undoDeletedCategory);
+        }
+
+        //CategoryManager'daki Delete diğer manager'lardaki HardDelete ile aynı işlemi yapıyor
+        [HttpPost]
+        [Authorize(Roles = "SuperAdmin,Category.Update")]
+        public async Task<JsonResult> HardDelete(int categoryId)
+        {
+            //index deki data-id den id alincak
+            var result = await _categoryService.DeleteAsync(categoryId);
+            var deletedCategory = JsonSerializer.Serialize(result);
             return Json(deletedCategory);
         }
     }

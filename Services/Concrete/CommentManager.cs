@@ -144,6 +144,7 @@ namespace Services.Concrete
             if (comment != null)
             {
                 comment.IsDeleted = true;
+                comment.IsActive = false;
                 comment.ModifiedByName = modifiedByName;
                 comment.ModifiedDate = DateTime.Now;
                 var deletedComment = await UnitOfWork.Comments.UpdateAsync(comment);
@@ -213,6 +214,32 @@ namespace Services.Concrete
                 });
             }
             return new DataResult<CommentDto>(ResultStatus.Error, Messages.Comment.NotFound(false), null);
+        }
+
+
+        public async Task<IDataResult<CommentDto>> UndoDeleteAsync(int commentId, string modifiedByName)
+        {
+            var comment = await UnitOfWork.Comments.GetAsync(c => c.ID == commentId, c => c.Article);
+            if (comment != null)
+            {
+                var article = comment.Article;
+                comment.IsDeleted = false;
+                comment.IsActive = true;
+                comment.ModifiedByName = modifiedByName;
+                comment.ModifiedDate = DateTime.Now;
+                var deletedComment = await UnitOfWork.Comments.UpdateAsync(comment);
+                article.ArticleComment += 1;
+                await UnitOfWork.Articles.UpdateAsync(article);
+                await UnitOfWork.SaveAsync();
+                return new DataResult<CommentDto>(ResultStatus.Success, Messages.Comment.UndoDelete(deletedComment.CreatedByName), new CommentDto
+                {
+                    Comment = deletedComment,
+                });
+            }
+            return new DataResult<CommentDto>(ResultStatus.Error, Messages.Comment.NotFound(isPlural: false), new CommentDto
+            {
+                Comment = null,
+            });
         }
     }
 }
