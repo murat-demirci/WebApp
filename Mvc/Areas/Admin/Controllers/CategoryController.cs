@@ -170,15 +170,15 @@ namespace Mvc.Areas.Admin.Controllers
             return Json(undoDeletedCategory);
         }
 
-        //Kategoriyi veri tabanından silmek için HardDelete action'ına ihtiyaç var, ancak CategoryManager'da tanımolı olmaığı için eklemedim
-        //[HttpPost]
-        //[Authorize(Roles = "SuperAdmin,Category.Update")]
-        //public async Task<JsonResult> HardDelete(int categoryId)
-        //{
-        //    //index deki data-id den id alincak
-        //    var result = await _categoryService.HardDeleteAsync(categoryId);
-        //    var deletedCategory = JsonSerializer.Serialize(result);
-        //    return Json(deletedCategory);
-        //}
+        //CategoryManager'daki Delete diğer manager'lardaki HardDelete ile aynı işlemi yapıyor
+        [HttpPost]
+        [Authorize(Roles = "SuperAdmin,Category.Update")]
+        public async Task<JsonResult> HardDelete(int categoryId)
+        {
+            //index deki data-id den id alincak
+            var result = await _categoryService.DeleteAsync(categoryId);
+            var deletedCategory = JsonSerializer.Serialize(result);
+            return Json(deletedCategory);
+        }
     }
 }

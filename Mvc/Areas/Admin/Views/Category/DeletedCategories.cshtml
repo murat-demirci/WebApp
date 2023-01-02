@@ -62,10 +62,10 @@
                                 <td>@category.CreatedByName</td>
                                 <td>@category.ModifiedDate.ToShortDateString()</td>
                                 <td>@category.ModifiedByName</td>
-                                <td>@category.Articles.Count</td>
+                                <td>@(category.Articles == null ? 0 : category.Articles.Count)</td>
                                 <td style="max-width:200px;min-width:100px;text-align:center;">
-                                    <button data-id="@category.ID" class="btn btn-warning btn-undo" style="width: 90px; font-size: 12px;"><span class="fas fa-undo"></span> Geri Yükle</button>
-                                    <button data-id="@category.ID" style="width: 90px; font-size: 12px;" class=" btn btn-danger  btn-delete"><span class="fas fa-minus-circle"></span> Kaldir</button>
+                                    <button data-id="@category.ID" class="btn btn-warning btn-undo" style="width: 90px; font-size: 12px;"><span class="fas fa-undo"></span></button>
+                                    <button data-id="@category.ID" style="width: 90px; font-size: 12px;" class=" btn btn-danger  btn-delete"><span class="fas fa-minus-circle"></span></button>
                                 </td>
                             </tr>
                         }

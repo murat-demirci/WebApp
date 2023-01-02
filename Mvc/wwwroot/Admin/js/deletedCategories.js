@@ -125,10 +125,10 @@
                         success: function (data) {
                             const undoDeletedCategoryResult = jQuery.parseJSON(data);
                             console.log(undoDeletedCategoryResult);
-                            if (undoDeletedCategoryResult.Data.resultStatus === 0) {
+                            if (undoDeletedCategoryResult.resultStatus === 0) {
                                 Swal.fire(
                                     'Arşivden Geri Yüklendi!',
-                                    `${undoDeletedCategoryResult.Data.Message}`,
+                                    `${undoDeletedCategoryResult.Message}`,
                                     'success'
                                 );
 
@@ -137,7 +137,7 @@
                                 Swal.fire({
                                     icon: 'error',
                                     title: 'Başarısız İşlem!',
-                                    text: `${undoDeletedCategoryResult.Data.Message}`,
+                                    text: `${undoDeletedCategoryResult.Message}`,
                                 });
                             }
                         },
@@ -180,7 +180,7 @@
                         success: function (data) {
                             const hardDeleteCategoryResult = jQuery.parseJSON(data);
                             console.log(hardDeleteCategoryResult);
-                            if (hardDeleteCategoryResult.resultStatus === 0) {
+                            if (hardDeleteCategoryResult.ResultStatus === 0) {
                                 Swal.fire(
                                     'Kalıcı olarak silindi!',
                                     `${hardDeleteCategoryResult.Message}`,
