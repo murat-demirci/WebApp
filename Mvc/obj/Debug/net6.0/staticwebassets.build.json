@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NQqNQ+I+rweGKShzr34+3KYh/lvZQF8GEDNph6FLQbw=",
+  "Hash": "YS5s0Pr3eXDzpcOj9+phX8fCZlgmpKTuxQZEiiW1DfA=",
   "Source": "Mvc",
   "BasePath": "_content/Mvc",
   "Mode": "Default",
@@ -695,6 +695,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\PostImages\\defaultThumbnail.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\PostImages\\eb53dd74-c288-4de9-9127-1bfb07b0c061_silcem.png",
+      "SourceId": "Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\",
+      "BasePath": "_content/Mvc",
+      "RelativePath": "img/PostImages/eb53dd74-c288-4de9-9127-1bfb07b0c061_silcem.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\PostImages\\eb53dd74-c288-4de9-9127-1bfb07b0c061_silcem.png"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\img\\UserImages\\2e7224eb-9ce0-412c-8de8-0d93230a088d_deneme3.png",

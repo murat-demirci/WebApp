@@ -36,6 +36,12 @@ namespace Services.Extensions
                 opt.Lockout.AllowedForNewUsers = false;
             }).AddEntityFrameworkStores<dContext>().AddTokenProvider<DataProtectorTokenProvider<User>>(TokenOptions.DefaultProvider);
             //migrations islemleri icin(identity)
+            //ValidationInterval değerinine atanan değer sayesinde atanan değer süresinde bir veri tabanına
+            //securityStamp'i kontrol etmek için istekte bulunulur. Bu değer belirlerken kullanıcı sayısı çok ise olabildiğince fazla olmalı
+            serviceCollection.Configure<SecurityStampValidatorOptions>(options =>
+            {
+                options.ValidationInterval = TimeSpan.Zero;
+            });
             serviceCollection.AddScoped<IUnitofWork, UnitofWork>();
             //scoped: bir istekte bulundugunda ve bu islemlere baslandiginda bu islemlerin
             //butunu scope icerisine alinir ve yurutulur.

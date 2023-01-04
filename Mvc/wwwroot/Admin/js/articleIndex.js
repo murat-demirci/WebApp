@@ -51,12 +51,14 @@ $(document).ready(function () {
                         },
                         success: function (data) {
                             const articleResult = jQuery.parseJSON(data);
+                            console.log(articleResult);
                             dataTable.clear();
-                            if (articleResult.Result.Data.resultStatus === 0) {
+                            if (articleResult.Data.resultStatus === 0) {
                                 let categoriesArray = [];
-                                $.each(articleResult.Result.Data.Articles.$values,
+                                $.each(articleResult.Data.Articles.$values,
                                     function (index, article) {
-                                        const newArticle = getJsonNetObject(article, articleResult.Result.Data.Articles.$values);
+                                        const newArticle = getJsonNetObject(article, articleResult.Data.Articles.$values);
+                                        console.log(newArticle);
                                         let newCategory = getJsonNetObject(newArticle.Category, newArticle);
                                         if (newCategory !== null) {
                                             categoriesArray.push(newCategory);
@@ -93,7 +95,7 @@ $(document).ready(function () {
                                 $('.spinner-border').hide();
                                 $('#articlesTable').fadeIn(1400);
                             } else {
-                                toastr.error(`${articleResult.Result.Data.Message}`, 'İşlem Başarısız!');
+                                toastr.error(`${articleResult.Data.Message}`, 'İşlem Başarısız!');
                             }
                         },
                         error: function (err) {
