@@ -23,12 +23,13 @@
                         success: function (data) {
                             const commentResult = jQuery.parseJSON(data);
                             dataTable.clear();
-                            console.log(commentResult);
-                            if (commentResult.Data) {
+                            console.log(commentResult.Data);
+                            if (commentResult.Data !== null) {
                                 const articlesArray = [];
                                 $.each(commentResult.Data.Comments.$values,
                                     function (index, comment) {
-                                        const newComment = getJsonNetObject(comment, commentResult.Data.Comments.$values);
+                                        const newComment = getJsonNetObject(comment, commentResult.Data.Comments.$values)
+                                        console.log(newComment);
                                         let newArticle = getJsonNetObject(newComment.Article, newComment);
                                         if (newArticle !== null) {
                                             articlesArray.push(newArticle);
@@ -40,6 +41,7 @@
                                         }
                                         const newTableRow = dataTable.row.add([
                                             newComment.ID,
+                                            //newComment.Article.Title,
                                             newArticle.Title,
                                             newComment.CommentContent.length > 75 ? newComment.CommentContent.substring(0, 75) : newComment.CommentContent,
                                             `${newComment.IsActive ? "Evet" : "Hayır"}`,

@@ -89,6 +89,9 @@ namespace Mvc.Areas.Admin.Controllers
                         await UserManager.RemoveFromRoleAsync(user, roleAssignDto.RoleName);
                     }
                 }
+                //rol atama işlemi gerçekleştikten sonra değişikliklerin gerçekleşmesi için rol atanan kullanıcının
+                //çıkış yapmasına gerek kalmadan belirli bir süre sonra işlemin otoamatik gerçekleşmesi için bu işem yapılır
+                await UserManager.UpdateSecurityStampAsync(user);
 
                 var userRoleAssignAjaxViewModel = JsonSerializer.Serialize(new UserRoleAssignAjaxViewModel
                 {
