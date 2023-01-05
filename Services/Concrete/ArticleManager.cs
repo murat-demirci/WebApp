@@ -20,7 +20,7 @@ namespace Services.Concrete
 
         public async Task<IDataResult<ArticleDto>> GetAsync(int articleId)
         {
-            var article = await UnitOfWork.Articles.GetAsync(a => a.ID == articleId, a => a.User, a => a.Category);
+            var article = await UnitOfWork.Articles.GetAsync(a => a.ID == articleId, a => a.User, a => a.Category, a => a.Comments);
             if (article != null)
             {
                 return new DataResult<ArticleDto>(ResultStatus.Success, new ArticleDto
@@ -234,5 +234,16 @@ namespace Services.Concrete
             });
         }
 
+        public async Task<IDataResult<ArticleListDto>> GetAllByViewCountAsync(bool isAscending, int? takeSize)
+        {
+            var articles = await UnitOfWork.Articles.GetAllAsync(a => a.IsActive && !a.IsDeleted, a => a.Category, a => a.User);
+            var sortedArticles = isAscending 
+                ? articles.OrderBy(a => a.ArticleView) 
+                : articles.OrderByDescending(a => a.ArticleView);
+            return new DataResult<ArticleListDto>(ResultStatus.Success, new ArticleListDto
+            {
+                Articles = takeSize == null ? sortedArticles.ToList() : sortedArticles.Take(takeSize.Value).ToList(),
+            });
+        }
     }
 }

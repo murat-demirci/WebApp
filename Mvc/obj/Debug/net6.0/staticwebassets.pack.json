@@ -85,6 +85,14 @@
       "PackagePath": "staticwebassets\\Admin\\js\\userIndex.js"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\BlogHome\\css\\styles.css",
+      "PackagePath": "staticwebassets\\BlogHome\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\BlogHome\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\BlogHome\\js\\scripts.js"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

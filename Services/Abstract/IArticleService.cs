@@ -19,5 +19,7 @@ namespace Services.Abstract
         Task<IResult> HardDeleteAsync(int articleId);
         Task<IDataResult<int>> CountAsync();
         Task<IDataResult<int>> CountByNonDeletedAsync();
+        //take size nullable. sayı verilmezse tüm makaleler gelir, verilirse verilen sayı kadar makale gelir
+        Task<IDataResult<ArticleListDto>> GetAllByViewCountAsync(bool isAscending, int? takeSize);
     }
 }
