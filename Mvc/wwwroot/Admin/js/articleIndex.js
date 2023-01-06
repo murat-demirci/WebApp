@@ -51,7 +51,6 @@ $(document).ready(function () {
                         },
                         success: function (data) {
                             const articleResult = jQuery.parseJSON(data);
-                            console.log(articleResult);
                             dataTable.clear();
                             if (articleResult.Data.resultStatus === 0) {
                                 let categoriesArray = [];

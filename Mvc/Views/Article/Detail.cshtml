@@ -1,0 +1,58 @@
+﻿@model Entities.Dtos.ArticleDto
+@{
+    Layout = "_ArticleLayout";
+    ViewBag.Title = Model.Article.Title;
+    ViewBag.Description = Model.Article.SeoDescription;
+    ViewBag.Author = Model.Article.SeoAuthor;
+    ViewBag.Tags = Model.Article.SeoTags;
+}
+
+<!-- Post Content Column -->
+<div class="col-lg-8">
+
+    <!-- Title -->
+    <h1 class="mt-4">@Model.Article.Title</h1>
+
+    <!-- Author -->
+    <p class="lead">
+        @Model.Article.User.UserName tarafından @Model.Article.CreatedDate.ToShortDateString() tarihinde paylaşılmıştır
+    </p>
+
+    <hr>
+
+    <!-- Preview Image -->
+    <div class="text-center">
+        <img class="img-fluid rounded" src="~/img/@Model.Article.ArticleThumbnail" alt="@Model.Article.Title">
+    </div>
+    <hr>
+
+    <!-- Post Content -->
+    @Html.Raw(@Model.Article.Content)
+    <hr>
+    <p class="text-center">Okunma Sayısı: <span class="badge badge-info" style="background-color: #808080">@Model.Article.ArticleView</span> Yorum Sayısı: <span class="badge badge-warning" style="background-color: #0f0f0f">@Model.Article.ArticleComment</span></p>
+
+    <!-- Comments Form -->
+    <div class="card my-4">
+        <h5 class="card-header">Bir Yorum Yaz:</h5>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    @foreach (var comment in Model.Article.Comments)
+    {
+        <!-- Single Comment -->
+        <div class="media mb-4" style="display: flex">
+            <img class="d-flex mr-3 ml-3 rounded-circle" style="max-height: 100px" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
+            <div class="media-body" style="display: block; margin-left: 20px">
+                <h5 class="mt-0">@comment.CreatedByName</h5>
+                @comment.CommentContent    
+            </div>
+        </div>
+    }
+</div>
