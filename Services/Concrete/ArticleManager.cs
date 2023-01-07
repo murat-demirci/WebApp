@@ -8,7 +8,9 @@ using Services.Utilities;
 using Shared.Utilities.Results.Abstract;
 using Shared.Utilities.Results.ComplexTypes;
 using Shared.Utilities.Results.Concrete;
+using System.Linq.Expressions;
 using static Services.Utilities.Messages;
+using Article = Entities.Concrete.Article;
 
 namespace Services.Concrete
 {
@@ -20,9 +22,10 @@ namespace Services.Concrete
 
         public async Task<IDataResult<ArticleDto>> GetAsync(int articleId)
         {
-            var article = await UnitOfWork.Articles.GetAsync(a => a.ID == articleId, a => a.User, a => a.Category, a => a.Comments);
+            var article = await UnitOfWork.Articles.GetAsync(a => a.ID == articleId, a => a.User, a => a.Category);
             if (article != null)
             {
+                article.Comments = await UnitOfWork.Comments.GetAllAsync(c => c.ArticleId == articleId && !c.IsDeleted && c.IsActive);
                 return new DataResult<ArticleDto>(ResultStatus.Success, new ArticleDto
                 {
                     Article = article,
@@ -243,6 +246,66 @@ namespace Services.Concrete
             return new DataResult<ArticleListDto>(ResultStatus.Success, new ArticleListDto
             {
                 Articles = takeSize == null ? sortedArticles.ToList() : sortedArticles.Take(takeSize.Value).ToList(),
+            });
+        }
+
+        public async Task<IDataResult<ArticleListDto>> GetAllByPagingAsync(int? categoryId, int currentPage = 1, int pageSize = 5, bool isAscending = false)
+        {
+            pageSize = pageSize > 20 ? 20 : pageSize;
+            var articles = categoryId == null
+                ? await UnitOfWork.Articles.GetAllAsync(a => a.IsActive && !a.IsDeleted, a => a.Category, a => a.User)
+                : await UnitOfWork.Articles.GetAllAsync(a => a.CategoryId == categoryId.Value && a.IsActive && !a.IsDeleted, a => a.Category, a => a.User);
+            //skip sql'deki offset gibi davranır, yani belirli sayıdaki makaleyi geçmemizi sağlar 
+            //örneğin her sayfada 5 makale olsun ve 2. sayfada olduğumuz varsayılsın. 2. sayfadaki makaleleri göstermek için
+            //5 tane makaleyi geçmemiz gerek. (2 - 1) * 5 = 5 ile bu işlem gerçekleştirilir
+            //take ile'de alınacak makale sayısı belirlenir
+            var sortedArticles = isAscending
+                ? articles.OrderBy(a => a.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList()
+                : articles.OrderByDescending(a => a.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+            return new DataResult<ArticleListDto>(ResultStatus.Success, new ArticleListDto
+            {
+                Articles = sortedArticles,
+                CategoryId= categoryId == null ? null : categoryId.Value,
+                CurrentPage = currentPage,
+                PageSize = pageSize,
+                TotalCount = articles.Count,
+            });
+        }
+
+        public async Task<IDataResult<ArticleListDto>> SearchAsync(string keyword, int currentPage = 1, int pageSize = 5, bool isAscending = false)
+        {
+            pageSize = pageSize > 20 ? 20 : pageSize;
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                var articles = await UnitOfWork.Articles.GetAllAsync(a => a.IsActive && !a.IsDeleted, a => a.Category, a => a.User);
+                var sortedArticles = isAscending
+                    ? articles.OrderBy(a => a.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList()
+                    : articles.OrderByDescending(a => a.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+                return new DataResult<ArticleListDto>(ResultStatus.Success, new ArticleListDto
+                {
+                    Articles = sortedArticles,
+                    CurrentPage = currentPage,
+                    PageSize = pageSize,
+                    TotalCount = articles.Count
+                });
+            }
+            var searchedArticles = await UnitOfWork.Articles.SearchAsync(new List<Expression<Func<Article, bool>>>
+            {
+                (a) => a.Title.Contains(keyword),
+                (a) => a.Category.Name.Contains(keyword),
+                (a) => a.SeoDescription.Contains(keyword),
+                (a) => a.SeoTags.Contains(keyword),
+
+            }, a => a.Category, a => a.User);
+            var searchedAndSortedArticles = isAscending
+                    ? searchedArticles.OrderBy(a => a.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList()
+                    : searchedArticles.OrderByDescending(a => a.CreatedDate).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+            return new DataResult<ArticleListDto>(ResultStatus.Success, new ArticleListDto
+            {
+                Articles = searchedAndSortedArticles,
+                CurrentPage = currentPage,
+                PageSize = pageSize,
+                TotalCount = searchedArticles.Count
             });
         }
     }

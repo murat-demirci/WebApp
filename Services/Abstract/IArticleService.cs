@@ -21,5 +21,10 @@ namespace Services.Abstract
         Task<IDataResult<int>> CountByNonDeletedAsync();
         //take size nullable. sayı verilmezse tüm makaleler gelir, verilirse verilen sayı kadar makale gelir
         Task<IDataResult<ArticleListDto>> GetAllByViewCountAsync(bool isAscending, int? takeSize);
+        
+        //current page gelmezse 1 olarak atanır
+        //isAscending sıralama türünü tutar
+        Task<IDataResult<ArticleListDto>> GetAllByPagingAsync(int? categoryId, int currentPage = 1, int pageSize = 5, bool isAscending = false);
+        Task<IDataResult<ArticleListDto>> SearchAsync(string keyword, int currentPage = 1, int pageSize = 5, bool isAscending = false);
     }
 }

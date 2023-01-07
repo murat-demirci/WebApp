@@ -89,6 +89,10 @@
       "PackagePath": "staticwebassets\\BlogHome\\css\\styles.css"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\BlogHome\\js\\articleDetail.js",
+      "PackagePath": "staticwebassets\\BlogHome\\js\\articleDetail.js"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\BlogHome\\js\\scripts.js",
       "PackagePath": "staticwebassets\\BlogHome\\js\\scripts.js"
     },

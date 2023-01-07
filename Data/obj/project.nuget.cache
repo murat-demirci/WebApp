@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "EvFYUpEwiA83lU3nxB3aoAX314zSX+X4L8UIhiX4eXIXQDgckmYcR8GF3BxPUd6lgVD7/I/jIrqdUR2tkqP6GQ==",
+  "dgSpecHash": "XLbVF0u01Oat2qjh0ie1wgBeiCDewG+sYRm9f5yy0sXZ1bnyh0fQ01jYsSp1AH4TnptPrP2fxJXwZzNmwYTNWQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Data\\Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hp\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Hp\\.nuget\\packages\\linqkit.core\\1.2.3\\linqkit.core.1.2.3.nupkg.sha512",
+    "C:\\Users\\Hp\\.nuget\\packages\\linqkit.microsoft.entityframeworkcore\\7.1.3\\linqkit.microsoft.entityframeworkcore.7.1.3.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
