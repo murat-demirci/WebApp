@@ -13,10 +13,12 @@ namespace Mvc.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(int? categoryId)
+        public async Task<IActionResult> Index(int? categoryId, int currentPage = 1, int pageSize = 5)
         {
             //int? nullable old. için ve getallbycategoryid int kabul ettiği için categoryId'yi verirken categoryId.Value şeklinde verdik
-            var articlesResult = await (categoryId == null ? _articleService.GetAllByNonDeletedAndActiveAsync() : _articleService.GetAllByCategoryAsync(categoryId.Value));
+            var articlesResult = await (categoryId == null 
+                ? _articleService.GetAllByPagingAsync(null, currentPage, pageSize) 
+                : _articleService.GetAllByPagingAsync(categoryId.Value, currentPage, pageSize));
             return View(articlesResult.Data);
         }
     }

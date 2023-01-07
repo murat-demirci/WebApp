@@ -34,7 +34,7 @@ namespace Shared.Data.Abstract
         //var result = _userRepository.AnyAsync(u=>u.FirstName=="murat) murat isimli kullanici var mi?
         Task<int> CountAsync(Expression<Func<T, bool>> predicate = null);
 
-
+        Task<IList<T>> SearchAsync(IList<Expression<Func<T, bool>>> predicates, params Expression<Func<T, object>>[] includeProperties);
 
     }
 }

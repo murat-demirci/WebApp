@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "buNjkCzmf1h/VP1XWBXBikxbw/fLvIBfvSSgDuxEyoksKyiT1kUqZ+nHc04sYen6a5YmQeVHyvOBjYhD4jhC5g==",
+  "dgSpecHash": "QB0OGcRda52oAytQVasF3Kx7QeTCETNE+R17UgSPxCaWXRHrK7Wch4xNp1iMzupQvICkUw9+t4B4z4DE+YYkBw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Shared\\Shared.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Hp\\.nuget\\packages\\linqkit.core\\1.2.3\\linqkit.core.1.2.3.nupkg.sha512",
+    "C:\\Users\\Hp\\.nuget\\packages\\linqkit.microsoft.entityframeworkcore\\7.1.3\\linqkit.microsoft.entityframeworkcore.7.1.3.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

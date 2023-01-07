@@ -1749,3 +1749,5 @@ C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\obj\Debug\net6.0\Mvc.genruntim
 C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\obj\Debug\net6.0\ref\Mvc.dll
 C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\bin\Debug\net6.0\libman.json
 C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\bin\Debug\net6.0\NToastNotify.dll
+C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\bin\Debug\net6.0\LinqKit.Core.dll
+C:\Users\Hp\Desktop\WebApp-FirstPartCompleted\Mvc\bin\Debug\net6.0\LinqKit.Microsoft.EntityFrameworkCore.dll

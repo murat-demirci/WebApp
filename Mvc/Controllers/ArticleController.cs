@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Mvc.Models;
 using Services.Abstract;
 using Shared.Utilities.Results.ComplexTypes;
 
@@ -14,9 +15,19 @@ namespace Mvc.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Search(string keyword, int currentPage = 1, int pageSize = 5, bool isAscending = false)
         {
-            return View();
+            var searchResult = await _articleService.SearchAsync(keyword, currentPage, pageSize, isAscending);
+            if(searchResult.ResultStatus == ResultStatus.Success)
+            {
+                return View (new ArticleSearchViewModel
+                {
+                    ArticleListDto = searchResult.Data,
+                    //keyword'ün tutulma sebebi, arama sonucunda dönen makaleler için de sayfalama yapılmasıdır
+                    Keyword = keyword
+                });
+            }
+            return NotFound();
         }
 
         [HttpGet]

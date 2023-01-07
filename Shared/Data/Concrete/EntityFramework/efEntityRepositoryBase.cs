@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LinqKit;
+using Microsoft.EntityFrameworkCore;
 using Shared.Data.Abstract;
 using Shared.Entites.Abstract;
 using System.Data;
@@ -84,6 +85,34 @@ namespace Shared.Data.Concrete.Dapper
         {
             await Task.Run(() => { _context.Set<TEntity>().Update(entity); });
             return entity;
+        }
+
+        public async Task<IList<TEntity>> SearchAsync(IList<Expression<Func<TEntity, bool>>> predicates, params Expression<Func<TEntity, object>>[] includeProperties)
+        {
+            IQueryable<TEntity> query = _context.Set<TEntity>();
+            //predicates listesi boş olabilir, bunu kontrol ederiz
+            //predicates'in içerdikleri query'e eklenir
+            if (predicates.Any())
+            {
+                var predicateChain = PredicateBuilder.New<TEntity>();
+                foreach (var predicate in predicates)
+                {
+                    //Where işleminde predicate'ler AND operatörü ile birbirine bağlanır
+                    //query = query.Where(predicate);
+                    //OR ile bağlamak için LinqKit.Microsoft.EntityFramework paketi yüklenir
+                    predicateChain.Or(predicate);
+                }
+                //oluşturulmuş olan OR'lu predicateChain query'e eklenir
+                query = query.Where(predicateChain);
+            }
+            if (includeProperties.Any())
+            {
+                foreach (var includeProperty in includeProperties)
+                {
+                    query = query.Include(includeProperty);
+                }
+            }
+            return await query.ToListAsync();
         }
     }
 }

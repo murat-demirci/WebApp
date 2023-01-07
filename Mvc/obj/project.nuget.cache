@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RUu+wgNKI3yxu8ZtT8Q83C8522JJrKf5x19KP/31NqShRzZwi2EGYt8EibeoLopwCF/sT5+H2ZO61bHXVity8g==",
+  "dgSpecHash": "5ZGvj/PubxO0fNkxEMzYVfk2mSt5ZGd/NQxRy40z+yx5ezanG3l+MyLoLso+PiT47+FAq0yX+du8QSoENaQzng==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\Mvc.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\Hp\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Hp\\.nuget\\packages\\linqkit.core\\1.2.3\\linqkit.core.1.2.3.nupkg.sha512",
+    "C:\\Users\\Hp\\.nuget\\packages\\linqkit.microsoft.entityframeworkcore\\7.1.3\\linqkit.microsoft.entityframeworkcore.7.1.3.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
