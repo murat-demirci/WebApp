@@ -1,0 +1,83 @@
+﻿@model Entities.Dtos.EmailSendDto
+
+@{
+    Layout = "_ContactLayout";
+    ViewBag.Title = "İletişim";
+    ViewBag.Author = "Design Blog";
+    ViewBag.Description = "İletişime Geç";
+    ViewBag.Tags = "İletişim, Contact";
+}
+
+@*<div class="container contact-form">
+    <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+    </div>
+    <form asp-controller="Home" asp-action="Contact" method="post">
+        <h3>Bize Bir Mesaj Bırak</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Ad*" asp-for="Name" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="E-posta" asp-for="Email" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Başlık *" asp-for="Subject" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btnContact">Gönder</button> />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Mesajınız... *" asp-for="Message" style="width: 100%; height: 150px;"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>*@
+
+<div class="container py-4">
+
+    <!-- Bootstrap 5 starter form -->
+    <form id="contactForm">
+
+        <!-- Name input -->
+        <div class="mb-3">
+            <label class="form-label" for="name">Name</label>
+            <input type="text" class="form-control" placeholder="Ad*" asp-for="Name" />
+            <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+        </div>
+
+        <!-- Email address input -->
+        <div class="mb-3">
+            <label class="form-label" for="emailAddress">Email Address</label>
+            <input type="text" class="form-control" placeholder="E-posta" asp-for="Email" />
+            <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+            <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+        </div>
+
+        @*Subject Input*@
+        <div class="mb-3">
+            <label class="form-label" for="emailAddress">Başlık</label>
+            <input type="text" class="form-control" placeholder="Başlık *" asp-for="Subject" />
+            <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+            <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+        </div>
+
+        <!-- Message input -->
+        <div class="mb-3">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-control" placeholder="Mesajınız... *" asp-for="Message" style="width: 100%; height: 150px;"></textarea>
+            <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
+        </div>
+
+        <!-- Form submit button -->
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">Gönder</button>
+        </div>
+
+    </form>
+
+</div>

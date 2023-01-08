@@ -36,7 +36,20 @@ namespace Mvc.Controllers
             var articleResult = await _articleService.GetAsync(articleId);
             if(articleResult.ResultStatus == ResultStatus.Success)
             {
-                return View(articleResult.Data);
+                var userArticles = await _articleService.GetAllByUserIdOnFilter(articleResult.Data.Article.UserId,
+                    Entities.ComplexTypes.FilterBy.Category, Entities.ComplexTypes.OrderBy.Date, false, 10, articleResult.Data.Article.CategoryId,
+                    DateTime.Now, DateTime.Now, 0, 100000, 0, 100000);
+                await _articleService.IncreaseViewCountAsync(articleId);
+                return View(new ArticleDetailViewModel
+                {
+                    ArticleDto = articleResult.Data,
+                    ArticleDetailRightSideBarViewModel = new ArticleDetailRightSideBarViewModel
+                    {
+                        ArticleListDto = userArticles.Data,
+                        Header = "Kullanıcının Aynı Kategori Üzerindeki En Çok Okunan Makaleleri",
+                        User = articleResult.Data.Article.User
+                    }
+                });
             }
             return NotFound();
         }

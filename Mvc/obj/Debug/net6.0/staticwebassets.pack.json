@@ -85,6 +85,14 @@
       "PackagePath": "staticwebassets\\Admin\\js\\userIndex.js"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\BlogHome\\css\\contact-page.css",
+      "PackagePath": "staticwebassets\\BlogHome\\css\\contact-page.css"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\BlogHome\\css\\site.css",
+      "PackagePath": "staticwebassets\\BlogHome\\css\\site.css"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\WebApp-FirstPartCompleted\\Mvc\\wwwroot\\BlogHome\\css\\styles.css",
       "PackagePath": "staticwebassets\\BlogHome\\css\\styles.css"
     },

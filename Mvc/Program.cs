@@ -1,4 +1,5 @@
 using Data.Concrete.EntityFramework.Contexts;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Mvc.AutoMapper.Profiles;
 using Mvc.Helpers.Abstract;
@@ -32,6 +33,11 @@ builder.Services.AddDbContext<dContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("LocalDB"));
 });
+
+//AboutUsPageInfo'da kullanýlacak olan deðerlerin appsettings.json'dan çekilmesi
+builder.Services.Configure<AboutUsPageInfo>(builder.Configuration.GetSection("AboutUsPageInfo"));
+builder.Services.Configure<WebSiteInfo>(builder.Configuration.GetSection("WebSiteInfo"));
+
 builder.Services.LoadMyServices();
 builder.Services.AddScoped<IImageHelper, ImageHelper>();
 builder.Services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile), typeof(CommentProfile), typeof(ViewModelsProfile));
