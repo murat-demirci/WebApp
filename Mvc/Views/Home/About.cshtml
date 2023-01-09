@@ -1,0 +1,25 @@
+﻿@model Entities.Concrete.AboutUsPageInfo;
+
+@{
+    Layout = "_AboutLayout";
+    ViewBag.Title = "Hakkında";
+    ViewBag.Description = Model.SeoDescription;
+    ViewBag.Author = Model.SeoAuthor;
+    ViewBag.Tags = Model.SeoTags;
+}
+
+<div class="container-fluid">
+    <div class="jumbotron mt-4">
+        <div class="d-flex align-items-center h-100">
+            <div class="container text-center py-5">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Erciyes_University_logo.svg/2068px-Erciyes_University_logo.svg.png" class="img-fluid mb-1" style="width: 20%;"/>
+                <div class="container mt-4 mb-5">
+                    <h2 class="text-center py-3 mb-5">@Model.Header</h2>
+                    <div class="text-center">
+                        <p>@Model.Content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

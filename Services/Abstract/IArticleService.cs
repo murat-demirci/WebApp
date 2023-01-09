@@ -1,4 +1,5 @@
-﻿using Entities.Dtos;
+﻿using Entities.ComplexTypes;
+using Entities.Dtos;
 using Shared.Utilities.Results.Abstract;
 
 namespace Services.Abstract
@@ -26,5 +27,9 @@ namespace Services.Abstract
         //isAscending sıralama türünü tutar
         Task<IDataResult<ArticleListDto>> GetAllByPagingAsync(int? categoryId, int currentPage = 1, int pageSize = 5, bool isAscending = false);
         Task<IDataResult<ArticleListDto>> SearchAsync(string keyword, int currentPage = 1, int pageSize = 5, bool isAscending = false);
+        Task<IResult> IncreaseViewCountAsync(int articleId);
+        Task<IDataResult<ArticleListDto>> GetAllByUserIdOnFilter(int userId, FilterBy filterBy, OrderBy orderBy,
+            bool isAscending, int takeSize, int categoryId, DateTime startAt, DateTime endAt, int minViewCount,
+            int maxViewCount, int minCommentCount, int maxCommentCount);
     }
 }
